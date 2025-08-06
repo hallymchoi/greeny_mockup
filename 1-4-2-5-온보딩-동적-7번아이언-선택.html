@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 선택</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-4-온보딩-동적-7번아이언-필수.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto">
+      <div class="flex items-center space-x-2 mb-6">
+        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+          <span class="text-lg font-bold text-forest-green">7</span>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-charcoal-gray">추가 아이언 정보</h1>
+          <p class="text-sm text-gray-600">세밀한 클럽 세팅이 가능해요</p>
+        </div>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-xl p-3 mb-6">
+        <div class="flex items-start space-x-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <p class="text-xs text-green-800">
+            현재 사용 중인 클럽의 느낌을 알려주세요
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            공이 어느 정도 높이로 뜨는 편인가요?
+          </label>
+          <button class="text-xs text-forest-green mb-3 flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            탄도가 뭔가요?
+          </button>
+          <p class="text-xs text-gray-500 mb-4">공이 날아가는 전체 궤적의 높낮이예요</p>
+          
+          <div class="grid grid-cols-3 gap-3">
+            <button class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-16 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 80 50">
+                    <path d="M10 40 Q40 35 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                    <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">낮음</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-16 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 80 50">
+                    <path d="M10 40 Q40 20 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                    <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">중간</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-16 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 80 50">
+                    <path d="M10 40 Q40 10 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                    <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">높음</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            클럽이 스윙할 때 무겁게 느껴지나요?
+          </label>
+          <p class="text-xs text-gray-500 mb-4">체감 무게는 정확한 컨트롤에 영향을 줘요</p>
+          
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              가벼움
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              적당함
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              무거움
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            샤프트가 임팩트 때 휘는 느낌이 강한가요?
+          </label>
+          <p class="text-xs text-gray-500 mb-4">휘는 정도에 따라 타이밍이 달라져요</p>
+          
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">부드러움</p>
+              <p class="text-xs text-gray-500 mt-1">많이 휘는 느낌</p>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">중간</p>
+              <p class="text-xs text-gray-500 mt-1">적당히 휘는 느낌</p>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">단단함</p>
+              <p class="text-xs text-gray-500 mt-1">거의 안 휘는 느낌</p>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            임팩트가 어떤 편인가요?
+          </label>
+          <p class="text-xs text-gray-500 mb-4">라이각과 샤프트 보정에 참고해요</p>
+          
+          <div class="grid grid-cols-3 gap-3">
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-8 h-8 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-red-500 rounded-full -translate-y-1"></div>
+                </div>
+                <p class="text-xs font-medium text-gray-700">탑볼</p>
+                <p class="text-xs text-gray-500 mt-1">얇게 맞음</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-8 h-8 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                </div>
+                <p class="text-xs font-medium text-gray-700">정타</p>
+                <p class="text-xs text-gray-500 mt-1">중앙 맞음</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-8 h-8 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-forest-green rounded-full translate-y-1"></div>
+                </div>
+                <p class="text-xs font-medium text-gray-700">뒤땅</p>
+                <p class="text-xs text-gray-500 mt-1">두껍게 맞음</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='1-4-3-1-온보딩-감성-시작.html'">
+        다음 단계로
+      </button>
+      <button class="w-full mt-3 text-gray-500 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='1-4-3-1-온보딩-감성-시작.html'">
+        건너뛰기
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.classList.contains('border-2')) {
+          const parent = this.closest('.space-y-2, .grid');
+          parent.querySelectorAll('button').forEach(btn => {
+            btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+            btn.classList.add('border-gray-200');
+          });
+          this.classList.remove('border-gray-200');
+          this.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

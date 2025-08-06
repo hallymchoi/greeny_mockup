@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 게시글 작성</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">게시글 작성</h1>
+      <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">등록</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">태그 선택 <span class="text-red-500">*</span></label>
+          <select class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green" onchange="handleTagChange(this)">
+            <option value="">태그를 선택하세요</option>
+            <option value="추천요청">#추천요청</option>
+            <option value="피팅샵후기">#피팅샵후기</option>
+            <option value="장비후기">#장비후기</option>
+            <option value="장비비교">#장비비교</option>
+            <option value="마이백인증">#마이백인증</option>
+            <option value="중고거래경험">#중고거래경험</option>
+            <option value="플레이인증">#플레이인증</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">제목 <span class="text-red-500">*</span></label>
+          <input type="text" placeholder="제목을 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">내용 <span class="text-red-500">*</span></label>
+          <textarea placeholder="내용을 입력하세요" rows="10" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+        </div>
+        
+        <div id="tagSpecificFields" class="hidden space-y-4">
+          <div id="추천요청Fields" class="hidden space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">현재 사용 클럽</label>
+              <input type="text" placeholder="현재 사용중인 클럽 정보를 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">불만족 이유</label>
+              <textarea placeholder="현재 클럽의 불만족 사항을 구체적으로 입력하세요" rows="3" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+            </div>
+          </div>
+          
+          <div id="피팅샵후기Fields" class="hidden space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">피팅샵명</label>
+              <input type="text" placeholder="피팅샵 이름을 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">위치</label>
+              <input type="text" placeholder="피팅샵 위치를 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+          </div>
+          
+          <div id="장비후기Fields" class="hidden space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">모델명</label>
+              <input type="text" placeholder="브랜드와 모델명을 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">사용기간</label>
+              <input type="text" placeholder="사용 기간을 입력하세요 (예: 3개월)" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+          </div>
+          
+          <div id="중고거래경험Fields" class="hidden space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">실제 거래가</label>
+              <input type="text" placeholder="실제 거래 금액을 입력하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">소요시간</label>
+              <input type="text" placeholder="거래 완료까지 소요된 시간" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">사진 첨부</label>
+          <div class="grid grid-cols-4 gap-3">
+            <button class="aspect-square bg-gray-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6 text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span class="text-xs text-gray-500">0/10</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 rounded-xl p-4">
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-2">커뮤니티 가이드라인</h3>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 서로를 존중하는 언어를 사용해주세요</li>
+            <li>• 광고성 게시글은 삭제될 수 있습니다</li>
+            <li>• 욕설이나 비방은 금지됩니다</li>
+            <li>• 정확한 정보를 공유해주세요</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        게시글 등록
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    function handleTagChange(select) {
+      const value = select.value;
+      const specificFields = document.getElementById('tagSpecificFields');
+      const allFieldGroups = specificFields.querySelectorAll('[id$="Fields"]');
+      
+      allFieldGroups.forEach(group => {
+        group.classList.add('hidden');
+      });
+      
+      if (value) {
+        specificFields.classList.remove('hidden');
+        const fieldGroup = document.getElementById(value + 'Fields');
+        if (fieldGroup) {
+          fieldGroup.classList.remove('hidden');
+        }
+      } else {
+        specificFields.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

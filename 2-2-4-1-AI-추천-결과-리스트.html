@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - AI 추천 결과</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="window.location.href='2-1-홈.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">AI 추천 결과</h1>
+            <button onclick="window.location.href='2-2-5-AI-추천-히스토리.html'" class="text-forest-green text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">
+                히스토리
+            </button>
+        </div>
+
+        <!-- 추천 요약 -->
+        <div class="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50">
+            <div class="text-center mb-4">
+                <div class="w-16 h-16 bg-gradient-to-r from-forest-green to-hunter-green rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold text-charcoal-gray">나이스샷님을 위한</h2>
+                <h2 class="text-lg font-bold text-charcoal-gray">맞춤 클럽 추천</h2>
+                <p class="text-sm text-gray-600 mt-2">3개의 추천 클럽을 찾았습니다</p>
+            </div>
+        </div>
+
+        <!-- 추천 클럽 리스트 -->
+        <div class="px-6 py-6 space-y-4">
+            <!-- 1위 추천 -->
+            <div class="bg-gradient-to-r from-gold-accent/10 to-yellow-50 border-2 border-gold-accent rounded-xl p-4 relative">
+                <div class="absolute -top-2 left-4">
+                    <span class="bg-gold-accent text-white px-3 py-1 rounded-full text-xs font-bold">1위 추천</span>
+                </div>
+                <div class="flex items-center space-x-4 mt-2">
+                    <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 T200" class="w-20 h-20 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-charcoal-gray mb-1">타이틀리스트 T200</h3>
+                        <p class="text-sm text-gray-600 mb-2">7번-PW (4개) • 2021년</p>
+                        <div class="flex items-center justify-between">
+                            <div class="bg-gold-accent text-white text-xs px-2 py-1 rounded-full font-bold">매칭도 95%</div>
+                            <p class="text-lg font-bold text-forest-green">350,000원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <button onclick="window.location.href='3-3-마켓-상세.html'" class="flex-1 bg-gold-accent text-white py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-gold-accent">
+                        자세히 보기
+                    </button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2위 추천 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4">
+                <div class="flex items-center space-x-4">
+                    <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="미즈노 JPX 923" class="w-20 h-20 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-charcoal-gray mb-1">미즈노 JPX 923</h3>
+                        <p class="text-sm text-gray-600 mb-2">6번-SW (7개) • 2022년</p>
+                        <div class="flex items-center justify-between">
+                            <div class="bg-forest-green text-white text-xs px-2 py-1 rounded-full font-bold">매칭도 87%</div>
+                            <p class="text-lg font-bold text-forest-green">280,000원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <button onclick="window.location.href='2-2-4-2-AI-추천-상세비교.html'" class="flex-1 bg-forest-green text-white py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-green">
+                        비교하기
+                    </button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3위 추천 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4">
+                <div class="flex items-center space-x-4">
+                    <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="캘러웨이 로그 ST" class="w-20 h-20 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-charcoal-gray mb-1">캘러웨이 로그 ST</h3>
+                        <p class="text-sm text-gray-600 mb-2">10.5도 • 정품</p>
+                        <div class="flex items-center justify-between">
+                            <div class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-bold">매칭도 82%</div>
+                            <p class="text-lg font-bold text-forest-green">420,000원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <button class="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        자세히 보기
+                    </button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 추천 이유 -->
+        <div class="px-6 pb-6">
+            <div class="bg-blue-50 rounded-xl p-4">
+                <h3 class="font-semibold text-charcoal-gray mb-3 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    추천 이유
+                </h3>
+                <div class="space-y-2">
+                    <div class="flex items-start space-x-2">
+                        <div class="w-1.5 h-1.5 bg-forest-green rounded-full mt-2 flex-shrink-0"></div>
+                        <p class="text-sm text-gray-700">안정적인 임팩트를 중시하는 스윙 패턴</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <div class="w-1.5 h-1.5 bg-forest-green rounded-full mt-2 flex-shrink-0"></div>
+                        <p class="text-sm text-gray-700">중급자에게 적합한 관용성</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <div class="w-1.5 h-1.5 bg-forest-green rounded-full mt-2 flex-shrink-0"></div>
+                        <p class="text-sm text-gray-700">선호하는 타감과 일치</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="px-6 pb-6">
+            <div class="flex space-x-3">
+                <button onclick="window.location.href='2-2-3-AI-추천-정보수정.html'" class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    정보 수정
+                </button>
+                <button onclick="window.location.href='2-1-홈.html'" class="flex-1 bg-forest-green text-white py-3 rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-forest-green">
+                    홈으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

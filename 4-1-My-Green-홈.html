@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - My Green</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="bg-gradient-to-br from-forest-green to-hunter-green px-6 pt-12 pb-8">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-xl font-bold text-white">My Green</h1>
+        <button onclick="window.location.href='4-2-My-Green-프로필-조회.html'" class="text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/50 flex items-center justify-center">
+          <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-white mb-1">나이스샷님</h2>
+          <p class="text-white/80 text-sm">핸디캡 10 • 서울</p>
+          <div class="flex items-center space-x-4 mt-2">
+            <div class="flex items-center space-x-2">
+              <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span class="text-white text-sm font-medium">골프공 120개</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 -mt-4">
+      <div class="bg-white rounded-xl p-4 shadow-lg">
+        <div class="grid grid-cols-3 divide-x divide-gray-100">
+          <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="text-center py-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <p class="text-2xl font-bold text-charcoal-gray">24</p>
+            <p class="text-xs text-gray-600 mt-1">플레이</p>
+          </button>
+          <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="text-center py-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <p class="text-2xl font-bold text-charcoal-gray">8</p>
+            <p class="text-xs text-gray-600 mt-1">보유클럽</p>
+          </button>
+          <button onclick="window.location.href='4-4-1-My-Green-방문자-목록.html'" class="text-center py-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <p class="text-2xl font-bold text-charcoal-gray">156</p>
+            <p class="text-xs text-gray-600 mt-1">방문자</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-6 space-y-6">
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">나의 장비</h3>
+          <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="w-full bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm font-semibold text-charcoal-gray">My Clubs</p>
+                  <p class="text-xs text-gray-600">내 클럽 관리하고 AI 분석받기</p>
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">나의 활동</h3>
+          <div class="space-y-2">
+            <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">플레이 기록</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-500">24회</span>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+            
+            <button onclick="window.location.href='4-5-1-My-Green-선물함-받은.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">선물함</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+            
+            <button onclick="window.location.href='4-7-1-My-Green-골프공-현황.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">골프공 관리</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-500">120개</span>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">방문자</h3>
+          <div class="space-y-2">
+            <button onclick="window.location.href='4-4-1-My-Green-방문자-목록.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">방문자 관리</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-500">오늘 12명</span>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+            
+            <button onclick="window.location.href='4-4-2-My-Green-방문자-방명록.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">방명록</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">ESG 활동</h3>
+          <div class="space-y-2">
+            <button onclick="window.location.href='4-6-7-1-My-Green-My-Clubs-ESG-신청.html'" class="w-full bg-gradient-to-r from-forest-green to-hunter-green rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="flex items-center justify-between">
+                <div class="text-left">
+                  <p class="text-white font-semibold">폐클럽 수거 신청</p>
+                  <p class="text-white/80 text-xs mt-1">환경을 위한 작은 실천, 리워드도 받으세요</p>
+                </div>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </div>
+            </button>
+            
+            <button onclick="window.location.href='4-6-7-2-My-Green-My-Clubs-ESG-내역.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-charcoal-gray">ESG 활동 내역</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-500">3회 참여</span>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='3-1-마켓-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 relative group text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='5-1-커뮤니티-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

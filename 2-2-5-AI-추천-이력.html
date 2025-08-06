@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 추천 히스토리</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='2-1-홈.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">추천 히스토리</h1>
+      <button onclick="window.location.href='2-2-6-피팅정보-관리.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6">
+        <div class="mb-6">
+          <h2 class="text-xl font-bold text-charcoal-gray mb-2">지금까지 받은<br/>AI 추천을 모아봤어요</h2>
+          <p class="text-sm text-gray-600">총 3번의 추천을 받으셨네요</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <p class="text-xs text-gray-500 mb-1">2024.12.15</p>
+                <h3 class="text-base font-semibold text-charcoal-gray mb-1">타이틀리스트 T200 추천</h3>
+                <p class="text-sm text-gray-600">정적 피팅 기반 추천</p>
+              </div>
+              <span class="text-sm font-bold text-forest-green">95% 매칭</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+              <div class="flex items-center space-x-4 text-xs text-gray-500">
+                <span>키 165cm</span>
+                <span>•</span>
+                <span>중급자</span>
+              </div>
+              <button onclick="window.location.href='2-2-4-1-AI-추천-결과-리스트.html'" class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">
+                다시 보기
+              </button>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <p class="text-xs text-gray-500 mb-1">2024.11.28</p>
+                <h3 class="text-base font-semibold text-charcoal-gray mb-1">캘러웨이 Paradym 추천</h3>
+                <p class="text-sm text-gray-600">동적 피팅 기반 추천</p>
+              </div>
+              <span class="text-sm font-bold text-forest-green">89% 매칭</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+              <div class="flex items-center space-x-4 text-xs text-gray-500">
+                <span>스윙속도 85mph</span>
+                <span>•</span>
+                <span>슬라이스</span>
+              </div>
+              <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">
+                다시 보기
+              </button>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <p class="text-xs text-gray-500 mb-1">2024.10.20</p>
+                <h3 class="text-base font-semibold text-charcoal-gray mb-1">테일러메이드 Stealth 2 추천</h3>
+                <p class="text-sm text-gray-600">종합 피팅 기반 추천</p>
+              </div>
+              <span class="text-sm font-bold text-forest-green">92% 매칭</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+              <div class="flex items-center space-x-4 text-xs text-gray-500">
+                <span>드라이버</span>
+                <span>•</span>
+                <span>비거리 중시</span>
+              </div>
+              <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">
+                다시 보기
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-hunter-green to-forest-green rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h2a1 1 0 100 2H6a4 4 0 01-4-4V5a4 4 0 014-4h8a4 4 0 014 4v6a4 4 0 01-4 4h-2a1 1 0 100-2h2a2 2 0 002-2V5a2 2 0 00-2-2h-2a1 1 0 100-2h2a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V5z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">추천 패턴 분석</h3>
+              <p class="text-xs text-gray-600">나이스샷님은 관용성이 높고 정확한 클럽을 선호하시네요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button onclick="window.location.href='2-2-2-AI-추천-시작.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        새로운 추천 받기
+      </button>
+    </div>
+  </div>
+</body>
+</html>

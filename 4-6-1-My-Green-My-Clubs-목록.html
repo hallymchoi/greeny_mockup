@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - My Clubs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-1-My-Green-홈.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">My Clubs</h1>
+      <button onclick="window.location.href='4-6-2-My-Green-My-Clubs-등록.html'" class="text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="px-6 py-4">
+      <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 text-white">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium text-white/80">현재 보유 클럽</p>
+            <p class="text-2xl font-bold">8개</p>
+          </div>
+          <button class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">
+            AI 분석 요청
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 pb-6 space-y-4">
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">드라이버</h3>
+          <div class="bg-white rounded-xl border border-gray-100">
+            <button onclick="window.location.href='4-6-3-My-Green-My-Clubs-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-4">
+                <img src="../golfclub_img/골프채 특가 혜택 (2).jpg" alt="테일러메이드 Qi10" class="w-16 h-16 object-cover rounded-lg">
+                <div class="flex-1 text-left">
+                  <h4 class="text-sm font-semibold text-charcoal-gray">테일러메이드 Qi10</h4>
+                  <p class="text-xs text-gray-600 mt-1">10.5도 • 스티프 플렉스</p>
+                  <p class="text-xs text-gray-500 mt-1">사용기간: 6개월</p>
+                </div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">아이언</h3>
+          <div class="space-y-3">
+            <div class="bg-white rounded-xl border border-gray-100">
+              <button onclick="window.location.href='4-6-3-My-Green-My-Clubs-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <div class="flex items-center space-x-4">
+                  <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 T200" class="w-16 h-16 object-cover rounded-lg">
+                  <div class="flex-1 text-left">
+                    <h4 class="text-sm font-semibold text-charcoal-gray">타이틀리스트 T200</h4>
+                    <p class="text-xs text-gray-600 mt-1">5-PW (6개) • 스틸 샤프트</p>
+                    <p class="text-xs text-gray-500 mt-1">사용기간: 3개월</p>
+                  </div>
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            
+            <div class="bg-white rounded-xl border border-gray-100">
+              <button onclick="window.location.href='4-6-3-My-Green-My-Clubs-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <div class="flex items-center space-x-4">
+                  <img src="../golfclub_img/미즈노 MX-1.jpg" alt="미즈노 JPX 923" class="w-16 h-16 object-cover rounded-lg">
+                  <div class="flex-1 text-left">
+                    <h4 class="text-sm font-semibold text-charcoal-gray">미즈노 JPX 923 포지드</h4>
+                    <p class="text-xs text-gray-600 mt-1">4-PW (7개) • 프로젝트X</p>
+                    <p class="text-xs text-gray-500 mt-1">사용기간: 1년 2개월</p>
+                  </div>
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">퍼터</h3>
+          <div class="bg-white rounded-xl border border-gray-100">
+            <button onclick="window.location.href='4-6-3-My-Green-My-Clubs-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center space-x-4">
+                <img src="../golfclub_img/골프채 특가 혜택 (3).jpg" alt="스코티카메론" class="w-16 h-16 object-cover rounded-lg">
+                <div class="flex-1 text-left">
+                  <h4 class="text-sm font-semibold text-charcoal-gray">스코티카메론 스페셜 셀렉트</h4>
+                  <p class="text-xs text-gray-600 mt-1">뉴포트 2 • 34인치</p>
+                  <p class="text-xs text-gray-500 mt-1">사용기간: 2년</p>
+                </div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        <div class="pt-4 space-y-3">
+          <button onclick="window.location.href='4-6-6-1-My-Green-My-Clubs-위시리스트.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <span class="text-sm font-medium text-charcoal-gray">위시리스트</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </button>
+          
+          <button onclick="window.location.href='4-6-7-1-My-Green-My-Clubs-ESG-신청.html'" class="w-full flex items-center justify-between bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="text-sm font-medium text-charcoal-gray">폐클럽 수거 신청</span>
+            </div>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

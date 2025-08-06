@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 정적 피팅 시작</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'fade-in': 'fadeIn 0.8s ease-out'
+          },
+          keyframes: {
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="history.back()" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-16 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-16 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-16 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-16 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-8 flex flex-col">
+      <div class="flex-1 flex flex-col items-center justify-center animate-fade-in">
+        <div class="w-24 h-24 bg-gradient-to-br from-forest-green to-hunter-green rounded-full flex items-center justify-center mb-8 animate-pulse-slow">
+          <svg class="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V19H7v2h10v-2h-4v-3.1a5.01 5.01 0 003.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm7 6c-1.65 0-3-1.35-3-3V5h6v6c0 1.65-1.35 3-3 3zm7-6c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+          </svg>
+        </div>
+        
+        <h1 class="text-2xl font-bold text-charcoal-gray mb-3 text-center animate-slide-up">
+          나이스샷님을 위한<br/>
+          맞춤 클럽을 찾아볼게요
+        </h1>
+        
+        <p class="text-base text-gray-600 text-center leading-relaxed mb-8 animate-slide-up" style="animation-delay: 0.1s">
+          몇 가지 정보만 알려주시면<br/>
+          AI가 최적의 클럽을 추천해드려요
+        </p>
+
+        <div class="bg-cream-white rounded-xl p-4 mb-8 animate-slide-up" style="animation-delay: 0.2s">
+          <div class="flex items-start space-x-3">
+            <div class="w-8 h-8 bg-forest-green bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-sm font-bold text-forest-green">1</span>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">정적 피팅</h3>
+              <p class="text-xs text-gray-600">키, 팔 길이 등 신체 정보를 입력해요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-6 animate-slide-up" style="animation-delay: 0.3s">
+        <button class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='1-4-1-2-온보딩-정적-필수.html'">
+          시작하기
+        </button>
+        
+        <button class="w-full mt-3 text-gray-500 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          나중에 할게요
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 필수</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-3-온보딩-동적-드라이버-선택.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto">
+      <div class="flex items-center space-x-2 mb-6">
+        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+          <span class="text-lg font-bold text-forest-green">7</span>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-charcoal-gray">7번 아이언 정보</h1>
+          <p class="text-sm text-gray-600">아이언 선택의 기준이 돼요</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            스윙 시 클럽 헤드 속도를 알고 있나요?
+          </label>
+          <button class="text-xs text-forest-green mb-3 flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            클럽스피드가 뭔가요?
+          </button>
+          <p class="text-xs text-gray-500 mb-3">샤프트 선택 기준이 돼요</p>
+          
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <span>느림</span>
+              <span class="text-xs text-gray-500">25m/s 미만</span>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <span>보통</span>
+              <span class="text-xs text-gray-500">25~30m/s</span>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <span>빠름</span>
+              <span class="text-xs text-gray-500">30~35m/s</span>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <span>매우 빠름</span>
+              <span class="text-xs text-gray-500">35m/s 이상</span>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              모르겠어요
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            7번 아이언이 보통 몇 m 정도 날아가나요?
+          </label>
+          <button class="text-xs text-forest-green mb-3 flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            캐리가 무슨 뜻인가요?
+          </button>
+          <p class="text-xs text-gray-500 mb-3">공이 떨어질 때까지 날아간 거리예요</p>
+          
+          <div class="grid grid-cols-2 gap-2">
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              100m 미만
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              100~120m
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              120~140m
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              140~160m
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              160m 이상
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              모르겠어요
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            7번 아이언의 구질은 어떤 편인가요?
+          </label>
+          <button class="text-xs text-forest-green mb-3 flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            구질이 뭘 의미하나요?
+          </button>
+          <p class="text-xs text-gray-500 mb-4">공이 날아가며 휘는 방향이에요</p>
+          
+          <div class="grid grid-cols-3 gap-3">
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 60 40">
+                    <path d="M10 30 Q30 25 50 10" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="50" cy="10" r="3" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">드로우</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 60 40">
+                    <path d="M30 30 L30 10" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="30" cy="10" r="3" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">스트레이트</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 60 40">
+                    <path d="M50 30 Q30 25 10 10" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="10" cy="10" r="3" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">페이드</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 60 40">
+                    <path d="M10 30 Q20 20 50 5" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="50" cy="5" r="3" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">훅</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <svg class="w-full h-full" viewBox="0 0 60 40">
+                    <path d="M50 30 Q40 20 10 5" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                    <circle cx="10" cy="5" r="3" fill="currentColor" class="text-gray-600"/>
+                  </svg>
+                </div>
+                <p class="text-xs font-medium text-gray-700">슬라이스</p>
+              </div>
+            </button>
+            
+            <button class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <div class="text-center">
+                <div class="w-full h-12 mb-2 flex items-center justify-center">
+                  <span class="text-2xl text-gray-400">?</span>
+                </div>
+                <p class="text-xs font-medium text-gray-700">모르겠음</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='1-4-2-5-온보딩-동적-7번아이언-선택.html'">
+        다음
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.classList.contains('border-2')) {
+          const parent = this.closest('.space-y-2, .grid');
+          parent.querySelectorAll('button').forEach(btn => {
+            btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+            btn.classList.add('border-gray-200');
+          });
+          this.classList.remove('border-gray-200');
+          this.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

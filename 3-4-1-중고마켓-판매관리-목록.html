@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 내 판매글</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">내 판매글</h1>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="flex gap-2 mb-4 overflow-x-auto">
+                <button class="px-4 py-2 bg-forest-green text-white rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">전체</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">판매중</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">예약중</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">판매완료</button>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                    <div class="flex gap-3">
+                        <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="타이틀리스트 T200" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-semibold">타이틀리스트 T200</h3>
+                                    <p class="text-forest-green font-bold mt-1">350,000원</p>
+                                    <p class="text-xs text-gray-500 mt-1">2일 전 등록</p>
+                                </div>
+                                <span class="px-2 py-1 bg-forest-green text-white text-xs rounded">판매중</span>
+                            </div>
+                            <div class="flex items-center gap-4 mt-3 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                    </svg>
+                                    채팅 5
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                    찜 12
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                    조회 156
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-4">
+                        <button class="flex-1 py-2 border border-forest-green text-forest-green rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green" onclick="window.location.href='3-4-3-마켓-판매관리-수정.html'">
+                            수정
+                        </button>
+                        <button class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            끌어올리기
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                    <div class="flex gap-3">
+                        <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="미즈노 JPX" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-semibold">미즈노 JPX 923</h3>
+                                    <p class="text-forest-green font-bold mt-1">280,000원</p>
+                                    <p class="text-xs text-gray-500 mt-1">5일 전 등록</p>
+                                </div>
+                                <span class="px-2 py-1 bg-orange-500 text-white text-xs rounded">예약중</span>
+                            </div>
+                            <div class="flex items-center gap-4 mt-3 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                    </svg>
+                                    채팅 3
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                    찜 8
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                    조회 89
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-4">
+                        <button class="flex-1 py-2 bg-forest-green text-white rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                            거래완료
+                        </button>
+                        <button class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            예약취소
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 opacity-60">
+                    <div class="flex gap-3">
+                        <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="테일러메이드" class="w-20 h-20 rounded object-cover">
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-semibold">테일러메이드 스텔스2</h3>
+                                    <p class="text-gray-500 font-bold mt-1 line-through">380,000원</p>
+                                    <p class="text-xs text-gray-500 mt-1">7일 전 등록</p>
+                                </div>
+                                <span class="px-2 py-1 bg-gray-500 text-white text-xs rounded">판매완료</span>
+                            </div>
+                            <div class="flex items-center gap-4 mt-3 text-sm text-gray-600">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                    </svg>
+                                    채팅 8
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                    찜 15
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                    조회 234
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-4">
+                        <button class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='3-4-4-마켓-판매관리-삭제.html'">
+                            삭제
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

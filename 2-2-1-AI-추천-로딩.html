@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-2-1 홈 > AI 추천 > 로딩</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes swing {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .swing-animation {
+      animation: swing 1s ease-in-out infinite;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="bg-white h-screen flex flex-col">
+    <!-- 헤더 -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">AI 클럽 추천</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <!-- 로딩 애니메이션 -->
+    <div class="flex-1 flex flex-col items-center justify-center px-6">
+      <div class="text-center">
+        <div class="swing-animation mb-6">
+          <svg class="w-24 h-24 text-forest-green mx-auto" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h2 class="text-xl font-semibold text-charcoal-gray mb-2">AI가 분석하고 있어요</h2>
+        <p class="text-gray-600 text-sm mb-6">나이스샷님의 정보를 바탕으로 최적의 클럽을 찾고 있어요</p>
+        
+        <!-- 진행률 바 -->
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+          <div class="bg-gradient-to-r from-hunter-green to-forest-green h-2 rounded-full transition-all duration-1000" style="width: 65%"></div>
+        </div>
+        
+        <!-- 골프 팁 -->
+        <div class="bg-blue-50 rounded-xl p-4">
+          <div class="flex items-start space-x-3">
+            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-forest-green" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-charcoal-gray mb-1">골프 팁</h3>
+              <p class="text-xs text-gray-600">드라이버 스윙 시 어깨를 회전시켜야 더 멀리 날아가요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 취소 버튼 -->
+    <div class="px-6 pb-6">
+      <button class="w-full border border-gray-300 text-gray-600 py-3 rounded-xl font-medium hover:bg-cream-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+        취소하기
+      </button>
+    </div>
+  </div>
+</body>
+</html> 

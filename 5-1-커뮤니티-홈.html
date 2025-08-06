@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 커뮤니티</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="bg-gradient-to-br from-hunter-green to-forest-green px-6 pt-12 pb-6">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-xl font-bold text-white">커뮤니티</h1>
+        <div class="flex items-center space-x-3">
+          <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+          <button onclick="window.location.href='5-2-2-커뮤니티-게시판-작성.html'" class="text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-white/80">나의 활동 점수</p>
+            <p class="text-2xl font-bold text-white">레벨 3</p>
+          </div>
+          <button onclick="window.location.href='5-5-1-커뮤니티-활동-배지.html'" class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+            배지 보기
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 -mt-3">
+      <div class="grid grid-cols-4 gap-3">
+        <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="bg-white rounded-xl p-3 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-gray-700">게시판</p>
+        </button>
+        
+        <button onclick="window.location.href='5-4-1-커뮤니티-타인그린-탐색.html'" class="bg-white rounded-xl p-3 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-gray-700">그린 탐색</p>
+        </button>
+        
+        <button onclick="window.location.href='5-6-1-커뮤니티-상점-목록.html'" class="bg-white rounded-xl p-3 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-gray-700">골프공 상점</p>
+        </button>
+        
+        <button onclick="window.location.href='5-5-1-커뮤니티-활동-배지.html'" class="bg-white rounded-xl p-3 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-gray-700">내 배지</p>
+        </button>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-6 space-y-6">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-charcoal-gray">🔥 인기 게시글</h3>
+            <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="text-xs text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="space-y-3">
+            <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl p-4 border border-gray-100 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">#추천요청</span>
+                <span class="text-xs text-gray-500">2시간 전</span>
+              </div>
+              <h4 class="text-sm font-semibold text-charcoal-gray mb-1">90타 깨기 위한 아이언 추천 부탁드려요</h4>
+              <p class="text-xs text-gray-600 line-clamp-2 mb-2">현재 평균 95타 치는데 아이언 정확도가 너무 떨어져서 교체 고민중입니다...</p>
+              <div class="flex items-center space-x-3 text-xs text-gray-500">
+                <span>조회 234</span>
+                <span>댓글 18</span>
+                <span>좋아요 24</span>
+              </div>
+            </button>
+            
+            <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl p-4 border border-gray-100 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="flex items-center justify-between mb-2">
+                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">#장비후기</span>
+                <span class="text-xs text-gray-500">5시간 전</span>
+              </div>
+              <h4 class="text-sm font-semibold text-charcoal-gray mb-1">타이틀리스트 T200 3개월 사용 후기</h4>
+              <p class="text-xs text-gray-600 line-clamp-2 mb-2">기존 미즈노 JPX에서 바꾸고 나서 확실히 비거리가 늘었습니다...</p>
+              <div class="flex items-center space-x-3 text-xs text-gray-500">
+                <span>조회 567</span>
+                <span>댓글 34</span>
+                <span>좋아요 89</span>
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-charcoal-gray">👥 인기 그린</h3>
+            <button onclick="window.location.href='5-4-1-커뮤니티-타인그린-탐색.html'" class="text-xs text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="w-12 h-12 bg-gray-200 rounded-full mx-auto mb-2"></div>
+              <p class="text-xs font-medium text-charcoal-gray">버디왕</p>
+              <p class="text-xs text-gray-500">핸디캡 9</p>
+            </button>
+            
+            <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="w-12 h-12 bg-gray-200 rounded-full mx-auto mb-2"></div>
+              <p class="text-xs font-medium text-charcoal-gray">이글헌터</p>
+              <p class="text-xs text-gray-500">핸디캡 5</p>
+            </button>
+            
+            <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="bg-white rounded-xl p-4 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="w-12 h-12 bg-gray-200 rounded-full mx-auto mb-2"></div>
+              <p class="text-xs font-medium text-charcoal-gray">골프마스터</p>
+              <p class="text-xs text-gray-500">핸디캡 3</p>
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-charcoal-gray">📢 플레이 인증</h3>
+            <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="text-xs text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-xl p-4 border border-gray-100">
+              <div class="flex items-center space-x-3 mb-3">
+                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">파온더그린</p>
+                  <p class="text-xs text-gray-500">30분 전</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mb-3">드디어 베스트 스코어 경신! 남서울CC에서 79타 🎉</p>
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="라운드 사진" class="w-full h-24 object-cover rounded-lg">
+                <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="라운드 사진" class="w-full h-24 object-cover rounded-lg">
+              </div>
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <button class="flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                  </svg>
+                  <span>24</span>
+                </button>
+                <button class="flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                  <span>8</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='3-1-마켓-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='4-1-My-Green-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 relative group text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

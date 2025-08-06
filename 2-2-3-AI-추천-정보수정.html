@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 피팅 정보 수정</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='2-2-2-AI-추천-시작.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">피팅 정보 수정</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <div class="sticky top-0 bg-white z-10 border-b border-gray-100">
+      <div class="flex">
+        <button class="flex-1 py-3 text-center text-sm font-medium text-forest-green border-b-2 border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+          정적 피팅
+        </button>
+        <button onclick="window.location.href='#'" class="flex-1 py-3 text-center text-sm font-medium text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          동적 피팅
+        </button>
+        <button onclick="window.location.href='#'" class="flex-1 py-3 text-center text-sm font-medium text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          감성 피팅
+        </button>
+      </div>
+    </div>
+    
+    <div class="flex-1 px-6 py-6 overflow-y-auto">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold text-charcoal-gray mb-2">신체 정보를 수정해주세요</h2>
+        <p class="text-sm text-gray-600">더 정확한 클럽 추천이 가능해요</p>
+      </div>
+      
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">키</label>
+          <div class="flex items-center bg-cream-white rounded-xl px-4 py-3">
+            <input type="number" value="165" class="bg-transparent text-lg font-medium text-charcoal-gray flex-1 outline-none focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+            <span class="text-gray-500">cm</span>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">손목에서 땅까지 거리</label>
+          <div class="flex items-center bg-cream-white rounded-xl px-4 py-3">
+            <input type="number" value="82" class="bg-transparent text-lg font-medium text-charcoal-gray flex-1 outline-none focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+            <span class="text-gray-500">cm</span>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">성별</label>
+          <div class="grid grid-cols-3 gap-3">
+            <button class="py-3 border-2 border-forest-green bg-blue-50 rounded-xl text-sm font-medium text-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              남성
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              여성
+            </button>
+            <button class="py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              미입력
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">나이</label>
+          <div class="flex items-center bg-cream-white rounded-xl px-4 py-3">
+            <input type="number" value="31" class="bg-transparent text-lg font-medium text-charcoal-gray flex-1 outline-none focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+            <span class="text-gray-500">세</span>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">골프 경력</label>
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              1년 미만
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              1~2년
+            </button>
+            <button class="w-full py-3 border-2 border-forest-green bg-blue-50 rounded-xl text-sm font-medium text-blue-700 text-left px-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              2~5년
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              5~10년
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-blue-50 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              10년 이상
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button onclick="window.location.href='2-2-4-1-AI-추천-결과-리스트.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        수정 완료
+      </button>
+    </div>
+  </div>
+</body>
+</html>

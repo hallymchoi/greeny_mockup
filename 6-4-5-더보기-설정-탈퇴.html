@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 회원 탈퇴</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="window.location.href='6-4-1-더보기-설정.html'" class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">회원 탈퇴</h1>
+            <div class="w-6"></div>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-6 py-6 space-y-6">
+                <!-- 탈퇴 안내 -->
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+                    <h3 class="text-sm font-semibold text-red-800 mb-2">🚨 탈퇴 전 꼭 확인해주세요</h3>
+                    <ul class="text-xs text-red-700 space-y-1">
+                        <li>• 탈퇴 시 모든 데이터가 즉시 삭제됩니다</li>
+                        <li>• 삭제된 데이터는 복구할 수 없습니다</li>
+                        <li>• 진행 중인 거래가 있다면 완료 후 탈퇴해주세요</li>
+                    </ul>
+                </div>
+                
+                <!-- 데이터 삭제 정책 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-charcoal-gray mb-3">삭제되는 데이터</h3>
+                    <div class="bg-gray-50 rounded-xl p-4 space-y-2">
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-medium text-charcoal-gray">개인정보</p>
+                                <p class="text-xs text-gray-600">프로필, 연락처, 주소 등</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-medium text-charcoal-gray">활동 기록</p>
+                                <p class="text-xs text-gray-600">라운딩 기록, 스코어, 게시글, 댓글</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-medium text-charcoal-gray">거래 내역</p>
+                                <p class="text-xs text-gray-600">구매/판매 기록, 채팅 내역</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-red-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-medium text-charcoal-gray">AI 추천 데이터</p>
+                                <p class="text-xs text-gray-600">피팅 정보, 추천 이력</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 탈퇴 사유 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-charcoal-gray mb-3">탈퇴 사유 (선택)</h3>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-xl">
+                        <option value="">선택하세요</option>
+                        <option value="not-use">서비스를 이용하지 않음</option>
+                        <option value="inconvenient">이용이 불편함</option>
+                        <option value="other-service">다른 서비스 이용</option>
+                        <option value="privacy">개인정보 보호 우려</option>
+                        <option value="other">기타</option>
+                    </select>
+                    <textarea placeholder="개선사항이나 의견을 남겨주세요 (선택)" rows="3"
+                              class="w-full px-4 py-3 border border-gray-300 rounded-xl mt-3 resize-none"></textarea>
+                </div>
+                
+                <!-- 확인 체크박스 -->
+                <div class="space-y-3">
+                    <label class="flex items-start space-x-2">
+                        <input type="checkbox" id="check1" class="mt-1 w-4 h-4">
+                        <span class="text-sm text-gray-600">
+                            탈퇴 시 모든 데이터가 삭제되며 복구할 수 없음을 확인했습니다
+                        </span>
+                    </label>
+                    
+                    <label class="flex items-start space-x-2">
+                        <input type="checkbox" id="check2" class="mt-1 w-4 h-4">
+                        <span class="text-sm text-gray-600">
+                            진행 중인 거래가 없음을 확인했습니다
+                        </span>
+                    </label>
+                    
+                    <label class="flex items-start space-x-2">
+                        <input type="checkbox" id="check3" class="mt-1 w-4 h-4">
+                        <span class="text-sm text-gray-600">
+                            회원 탈퇴에 동의합니다
+                        </span>
+                    </label>
+                </div>
+                
+                <!-- 비밀번호 확인 -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">비밀번호 확인</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-xl">
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-6 border-t border-gray-100">
+            <button onclick="withdrawAccount()" id="withdrawBtn" disabled
+                    class="w-full bg-gray-300 text-gray-500 py-3 rounded-xl font-semibold disabled:cursor-not-allowed">
+                회원 탈퇴
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Enable button only when all checkboxes are checked
+        const checkboxes = ['check1', 'check2', 'check3'];
+        const passwordInput = document.getElementById('password');
+        const withdrawBtn = document.getElementById('withdrawBtn');
+        
+        function checkAllConditions() {
+            const allChecked = checkboxes.every(id => document.getElementById(id).checked);
+            const hasPassword = passwordInput.value.length > 0;
+            
+            if (allChecked && hasPassword) {
+                withdrawBtn.disabled = false;
+                withdrawBtn.className = 'w-full bg-red-600 text-white py-3 rounded-xl font-semibold';
+            } else {
+                withdrawBtn.disabled = true;
+                withdrawBtn.className = 'w-full bg-gray-300 text-gray-500 py-3 rounded-xl font-semibold disabled:cursor-not-allowed';
+            }
+        }
+        
+        checkboxes.forEach(id => {
+            document.getElementById(id).addEventListener('change', checkAllConditions);
+        });
+        
+        passwordInput.addEventListener('input', checkAllConditions);
+        
+        function withdrawAccount() {
+            if (confirm('정말로 탈퇴하시겠습니까?\n\n이 작업은 되돌릴 수 없습니다.')) {
+                alert('회원 탈퇴가 완료되었습니다.\n그동안 Greeny를 이용해주셔서 감사합니다.');
+                window.location.href = '1-1-온보딩.html';
+            }
+        }
+    </script>
+</body>
+</html>

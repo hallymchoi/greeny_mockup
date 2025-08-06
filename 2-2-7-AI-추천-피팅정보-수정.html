@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 피팅정보 수정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="if(confirm('수정을 취소하시겠습니까?')) window.location.href='2-2-6-AI-추천-피팅정보-조회.html'" class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">피팅정보 수정</h1>
+            <button onclick="saveFittingInfo()" class="text-forest-green font-medium">저장</button>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-6 py-6 space-y-6">
+                <!-- 변경 사항 알림 -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+                    <p class="text-sm text-yellow-800">
+                        <strong>주의:</strong> 피팅정보를 수정하면 AI 추천 결과가 변경됩니다.
+                    </p>
+                </div>
+                
+                <!-- 신체 정보 -->
+                <div>
+                    <h2 class="text-lg font-semibold text-charcoal-gray mb-4">신체 정보</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">키 (cm)</label>
+                            <input type="number" value="175" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">체중 (kg)</label>
+                            <input type="number" value="72" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">팔 길이 (cm)</label>
+                            <input type="number" value="82" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">손목에서 바닥까지 (cm)</label>
+                            <input type="number" value="86" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 스윙 정보 -->
+                <div>
+                    <h2 class="text-lg font-semibold text-charcoal-gray mb-4">스윙 정보</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">헤드 스피드 (mph)</label>
+                            <input type="number" value="95" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">볼 스피드 (mph)</label>
+                            <input type="number" value="140" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">스윙 템포</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                                <option value="slow">느림</option>
+                                <option value="normal" selected>보통</option>
+                                <option value="fast">빠름</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">스윙 경로</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                                <option value="outside-in">아웃사이드-인</option>
+                                <option value="inside-out" selected>인사이드-아웃</option>
+                                <option value="straight">스트레이트</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 선호 정보 -->
+                <div>
+                    <h2 class="text-lg font-semibold text-charcoal-gray mb-4">선호 정보</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">샤프트 강도</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                                <option value="L">Ladies</option>
+                                <option value="A">Senior</option>
+                                <option value="R" selected>Regular</option>
+                                <option value="S">Stiff</option>
+                                <option value="X">Extra Stiff</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">예산 범위</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-forest-green focus:ring-2 focus:ring-forest-green/20">
+                                <option value="0-50">50만원 이하</option>
+                                <option value="50-100" selected>50-100만원</option>
+                                <option value="100-200">100-200만원</option>
+                                <option value="200+">200만원 이상</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 버튼 그룹 -->
+                <div class="space-y-3 pb-6">
+                    <button onclick="saveFittingInfo()" class="w-full bg-forest-green text-white py-3 rounded-xl font-semibold">
+                        변경사항 저장
+                    </button>
+                    <button onclick="if(confirm('수정을 취소하시겠습니까?')) window.location.href='2-2-6-AI-추천-피팅정보-조회.html'" class="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+                        취소
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function saveFittingInfo() {
+            alert('피팅정보가 성공적으로 수정되었습니다.');
+            window.location.href = '2-2-6-AI-추천-피팅정보-조회.html';
+        }
+    </script>
+</body>
+</html>

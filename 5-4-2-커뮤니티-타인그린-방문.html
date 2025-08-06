@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 버디왕님의 그린</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="bg-gradient-to-br from-green-500 to-emerald-600 px-6 pt-12 pb-8">
+      <div class="flex items-center justify-between mb-6">
+        <button onclick="window.location.href='5-4-1-커뮤니티-타인그린-탐색.html'" class="text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <h1 class="text-lg font-bold text-white">버디왕님의 그린</h1>
+        <button class="text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/50"></div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-white mb-1">버디왕</h2>
+          <p class="text-white/80 text-sm">핸디캡 9 • 서울</p>
+          <div class="flex items-center space-x-4 mt-2">
+            <div class="flex items-center space-x-2">
+              <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span class="text-white text-sm font-medium">골프공 234개</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 -mt-4">
+      <div class="bg-white rounded-xl p-4 shadow-lg">
+        <div class="grid grid-cols-3 divide-x divide-gray-100">
+          <div class="text-center py-2">
+            <p class="text-2xl font-bold text-charcoal-gray">156</p>
+            <p class="text-xs text-gray-600 mt-1">팔로워</p>
+          </div>
+          <div class="text-center py-2">
+            <p class="text-2xl font-bold text-charcoal-gray">89</p>
+            <p class="text-xs text-gray-600 mt-1">팔로잉</p>
+          </div>
+          <div class="text-center py-2">
+            <p class="text-2xl font-bold text-charcoal-gray">1.2k</p>
+            <p class="text-xs text-gray-600 mt-1">방문자</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4">
+      <div class="flex space-x-3">
+        <button class="flex-1 bg-forest-green text-white py-2.5 rounded-xl font-medium text-sm focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">팔로우</button>
+        <button onclick="window.location.href='5-4-3-커뮤니티-타인그린-방명록.html'" class="flex-1 bg-gray-100 text-gray-700 py-2.5 rounded-xl font-medium text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">방명록 작성</button>
+      </div>
+    </div>
+    
+    <div class="flex border-b border-gray-100">
+      <button class="flex-1 py-3 text-forest-green font-medium text-sm border-b-2 border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">보유 클럽</button>
+      <button class="flex-1 py-3 text-gray-500 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">위시리스트</button>
+      <button class="flex-1 py-3 text-gray-500 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">방명록</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-6 space-y-6">
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">드라이버</h3>
+          <div class="bg-white rounded-xl border border-gray-100 p-4">
+            <div class="flex items-center space-x-4">
+              <img src="../golfclub_img/골프채 특가 혜택 (2).jpg" alt="타이틀리스트 TSR3" class="w-16 h-16 object-cover rounded-lg">
+              <div class="flex-1">
+                <h4 class="text-sm font-semibold text-charcoal-gray">타이틀리스트 TSR3</h4>
+                <p class="text-xs text-gray-600 mt-1">9도 • 스티프 플렉스</p>
+                <p class="text-xs text-gray-500 mt-1">사용기간: 8개월</p>
+              </div>
+              <button onclick="window.location.href='5-4-4-커뮤니티-타인그린-상호작용.html'" class="text-forest-green text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기요청</button>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">아이언</h3>
+          <div class="bg-white rounded-xl border border-gray-100 p-4">
+            <div class="flex items-center space-x-4">
+              <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 T200" class="w-16 h-16 object-cover rounded-lg">
+              <div class="flex-1">
+                <h4 class="text-sm font-semibold text-charcoal-gray">타이틀리스트 T200</h4>
+                <p class="text-xs text-gray-600 mt-1">5-PW (6개) • 스틸 샤프트</p>
+                <p class="text-xs text-gray-500 mt-1">사용기간: 1년</p>
+              </div>
+              <button onclick="window.location.href='5-4-4-커뮤니티-타인그린-상호작용.html'" class="text-forest-green text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기요청</button>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">퍼터</h3>
+          <div class="bg-white rounded-xl border border-gray-100 p-4">
+            <div class="flex items-center space-x-4">
+              <img src="../golfclub_img/골프채 특가 혜택 (3).jpg" alt="스코티카메론" class="w-16 h-16 object-cover rounded-lg">
+              <div class="flex-1">
+                <h4 class="text-sm font-semibold text-charcoal-gray">스코티카메론 스페셜 셀렉트</h4>
+                <p class="text-xs text-gray-600 mt-1">뉴포트 2 • 34인치</p>
+                <p class="text-xs text-gray-500 mt-1">사용기간: 2년</p>
+              </div>
+              <button onclick="window.location.href='5-4-4-커뮤니티-타인그린-상호작용.html'" class="text-forest-green text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기요청</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 rounded-xl p-4">
+          <div class="flex items-start space-x-3">
+            <svg class="w-5 h-5 text-forest-green mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">버디왕님의 한마디</h3>
+              <p class="text-xs text-gray-600">"타이틀리스트로 통일하니 일관성이 좋아졌어요. T200은 관용성이 좋아서 90타 깨기에 큰 도움이 됐습니다!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 폐클럽 수거 신청</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">폐클럽 수거 신청</h1>
+      <button onclick="window.location.href='4-6-7-2-My-Green-My-Clubs-ESG-내역.html'" class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">내역</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-6 text-white">
+          <div class="flex items-start space-x-4">
+            <svg class="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h2 class="text-xl font-bold mb-2">환경을 위한 작은 실천</h2>
+              <p class="text-sm text-white/90">사용하지 않는 골프클럽을 수거해드립니다</p>
+              <p class="text-sm text-white/90 mt-1">수거 완료시 <span class="font-semibold">5,000P</span> 리워드 지급</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-3">수거 대상 클럽</h3>
+          <div class="space-y-2">
+            <label class="flex items-center justify-between p-4 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">드라이버</p>
+                  <p class="text-xs text-gray-500">파손/변형된 클럽 포함</p>
+                </div>
+              </div>
+            </label>
+            
+            <label class="flex items-center justify-between p-4 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">아이언</p>
+                  <p class="text-xs text-gray-500">세트 또는 낱개 가능</p>
+                </div>
+              </div>
+            </label>
+            
+            <label class="flex items-center justify-between p-4 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">퍼터</p>
+                  <p class="text-xs text-gray-500">모든 종류 수거 가능</p>
+                </div>
+              </div>
+            </label>
+            
+            <label class="flex items-center justify-between p-4 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">기타</p>
+                  <p class="text-xs text-gray-500">우드, 유틸리티, 웨지 등</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">클럽 정보</label>
+          <textarea placeholder="수거할 클럽의 브랜드, 모델명, 수량 등을 자세히 입력해주세요" rows="3" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">클럽 사진</label>
+          <button class="w-full bg-gray-100 rounded-xl p-8 border-2 border-dashed border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex flex-col items-center">
+              <svg class="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <p class="text-sm text-gray-600">사진 추가하기</p>
+              <p class="text-xs text-gray-500 mt-1">최대 5장</p>
+            </div>
+          </button>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">이름</label>
+            <input type="text" value="나이스샷" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">연락처</label>
+            <input type="tel" value="010-1234-5678" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">수거 주소</label>
+            <div class="space-y-2">
+              <div class="flex space-x-2">
+                <input type="text" placeholder="우편번호" class="w-32 bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+                <button class="px-4 py-3 bg-gray-200 rounded-xl text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">주소 찾기</button>
+              </div>
+              <input type="text" placeholder="기본 주소" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+              <input type="text" placeholder="상세 주소" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">수거 요청사항</label>
+            <textarea placeholder="수거 시 참고사항을 입력해주세요 (예: 경비실 보관)" rows="2" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 rounded-xl p-4">
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-2">수거 안내</h3>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 신청 후 2-3일 이내 비대면 수거 진행</li>
+            <li>• 수거 완료 후 리워드 자동 지급</li>
+            <li>• 클럽 상태 관계없이 수거 가능</li>
+            <li>• 수거된 클럽은 재활용/기부됩니다</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        수거 신청하기
+      </button>
+    </div>
+  </div>
+</body>
+</html>

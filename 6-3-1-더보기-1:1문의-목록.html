@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 1:1 문의</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="window.location.href='6-5-고객센터.html'" class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">1:1 문의</h1>
+            <button onclick="window.location.href='6-3-2-더보기-1:1문의-등록.html'" class="text-forest-green">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-6 py-4 space-y-3">
+                <!-- 문의 1 -->
+                <button onclick="window.location.href='6-3-3-더보기-1:1문의-상세.html'" class="w-full bg-white border border-gray-200 rounded-xl p-4 text-left hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-semibold">[상품문의]</span>
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">답변완료</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">AI 추천 클럽이 맞지 않는 것 같아요</h3>
+                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">추천받은 클럽으로 라운딩했는데 거리가 예상보다 짧게 나옵니다...</p>
+                    <p class="text-xs text-gray-500">문의일: 2025.01.18 | 답변일: 2025.01.19</p>
+                </button>
+                
+                <!-- 문의 2 -->
+                <button onclick="window.location.href='6-3-3-더보기-1:1문의-상세.html'" class="w-full bg-white border border-gray-200 rounded-xl p-4 text-left hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded font-semibold">[배송문의]</span>
+                        <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded">답변대기</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">배송이 늦어지고 있습니다</h3>
+                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">1월 10일 주문한 상품이 아직 도착하지 않았습니다...</p>
+                    <p class="text-xs text-gray-500">문의일: 2025.01.20</p>
+                </button>
+                
+                <!-- 문의 3 -->
+                <button onclick="window.location.href='6-3-3-더보기-1:1문의-상세.html'" class="w-full bg-white border border-gray-200 rounded-xl p-4 text-left hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded font-semibold">[기타문의]</span>
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">답변완료</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">회원 탈퇴 후 재가입 가능한가요?</h3>
+                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">탈퇴 후 동일한 이메일로 재가입이 가능한지 궁금합니다...</p>
+                    <p class="text-xs text-gray-500">문의일: 2025.01.15 | 답변일: 2025.01.15</p>
+                </button>
+                
+                <!-- 문의 4 -->
+                <button onclick="window.location.href='6-3-3-더보기-1:1문의-상세.html'" class="w-full bg-white border border-gray-200 rounded-xl p-4 text-left hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded font-semibold">[환불문의]</span>
+                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">답변완료</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">중고 상품 환불 요청</h3>
+                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">받은 상품에 설명에 없던 흠집이 있습니다...</p>
+                    <p class="text-xs text-gray-500">문의일: 2025.01.12 | 답변일: 2025.01.13</p>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 문의하기 버튼 -->
+        <div class="p-6 border-t border-gray-100">
+            <button onclick="window.location.href='6-3-2-더보기-1:1문의-등록.html'" class="w-full bg-forest-green text-white py-3 rounded-xl font-semibold flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                <span>새 문의 작성</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

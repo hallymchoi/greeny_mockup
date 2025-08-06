@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Debugger - 번호 마커 위치 계산 도구</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background: #f5f5f5;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .debug-panel {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .debug-info {
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .element-info {
+            background: #e9ecef;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #007bff;
+        }
+        .coordinates {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .highlight {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.3);
+            border: 2px solid red;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .marker-preview {
+            position: absolute;
+            background: rgba(255, 20, 147, 0.8);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>번호 마커 위치 계산 디버거</h1>
+        <p>HTML 페이지의 요소들이 실제로 어떤 위치에 렌더링되는지 확인하고, 번호 마커의 정확한 위치를 계산할 수 있는 도구입니다.</p>
+        
+        <div class="debug-panel">
+            <h3>사용 방법</h3>
+            <ol>
+                <li>아래 입력 필드에 분석할 HTML 파일 경로를 입력하세요</li>
+                <li>"페이지 로드" 버튼을 클릭하여 iframe에 페이지를 로드합니다</li>
+                <li>"요소 위치 분석" 버튼을 클릭하여 클릭 가능한 요소들의 위치를 확인합니다</li>
+                <li>iframe 내에서 요소를 클릭하면 해당 요소의 정확한 좌표가 표시됩니다</li>
+            </ol>
+        </div>
+
+        <div class="debug-panel">
+            <label for="htmlFile">HTML 파일 경로:</label>
+            <input type="text" id="htmlFile" value="3-4-판매하기.html" style="width: 300px; padding: 8px; margin: 0 10px;">
+            <button onclick="loadPage()">페이지 로드</button>
+            <button onclick="analyzePositions()">요소 위치 분석</button>
+            <button onclick="clearHighlights()">하이라이트 제거</button>
+        </div>
+
+        <div id="debugInfo" class="debug-info"></div>
+
+        <iframe id="pageFrame" src=""></iframe>
+    </div>
+
+    <script>
+        let currentPage = '';
+        
+        function loadPage() {
+            const filePath = document.getElementById('htmlFile').value;
+            const iframe = document.getElementById('pageFrame');
+            currentPage = filePath;
+            iframe.src = filePath;
+            
+            // iframe 로드 완료 후 클릭 이벤트 추가
+            iframe.onload = function() {
+                addClickListeners();
+            };
+        }
+        
+        function addClickListeners() {
+            const iframe = document.getElementById('pageFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // 모든 클릭 가능한 요소에 이벤트 리스너 추가
+            const clickableElements = iframeDoc.querySelectorAll('button, a, [onclick], [href]');
+            
+            clickableElements.forEach((element, index) => {
+                element.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showElementInfo(element, index + 1);
+                });
+            });
+        }
+        
+        function showElementInfo(element, number) {
+            const iframe = document.getElementById('pageFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // 컨테이너와 left-panel 찾기
+            const container = iframeDoc.querySelector('.container') || iframeDoc.body;
+            const leftPanel = iframeDoc.querySelector('.left-panel') || container;
+            
+            // 요소의 위치 계산
+            const elementRect = element.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            const leftPanelRect = leftPanel.getBoundingClientRect();
+            
+            // 다양한 기준점으로 상대 위치 계산
+            const relativeToContainer = {
+                top: elementRect.top - containerRect.top,
+                left: elementRect.left - containerRect.left
+            };
+            
+            const relativeToLeftPanel = {
+                top: elementRect.top - leftPanelRect.top,
+                left: elementRect.left - leftPanelRect.left
+            };
+            
+            // 마커 위치 (좌상단에서 약간 왼쪽 위로)
+            const markerPosition = {
+                top: Math.max(0, relativeToLeftPanel.top - 8),
+                left: Math.max(0, relativeToLeftPanel.left - 8)
+            };
+            
+            // 디버그 정보 표시
+            const debugInfo = document.getElementById('debugInfo');
+            debugInfo.innerHTML = `
+                <div class="element-info">
+                    <strong>요소 #${number}: ${element.tagName.toLowerCase()}</strong><br>
+                    텍스트: "${element.textContent.trim().substring(0, 50)}..."<br>
+                    CSS 선택자: ${generateSelector(element)}<br>
+                    <br>
+                    <strong>위치 정보:</strong><br>
+                    뷰포트 기준: <span class="coordinates">top: ${Math.round(elementRect.top)}px, left: ${Math.round(elementRect.left)}px</span><br>
+                    컨테이너 기준: <span class="coordinates">top: ${Math.round(relativeToContainer.top)}px, left: ${Math.round(relativeToContainer.left)}px</span><br>
+                    Left Panel 기준: <span class="coordinates">top: ${Math.round(relativeToLeftPanel.top)}px, left: ${Math.round(relativeToLeftPanel.left)}px</span><br>
+                    <strong>권장 마커 위치: <span class="coordinates">top: ${Math.round(markerPosition.top)}px, left: ${Math.round(markerPosition.left)}px</span></strong><br>
+                    <br>
+                    요소 크기: ${Math.round(elementRect.width)}px × ${Math.round(elementRect.height)}px<br>
+                    <br>
+                    <strong>Python 설정 코드:</strong><br>
+                    <code>{'selector': '${generateSelector(element)}', 'offset': {'top': ${Math.round(markerPosition.top)}, 'left': ${Math.round(markerPosition.left)}}, 'desc': '설명'}</code>
+                </div>
+            `;
+            
+            // 요소 하이라이트
+            highlightElement(element, number);
+        }
+        
+        function generateSelector(element) {
+            // 간단한 CSS 선택자 생성
+            if (element.id) {
+                return `#${element.id}`;
+            }
+            
+            if (element.onclick) {
+                const onclickStr = element.onclick.toString();
+                if (onclickStr.includes('history.back')) {
+                    return 'button[onclick="history.back()"]';
+                }
+                if (onclickStr.includes('location.href')) {
+                    const match = onclickStr.match(/location\.href\s*=\s*['"]([^'"]+)['"]/);
+                    if (match) {
+                        return `button[onclick*="${match[1]}"]`;
+                    }
+                }
+            }
+            
+            if (element.className) {
+                const classes = element.className.split(' ').filter(c => c.length > 0);
+                if (classes.length > 0) {
+                    return `${element.tagName.toLowerCase()}.${classes.join('.')}`;
+                }
+            }
+            
+            return element.tagName.toLowerCase();
+        }
+        
+        function highlightElement(element, number) {
+            const iframe = document.getElementById('pageFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // 기존 하이라이트 제거
+            const existingHighlights = iframeDoc.querySelectorAll('.highlight, .marker-preview');
+            existingHighlights.forEach(h => h.remove());
+            
+            // 요소 하이라이트
+            const rect = element.getBoundingClientRect();
+            const highlight = iframeDoc.createElement('div');
+            highlight.className = 'highlight';
+            highlight.style.cssText = `
+                position: fixed;
+                top: ${rect.top}px;
+                left: ${rect.left}px;
+                width: ${rect.width}px;
+                height: ${rect.height}px;
+                background: rgba(255, 0, 0, 0.3);
+                border: 2px solid red;
+                pointer-events: none;
+                z-index: 9999;
+            `;
+            iframeDoc.body.appendChild(highlight);
+            
+            // 마커 미리보기
+            const leftPanel = iframeDoc.querySelector('.left-panel');
+            if (leftPanel) {
+                const leftPanelRect = leftPanel.getBoundingClientRect();
+                const markerTop = Math.max(0, rect.top - leftPanelRect.top - 8);
+                const markerLeft = Math.max(0, rect.left - leftPanelRect.left - 8);
+                
+                const marker = iframeDoc.createElement('div');
+                marker.className = 'marker-preview';
+                marker.textContent = number;
+                marker.style.cssText = `
+                    position: absolute;
+                    top: ${markerTop}px;
+                    left: ${markerLeft}px;
+                    background: rgba(255, 20, 147, 0.8);
+                    color: white;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                    z-index: 10000;
+                `;
+                leftPanel.appendChild(marker);
+            }
+        }
+        
+        function analyzePositions() {
+            const iframe = document.getElementById('pageFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            if (!iframeDoc) {
+                alert('먼저 페이지를 로드해주세요.');
+                return;
+            }
+            
+            const clickableElements = iframeDoc.querySelectorAll('button, a, [onclick], [href]');
+            const container = iframeDoc.querySelector('.container') || iframeDoc.body;
+            const leftPanel = iframeDoc.querySelector('.left-panel') || container;
+            
+            let analysis = `<h3>${currentPage} - 요소 위치 분석 결과</h3>`;
+            analysis += `<p>총 ${clickableElements.length}개의 클릭 가능한 요소를 찾았습니다.</p>`;
+            
+            clickableElements.forEach((element, index) => {
+                const rect = element.getBoundingClientRect();
+                const leftPanelRect = leftPanel.getBoundingClientRect();
+                const relativeTop = Math.max(0, rect.top - leftPanelRect.top - 8);
+                const relativeLeft = Math.max(0, rect.left - leftPanelRect.left - 8);
+                
+                analysis += `
+                    <div class="element-info">
+                        <strong>${index + 1}. ${element.tagName}</strong> - "${element.textContent.trim().substring(0, 30)}..."<br>
+                        선택자: ${generateSelector(element)}<br>
+                        마커 위치: <span class="coordinates">top: ${Math.round(relativeTop)}px, left: ${Math.round(relativeLeft)}px</span>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('debugInfo').innerHTML = analysis;
+        }
+        
+        function clearHighlights() {
+            const iframe = document.getElementById('pageFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            if (iframeDoc) {
+                const highlights = iframeDoc.querySelectorAll('.highlight, .marker-preview');
+                highlights.forEach(h => h.remove());
+            }
+            
+            document.getElementById('debugInfo').innerHTML = '';
+        }
+        
+        // 페이지 로드 시 기본 페이지 로드
+        window.onload = function() {
+            loadPage();
+        };
+    </script>
+</body>
+</html>

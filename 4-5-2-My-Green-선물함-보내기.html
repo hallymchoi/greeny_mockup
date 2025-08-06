@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 선물 보내기</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-5-1-My-Green-선물함-받은.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">선물 보내기</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div class="bg-yellow-50 rounded-xl p-4">
+          <div class="flex items-start space-x-3">
+            <svg class="w-5 h-5 text-gold-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">선물 규칙</h3>
+              <p class="text-xs text-gray-600">1일 1인 1개 골프공만 선물 가능합니다</p>
+              <p class="text-xs text-gray-600 mt-1">보유 Green Badge: <span class="font-semibold text-gold-accent">120개</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">받는 사람</label>
+          <div class="relative">
+            <input type="text" placeholder="닉네임을 검색하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 pr-10 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-medium text-gray-700 mb-3">최근 방문자</h3>
+          <div class="space-y-2">
+            <label class="flex items-center justify-between p-3 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="radio" name="recipient" class="w-4 h-4 text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">골프마스터</p>
+                  <p class="text-xs text-gray-500">10분 전 방문</p>
+                </div>
+              </div>
+            </label>
+            
+            <label class="flex items-center justify-between p-3 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="radio" name="recipient" class="w-4 h-4 text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">버디왕</p>
+                  <p class="text-xs text-gray-500">1시간 전 방문</p>
+                </div>
+              </div>
+            </label>
+            
+            <label class="flex items-center justify-between p-3 bg-cream-white rounded-xl cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center space-x-3">
+                <input type="radio" name="recipient" class="w-4 h-4 text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                <div>
+                  <p class="text-sm font-medium text-charcoal-gray">주말골퍼</p>
+                  <p class="text-xs text-gray-500">5시간 전 방문</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">선물 내용</label>
+          <div class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl p-6">
+            <div class="text-center">
+              <svg class="w-12 h-12 text-gold-accent mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <p class="text-lg font-bold text-charcoal-gray">골프공 1개</p>
+              <p class="text-sm text-gray-600 mt-1">하루에 한 명에게만 보낼 수 있어요</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">메시지</label>
+          <textarea placeholder="따뜻한 응원의 메시지를 남겨보세요" rows="3" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+          <p class="text-xs text-gray-500 mt-1 text-right">0/50</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-yellow-500 to-orange-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        선물 보내기
+      </button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 공지사항 목록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="window.location.href='6-2-공지사항.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">전체 공지사항</h1>
+            <div class="w-6"></div>
+        </div>
+        
+        <div class="sticky top-0 bg-white border-b border-gray-100 px-6 py-3">
+            <div class="flex space-x-2">
+                <button class="px-4 py-2 bg-forest-green text-white rounded-full text-sm font-medium">전체</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">[중요]</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">[안내]</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">[점검]</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">[이벤트]</button>
+            </div>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-6 py-4 space-y-3">
+                <a href="6-2-2-더보기-공지사항-상세.html" class="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded font-semibold">[중요]</span>
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded font-semibold">NEW</span>
+                        </div>
+                        <span class="text-xs text-gray-500">2025.01.20</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">서비스 업데이트 안내</h3>
+                    <p class="text-sm text-gray-600 line-clamp-2">AI 클럽 추천 시스템이 더욱 정확해졌습니다...</p>
+                </a>
+                
+                <a href="6-2-2-더보기-공지사항-상세.html" class="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded font-semibold">[안내]</span>
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded font-semibold">NEW</span>
+                        </div>
+                        <span class="text-xs text-gray-500">2025.01.15</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">1월 정기 점검 안내</h3>
+                    <p class="text-sm text-gray-600 line-clamp-2">더 나은 서비스 제공을 위해...</p>
+                </a>
+                
+                <a href="6-2-2-더보기-공지사항-상세.html" class="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start justify-between mb-2">
+                        <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded font-semibold">[점검]</span>
+                        <span class="text-xs text-gray-500">2025.01.10</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">서버 점검 완료 안내</h3>
+                    <p class="text-sm text-gray-600 line-clamp-2">예정된 서버 점검이 완료되었습니다...</p>
+                </a>
+                
+                <a href="6-2-2-더보기-공지사항-상세.html" class="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start justify-between mb-2">
+                        <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded font-semibold">[이벤트]</span>
+                        <span class="text-xs text-gray-500">2025.01.05</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-gray mb-1">신규 가입 이벤트 당첨자 발표</h3>
+                    <p class="text-sm text-gray-600 line-clamp-2">12월 신규 가입 이벤트 당첨자를...</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

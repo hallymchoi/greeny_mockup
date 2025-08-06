@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 회원가입 정보입력</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="bg-white h-screen flex flex-col">
+    <!-- 헤더 -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">정보 입력</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <!-- 이메일 입력 -->
+    <div class="px-6 pt-8 pb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-2">이메일</label>
+      <div class="relative">
+        <input type="email" id="email" placeholder="user@email.com" 
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-green focus:border-transparent"
+               oninput="validateEmail()">
+        <div id="email-feedback" class="mt-1 text-xs hidden">
+          <span id="email-icon"></span>
+          <span id="email-message"></span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 비밀번호 입력 -->
+    <div class="px-6 pb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-2">비밀번호</label>
+      <div class="relative">
+        <input type="password" id="password" placeholder="8자 이상 입력" 
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-green focus:border-transparent pr-10"
+               oninput="validatePassword()">
+        <button type="button" onclick="togglePassword('password')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </button>
+      </div>
+      <div id="password-feedback" class="mt-1 text-xs text-gray-500">
+        <p>8자 이상, 영문/숫자/특수문자 중 2가지 이상 조합</p>
+      </div>
+      <div id="password-strength" class="mt-2 hidden">
+        <div class="flex space-x-1">
+          <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+          <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+          <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+        </div>
+        <p class="text-xs mt-1"></p>
+      </div>
+    </div>
+    
+    <!-- 비밀번호 확인 -->
+    <div class="px-6 pb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-2">비밀번호 확인</label>
+      <div class="relative">
+        <input type="password" id="password-confirm" placeholder="비밀번호 재입력" 
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-green focus:border-transparent pr-10"
+               oninput="validatePasswordMatch()">
+        <button type="button" onclick="togglePassword('password-confirm')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </button>
+      </div>
+      <div id="password-match-feedback" class="mt-1 text-xs hidden">
+        <span id="password-match-icon"></span>
+        <span id="password-match-message"></span>
+      </div>
+    </div>
+    
+    <!-- 닉네임 입력 -->
+    <div class="px-6 pb-8">
+      <label class="block text-sm font-medium text-gray-700 mb-2">닉네임</label>
+      <div class="relative">
+        <input type="text" id="nickname" placeholder="나이스샷" maxlength="10"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-green focus:border-transparent"
+               oninput="validateNickname()">
+        <span id="nickname-length" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">0/10</span>
+      </div>
+      <div id="nickname-feedback" class="mt-1 text-xs hidden">
+        <span id="nickname-icon"></span>
+        <span id="nickname-message"></span>
+      </div>
+    </div>
+    
+    <!-- 가입 완료 버튼 -->
+    <div class="px-6 pt-2 pb-8 mt-auto">
+      <button id="submit-btn" onclick="handleSubmit()" 
+              class="w-full bg-gray-300 text-white py-4 rounded-xl font-semibold cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400" 
+              disabled>
+        <span id="btn-text">가입 완료</span>
+        <svg id="btn-spinner" class="hidden animate-spin h-5 w-5 text-white inline-block ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    let validations = {
+      email: false,
+      password: false,
+      passwordMatch: false,
+      nickname: false
+    };
+    
+    function validateEmail() {
+      const email = document.getElementById('email').value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const feedback = document.getElementById('email-feedback');
+      const icon = document.getElementById('email-icon');
+      const message = document.getElementById('email-message');
+      
+      if (email.length > 0) {
+        feedback.classList.remove('hidden');
+        if (emailRegex.test(email)) {
+          validations.email = true;
+          feedback.classList.remove('text-red-500');
+          feedback.classList.add('text-green-500');
+          icon.innerHTML = '✓ ';
+          message.textContent = '올바른 이메일 형식이에요';
+        } else {
+          validations.email = false;
+          feedback.classList.remove('text-green-500');
+          feedback.classList.add('text-red-500');
+          icon.innerHTML = '✗ ';
+          message.textContent = '이메일 형식이 올바르지 않아요';
+        }
+      } else {
+        feedback.classList.add('hidden');
+        validations.email = false;
+      }
+      checkFormValidity();
+    }
+    
+    function validatePassword() {
+      const password = document.getElementById('password').value;
+      const strength = document.getElementById('password-strength');
+      const strengthBars = strength.querySelectorAll('div div');
+      const strengthText = strength.querySelector('p');
+      
+      if (password.length > 0) {
+        strength.classList.remove('hidden');
+        
+        let score = 0;
+        if (password.length >= 8) score++;
+        if (/[a-zA-Z]/.test(password)) score++;
+        if (/[0-9]/.test(password)) score++;
+        if (/[^a-zA-Z0-9]/.test(password)) score++;
+        
+        // Reset bars
+        strengthBars.forEach(bar => {
+          bar.classList.remove('bg-red-500', 'bg-yellow-500', 'bg-green-500');
+          bar.classList.add('bg-gray-200');
+        });
+        
+        if (score >= 2) {
+          validations.password = true;
+          if (score === 2) {
+            strengthBars[0].classList.remove('bg-gray-200');
+            strengthBars[0].classList.add('bg-yellow-500');
+            strengthText.textContent = '보통';
+            strengthText.className = 'text-xs mt-1 text-yellow-600';
+          } else if (score === 3) {
+            strengthBars[0].classList.remove('bg-gray-200');
+            strengthBars[0].classList.add('bg-yellow-500');
+            strengthBars[1].classList.remove('bg-gray-200');
+            strengthBars[1].classList.add('bg-yellow-500');
+            strengthText.textContent = '안전';
+            strengthText.className = 'text-xs mt-1 text-yellow-600';
+          } else {
+            strengthBars.forEach(bar => {
+              bar.classList.remove('bg-gray-200');
+              bar.classList.add('bg-green-500');
+            });
+            strengthText.textContent = '매우 안전';
+            strengthText.className = 'text-xs mt-1 text-green-600';
+          }
+        } else {
+          validations.password = false;
+          strengthBars[0].classList.remove('bg-gray-200');
+          strengthBars[0].classList.add('bg-red-500');
+          strengthText.textContent = '너무 약해요';
+          strengthText.className = 'text-xs mt-1 text-red-600';
+        }
+      } else {
+        strength.classList.add('hidden');
+        validations.password = false;
+      }
+      
+      // Re-validate password match if confirm field has value
+      if (document.getElementById('password-confirm').value) {
+        validatePasswordMatch();
+      }
+      checkFormValidity();
+    }
+    
+    function validatePasswordMatch() {
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('password-confirm').value;
+      const feedback = document.getElementById('password-match-feedback');
+      const icon = document.getElementById('password-match-icon');
+      const message = document.getElementById('password-match-message');
+      
+      if (confirm.length > 0) {
+        feedback.classList.remove('hidden');
+        if (password === confirm) {
+          validations.passwordMatch = true;
+          feedback.classList.remove('text-red-500');
+          feedback.classList.add('text-green-500');
+          icon.innerHTML = '✓ ';
+          message.textContent = '비밀번호가 일치해요';
+        } else {
+          validations.passwordMatch = false;
+          feedback.classList.remove('text-green-500');
+          feedback.classList.add('text-red-500');
+          icon.innerHTML = '✗ ';
+          message.textContent = '비밀번호가 일치하지 않아요';
+        }
+      } else {
+        feedback.classList.add('hidden');
+        validations.passwordMatch = false;
+      }
+      checkFormValidity();
+    }
+    
+    function validateNickname() {
+      const nickname = document.getElementById('nickname').value;
+      const lengthSpan = document.getElementById('nickname-length');
+      const feedback = document.getElementById('nickname-feedback');
+      const icon = document.getElementById('nickname-icon');
+      const message = document.getElementById('nickname-message');
+      
+      lengthSpan.textContent = `${nickname.length}/10`;
+      
+      if (nickname.length > 0) {
+        feedback.classList.remove('hidden');
+        if (nickname.length >= 2 && nickname.length <= 10) {
+          validations.nickname = true;
+          feedback.classList.remove('text-red-500');
+          feedback.classList.add('text-green-500');
+          icon.innerHTML = '✓ ';
+          message.textContent = '사용 가능한 닉네임이에요';
+        } else {
+          validations.nickname = false;
+          feedback.classList.remove('text-green-500');
+          feedback.classList.add('text-red-500');
+          icon.innerHTML = '✗ ';
+          message.textContent = '닉네임은 2~10자로 입력해주세요';
+        }
+      } else {
+        feedback.classList.add('hidden');
+        validations.nickname = false;
+      }
+      checkFormValidity();
+    }
+    
+    function togglePassword(fieldId) {
+      const field = document.getElementById(fieldId);
+      field.type = field.type === 'password' ? 'text' : 'password';
+    }
+    
+    function checkFormValidity() {
+      const btn = document.getElementById('submit-btn');
+      const allValid = Object.values(validations).every(v => v === true);
+      
+      if (allValid) {
+        btn.disabled = false;
+        btn.classList.remove('bg-gray-300', 'cursor-not-allowed');
+        btn.classList.add('bg-gradient-to-r', 'from-hunter-green', 'to-forest-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      } else {
+        btn.disabled = true;
+        btn.classList.add('bg-gray-300', 'cursor-not-allowed');
+        btn.classList.remove('bg-gradient-to-r', 'from-hunter-green', 'to-forest-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      }
+    }
+    
+    function handleSubmit() {
+      const btn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+      
+      // Show loading state
+      btn.disabled = true;
+      btnText.textContent = '가입 처리중...';
+      btnSpinner.classList.remove('hidden');
+      
+      // Simulate API call
+      setTimeout(() => {
+        window.location.href = '1-1-3-회원가입-이메일-완료.html';
+      }, 1500);
+    }
+  </script>
+</body>
+</html> 

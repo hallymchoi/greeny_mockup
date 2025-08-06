@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 클럽 정보 인식중</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">클럽 등록</h1>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="text-center py-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-forest-green bg-opacity-10 rounded-full mb-4">
+                    <svg class="w-10 h-10 text-forest-green animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                
+                <h2 class="text-lg font-semibold text-charcoal-gray mb-2">사진에서 클럽 정보를 읽고 있어요</h2>
+                
+                <p class="text-sm text-gray-600">
+                    AI가 클럽 정보를 자동으로 인식합니다
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-sm text-gray-600">클럽 종류</label>
+                        <div class="w-32 h-8 bg-gray-200 rounded animate-pulse"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-sm text-gray-600">브랜드</label>
+                        <div class="w-24 h-8 bg-gray-200 rounded animate-pulse"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-sm text-gray-600">모델명</label>
+                        <div class="w-36 h-8 bg-gray-200 rounded animate-pulse"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="text-sm text-gray-600">샤프트</label>
+                        <div class="w-28 h-8 bg-gray-200 rounded animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-sm text-gray-500">
+                잠시만 기다려주세요...
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 마켓</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <h1 class="text-xl font-bold text-charcoal-gray">마켓</h1>
+      <div class="flex items-center space-x-3">
+        <button onclick="document.getElementById('search-input').focus()" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button onclick="window.location.href='3-6-알림.html'" class="text-gray-600 relative focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+          </svg>
+          <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="sticky top-0 bg-white z-10 border-b border-gray-100">
+      <div class="px-6 py-3">
+        <div class="flex items-center space-x-2">
+          <div class="flex space-x-2 overflow-x-auto flex-1">
+            <button class="px-4 py-2 bg-forest-green text-white rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              전체
+            </button>
+            <button onclick="window.location.href='3-2-1-카테고리-드라이버.html'" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+              드라이버
+            </button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+              아이언
+            </button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+              퍼터
+            </button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+              웨지
+            </button>
+          </div>
+          <button onclick="showDetailFilter()" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium whitespace-nowrap flex items-center space-x-1 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+            <span>상세필터</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-4">
+        <div class="bg-gradient-to-r from-hunter-green to-forest-green rounded-2xl p-6 mb-6">
+          <h2 class="text-white text-lg font-bold mb-2">오늘의 특가</h2>
+          <p class="text-white/90 text-sm mb-4">인증된 중고 클럽 최대 40% 할인</p>
+          <button class="bg-white text-forest-green px-4 py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-green">
+            특가 상품 보기
+          </button>
+        </div>
+        
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-charcoal-gray">AI 추천 매물</h3>
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div onclick="window.location.href='3-3-상품-상세.html'" class="bg-white rounded-xl overflow-hidden border border-gray-100">
+              <div class="aspect-square bg-gray-100 relative">
+                <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="타이틀리스트 T200" class="w-full h-full object-contain">
+                <span class="absolute top-2 left-2 bg-forest-green text-white text-xs px-2 py-1 rounded">95% 매칭</span>
+              </div>
+              <div class="p-3">
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">타이틀리스트 T200</h4>
+                <p class="text-xs text-gray-500 mb-2">2022년 • A급</p>
+                <p class="text-base font-bold text-charcoal-gray">1,200,000원</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100">
+              <div class="aspect-square bg-gray-100 relative">
+                <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="캘러웨이 Apex 21" class="w-full h-full object-contain">
+                <span class="absolute top-2 left-2 bg-forest-green text-white text-xs px-2 py-1 rounded">92% 매칭</span>
+              </div>
+              <div class="p-3">
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">캘러웨이 Apex 21</h4>
+                <p class="text-xs text-gray-500 mb-2">2021년 • A급</p>
+                <p class="text-base font-bold text-charcoal-gray">980,000원</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-charcoal-gray">새 상품</h3>
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white rounded-xl p-4 flex items-center space-x-4 border border-gray-100">
+              <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="테일러메이드 Stealth 2 Plus" class="w-20 h-20 object-contain bg-gray-100 rounded-lg flex-shrink-0">
+              <div class="flex-1">
+                <span class="text-xs text-green-600 font-medium">새상품</span>
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">테일러메이드 Stealth 2 Plus</h4>
+                <p class="text-xs text-gray-500 mb-1">10.5도 • Ventus Blue 6-S</p>
+                <p class="text-base font-bold text-charcoal-gray">890,000원</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl p-4 flex items-center space-x-4 border border-gray-100">
+              <img src="../golfclub_img/테일러메이드 혜택과 특가 (1).jpg" alt="핑 G430 MAX" class="w-20 h-20 object-contain bg-gray-100 rounded-lg flex-shrink-0">
+              <div class="flex-1">
+                <span class="text-xs text-green-600 font-medium">새상품</span>
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">핑 G430 MAX</h4>
+                <p class="text-xs text-gray-500 mb-1">9도 • Alta CB Black</p>
+                <p class="text-base font-bold text-charcoal-gray">780,000원</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-charcoal-gray">인기 매물</h3>
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">더보기</button>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100">
+              <div class="aspect-square bg-gray-100 relative">
+                <img src="../golfclub_img/골프채 혜택과 특가.jpg" alt="스릭슨 ZX5 아이언" class="w-full h-full object-contain">
+                <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">HOT</span>
+              </div>
+              <div class="p-3">
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">스릭슨 ZX5 아이언</h4>
+                <p class="text-xs text-gray-500 mb-2">5-P • NS Pro 950</p>
+                <p class="text-base font-bold text-charcoal-gray">650,000원</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100">
+              <div class="aspect-square bg-gray-100 relative">
+                <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="스코티카메론 퍼터" class="w-full h-full object-contain">
+                <span class="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">인기</span>
+              </div>
+              <div class="p-3">
+                <h4 class="text-sm font-semibold text-charcoal-gray mb-1">스코티카메론 퍼터</h4>
+                <p class="text-xs text-gray-500 mb-2">뉴포트2 • 34인치</p>
+                <p class="text-base font-bold text-charcoal-gray">480,000원</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button onclick="window.location.href='3-4-판매하기.html'" class="fixed bottom-20 right-6 w-14 h-14 bg-gradient-to-r from-hunter-green to-forest-green rounded-full flex items-center justify-center shadow-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      </svg>
+    </button>
+    
+        <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 group text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='4-1-My-Green-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='5-1-커뮤니티-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 상세 필터 팝업 -->
+  <div id="detail-filter" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl max-h-[80vh] overflow-hidden animate-slide-up">
+      <div class="sticky top-0 bg-white border-b border-gray-100 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-charcoal-gray">상세 필터</h3>
+          <button onclick="closeDetailFilter()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="px-6 py-4 overflow-y-auto">
+        <!-- 가격대 필터 -->
+        <div class="mb-6">
+          <h4 class="text-sm font-semibold text-charcoal-gray mb-3">가격대</h4>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">최소</span>
+              <span id="min-price-display" class="font-medium">0원</span>
+            </div>
+            <input type="range" id="min-price" min="0" max="5000000" step="100000" value="0" 
+                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent"
+                   oninput="updatePriceRange()">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">최대</span>
+              <span id="max-price-display" class="font-medium">5,000,000원</span>
+            </div>
+            <input type="range" id="max-price" min="0" max="5000000" step="100000" value="5000000"
+                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent"
+                   oninput="updatePriceRange()">
+          </div>
+        </div>
+        
+        <!-- 브랜드 필터 -->
+        <div class="mb-6">
+          <h4 class="text-sm font-semibold text-charcoal-gray mb-3">브랜드</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">타이틀리스트</span>
+            </label>
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">테일러메이드</span>
+            </label>
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">캘러웨이</span>
+            </label>
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">핑</span>
+            </label>
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">미즈노</span>
+            </label>
+            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+              <input type="checkbox" class="w-4 h-4 text-forest-green rounded focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+              <span class="text-sm">스릭슨</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- 상태 필터 -->
+        <div class="mb-6">
+          <h4 class="text-sm font-semibold text-charcoal-gray mb-3">상태</h4>
+          <div class="flex space-x-2">
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">새상품</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">A급</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">B급</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">C급</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sticky bottom-0 bg-white border-t border-gray-100 px-6 py-4 flex space-x-3">
+        <button onclick="resetFilter()" class="flex-1 py-3 border border-gray-300 rounded-xl text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          초기화
+        </button>
+        <button onclick="applyFilter()" class="flex-1 py-3 bg-gradient-to-r from-forest-green to-hunter-green text-white rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          적용하기
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    .animate-slide-up {
+      animation: slide-up 0.3s ease-out;
+    }
+    
+    /* 커스텀 range 슬라이더 스타일 */
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #228B22;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #228B22;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+  
+  <script>
+    function showDetailFilter() {
+      document.getElementById('detail-filter').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeDetailFilter() {
+      document.getElementById('detail-filter').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    function updatePriceRange() {
+      const minPrice = document.getElementById('min-price').value;
+      const maxPrice = document.getElementById('max-price').value;
+      
+      document.getElementById('min-price-display').textContent = 
+        new Intl.NumberFormat('ko-KR').format(minPrice) + '원';
+      document.getElementById('max-price-display').textContent = 
+        new Intl.NumberFormat('ko-KR').format(maxPrice) + '원';
+    }
+    
+    function resetFilter() {
+      // 필터 초기화 로직
+      document.getElementById('min-price').value = 0;
+      document.getElementById('max-price').value = 5000000;
+      updatePriceRange();
+      
+      // 체크박스 모두 해제
+      document.querySelectorAll('#detail-filter input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      
+      // 상태 버튼 초기화
+      document.querySelectorAll('#detail-filter .mb-6:last-child button').forEach(btn => {
+        btn.classList.remove('bg-forest-green', 'text-white');
+        btn.classList.add('border-gray-300');
+      });
+    }
+    
+    function applyFilter() {
+      // 필터 적용 로직
+      closeDetailFilter();
+      // 실제로는 여기서 필터링된 결과를 표시
+    }
+    
+    // 상태 버튼 클릭 이벤트
+    document.addEventListener('DOMContentLoaded', function() {
+      const stateButtons = document.querySelectorAll('#detail-filter .mb-6:last-child button');
+      stateButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          this.classList.toggle('bg-forest-green');
+          this.classList.toggle('text-white');
+          this.classList.toggle('border-gray-300');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

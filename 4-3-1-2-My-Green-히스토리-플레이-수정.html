@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 플레이 기록 수정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">플레이 기록 수정</h1>
+                <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">완료</button>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="space-y-4">
+                <div>
+                    <label class="text-sm text-gray-600">골프장명 *</label>
+                    <input type="text" value="스카이밸리 CC" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">방문일 *</label>
+                    <input type="date" value="2025-07-15" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">스코어</label>
+                    <input type="number" value="85" placeholder="예: 85" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">동반자</label>
+                    <div class="mt-1">
+                        <div class="flex gap-2 mb-2">
+                            <input type="text" value="김민수" placeholder="동반자 이름" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                            <button class="p-2 text-red-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex gap-2 mb-2">
+                            <input type="text" value="이영희" placeholder="동반자 이름" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                            <button class="p-2 text-red-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="text-forest-green text-sm flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-forest-green">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            동반자 추가
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">메모</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">날씨가 좋아서 스코어도 좋았던 라운드</textarea>
+                </div>
+            </div>
+
+            <button class="w-full bg-forest-green text-white py-4 rounded-lg font-semibold hover:bg-hunter-green transition-colors mt-6 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                수정 완료
+            </button>
+        </div>
+    </div>
+</body>
+</html>

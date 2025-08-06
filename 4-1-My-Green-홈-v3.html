@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - My Green</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .golf-field {
+      background: linear-gradient(180deg, #7dd3c0 0%, #5ebd9a 30%, #4ade80 60%, #22c55e 100%);
+      position: relative;
+      overflow: hidden;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+    
+    .golf-field::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      right: -50%;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 255, 255, 0.03) 30px,
+        rgba(255, 255, 255, 0.03) 60px
+      );
+    }
+    
+    .pixel-art {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+    
+    .bounce {
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) translateX(-50%); }
+      50% { transform: translateY(-8px) translateX(-50%); }
+    }
+    
+    /* 픽셀아트 스타일 그림자 */
+    .pixel-shadow {
+      box-shadow: 
+        4px 0 0 rgba(0,0,0,0.2),
+        0 4px 0 rgba(0,0,0,0.2),
+        4px 4px 0 rgba(0,0,0,0.2);
+    }
+    
+    /* 픽셀아트 홀컵 */
+    .hole-cup {
+      width: 60px;
+      height: 60px;
+      background: #1a1a1a;
+      position: relative;
+      box-shadow: 
+        inset 0 0 0 4px #0a0a0a,
+        inset 0 0 0 8px #2a2a2a,
+        inset 0 0 0 12px #1a1a1a;
+    }
+    
+    /* 픽셀아트 깃대 */
+    .flag-pole {
+      width: 4px;
+      height: 100px;
+      background: #666;
+      position: relative;
+    }
+    
+    .flag {
+      width: 40px;
+      height: 24px;
+      background: #ff0000;
+      position: absolute;
+      top: 0;
+      right: -40px;
+      clip-path: polygon(0 0, 100% 8px, 100% 16px, 0 24px);
+    }
+    
+    /* 픽셀아트 골프백 */
+    .pixel-golf-bag {
+      width: 80px;
+      height: 100px;
+      background: linear-gradient(to bottom, #3a3a3a 0%, #2a2a2a 100%);
+      position: relative;
+      border: 4px solid #1a1a1a;
+    }
+    
+    .pixel-club {
+      width: 4px;
+      height: 60px;
+      background: #888;
+      position: absolute;
+      top: -20px;
+    }
+    
+    /* 픽셀아트 골프공 바스켓 */
+    .pixel-basket {
+      width: 80px;
+      height: 60px;
+      background: #b8b8b8;
+      position: relative;
+      border: 4px solid #888;
+    }
+    
+    .pixel-ball {
+      width: 12px;
+      height: 12px;
+      background: white;
+      position: absolute;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <!-- 헤더 -->
+    <div class="bg-gradient-to-br from-forest-green to-hunter-green px-4 pt-6 pb-3">
+      <div class="flex items-center justify-between mb-3">
+        <h1 class="text-xl font-bold text-white">My Green</h1>
+        <button onclick="window.location.href='4-2-My-Green-프로필-조회.html'" class="text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 사용자 정보 -->
+      <div class="flex items-center space-x-3">
+        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/50 flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-white">나이스샷님</h2>
+          <p class="text-white/80 text-xs">핸디캡 10 • 서울</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 골프 필드 그래픽 영역 -->
+    <div class="golf-field relative flex-1" style="min-height: 580px;">
+      
+      <!-- 아바타 (정중앙) -->
+      <div class="absolute bounce" style="top: 50%; left: 50%;">
+        <div class="pixel-art" style="width: 80px; height: 80px; margin-left: -40px;">
+          <!-- 픽셀아트 아바타 머리 -->
+          <div style="width: 48px; height: 48px; background: #fdbcb4; margin: 0 auto; position: relative; border: 4px solid #333;">
+            <!-- 눈 -->
+            <div style="position: absolute; top: 16px; left: 8px; width: 8px; height: 8px; background: #333;"></div>
+            <div style="position: absolute; top: 16px; right: 8px; width: 8px; height: 8px; background: #333;"></div>
+            <!-- 입 -->
+            <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 16px; height: 4px; background: #333;"></div>
+          </div>
+          <!-- 픽셀아트 아바타 몸 -->
+          <div style="width: 56px; height: 32px; background: #22c55e; margin: -4px auto 0; border: 4px solid #333; border-top: none;"></div>
+        </div>
+        <p class="text-center mt-2 text-white font-bold text-sm bg-black/40 px-3 py-1 rounded" style="image-rendering: auto;">나이스샷</p>
+      </div>
+      
+      <!-- 홀컵과 깃대 (우상단) -->
+      <div class="absolute" style="top: 20%; right: 25%;">
+        <div class="relative pixel-art">
+          <!-- 홀컵 -->
+          <div class="hole-cup"></div>
+          <!-- 깃대 -->
+          <div class="flag-pole" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+            <div class="flag"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 골프백 (좌측) -->
+      <button onclick="showClubsList()" class="absolute" style="top: 50%; left: 15%;">
+        <div class="pixel-art pixel-golf-bag pixel-shadow">
+          <!-- 클럽들 -->
+          <div class="pixel-club" style="left: 8px; transform: rotate(-10deg);"></div>
+          <div class="pixel-club" style="left: 20px; transform: rotate(-5deg);"></div>
+          <div class="pixel-club" style="left: 32px;"></div>
+          <div class="pixel-club" style="left: 44px; transform: rotate(5deg);"></div>
+          <div class="pixel-club" style="right: 8px; transform: rotate(10deg);"></div>
+          <!-- 포켓 -->
+          <div style="position: absolute; bottom: 8px; left: 8px; right: 8px; height: 20px; background: #1a1a1a;"></div>
+        </div>
+        <p class="text-center mt-2 text-white text-sm font-bold bg-black/40 px-3 py-1 rounded">나의 장비</p>
+      </button>
+      
+      <!-- 골프공 바스켓 (우측) -->
+      <button onclick="window.location.href='4-7-1-My-Green-골프공-현황.html'" class="absolute" style="top: 50%; right: 15%;">
+        <div class="relative">
+          <div class="pixel-art pixel-basket pixel-shadow">
+            <!-- 그물망 패턴 -->
+            <div style="position: absolute; inset: 0; background-image: 
+              repeating-linear-gradient(45deg, transparent, transparent 4px, #999 4px, #999 8px),
+              repeating-linear-gradient(-45deg, transparent, transparent 4px, #999 4px, #999 8px);
+              opacity: 0.3;"></div>
+            <!-- 골프공들 -->
+            <div class="pixel-ball" style="bottom: 8px; left: 8px;"></div>
+            <div class="pixel-ball" style="bottom: 8px; left: 24px;"></div>
+            <div class="pixel-ball" style="bottom: 8px; right: 8px;"></div>
+            <div class="pixel-ball" style="bottom: 20px; left: 16px;"></div>
+            <div class="pixel-ball" style="bottom: 20px; right: 16px;"></div>
+            <div class="pixel-ball" style="bottom: 32px; left: 28px;"></div>
+          </div>
+          <!-- 개수 표시 -->
+          <div class="absolute -top-2 -right-2 bg-gold-accent text-white text-sm font-bold px-2 py-1" style="border: 2px solid #333;">
+            120
+          </div>
+        </div>
+        <p class="text-center mt-2 text-white text-sm font-bold bg-black/40 px-3 py-1 rounded">골프공</p>
+      </button>
+      
+      <!-- 지도 아이콘 (좌상단) -->
+      <button onclick="showPlayMap()" class="absolute" style="top: 20%; left: 20%;">
+        <div class="pixel-art bg-white border-4 border-black" style="width: 72px; height: 72px;">
+          <div class="relative w-full h-full p-2">
+            <!-- 픽셀아트 지도 -->
+            <div style="width: 100%; height: 100%; background: linear-gradient(to right, #4ade80 0%, #4ade80 40%, #3b82f6 40%, #3b82f6 60%, #4ade80 60%, #4ade80 100%);">
+              <!-- 지도 핀 -->
+              <div style="position: absolute; top: 20%; left: 30%; width: 8px; height: 12px; background: #ff0000;"></div>
+              <div style="position: absolute; top: 50%; left: 60%; width: 8px; height: 12px; background: #ff0000;"></div>
+              <div style="position: absolute; bottom: 20%; left: 40%; width: 8px; height: 12px; background: #ff0000;"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-2 text-white text-sm font-bold bg-black/40 px-3 py-1 rounded">플레이 기록</p>
+      </button>
+      
+      <!-- 선물함 (우하단) -->
+      <button onclick="window.location.href='4-5-1-My-Green-선물함-받은.html'" class="absolute" style="bottom: 25%; right: 20%;">
+        <div class="pixel-art relative">
+          <!-- 픽셀아트 선물상자 -->
+          <div style="width: 72px; height: 72px; background: #c084fc; border: 4px solid #333; position: relative;">
+            <!-- 리본 가로 -->
+            <div style="position: absolute; top: 50%; left: 0; right: 0; height: 12px; background: #fbbf24; transform: translateY(-50%);"></div>
+            <!-- 리본 세로 -->
+            <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 12px; background: #fbbf24; transform: translateX(-50%);"></div>
+            <!-- 리본 매듭 -->
+            <div style="position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; background: #f59e0b; transform: translate(-50%, -50%); border: 2px solid #333;"></div>
+          </div>
+          <!-- 새 선물 알림 -->
+          <div class="absolute -top-2 -right-2 w-4 h-4 bg-red-500 animate-pulse" style="border: 2px solid #333;"></div>
+        </div>
+        <p class="text-center mt-2 text-white text-sm font-bold bg-black/40 px-3 py-1 rounded">선물함</p>
+      </button>
+      
+      <!-- 방명록 미리보기 (하단) -->
+      <div class="absolute bottom-6 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl border-4 border-black pixel-art" style="image-rendering: auto;">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-bold text-charcoal-gray">방명록</h3>
+          <button onclick="window.location.href='4-4-2-My-Green-방문자-방명록.html'" class="text-xs text-forest-green font-semibold">더보기</button>
+        </div>
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-purple-500 pixel-art" style="border: 2px solid #333;"></div>
+            <div class="flex-1">
+              <p class="text-xs text-gray-800 font-medium">골프왕: 오늘도 화이팅! 🏌️</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-blue-500 pixel-art" style="border: 2px solid #333;"></div>
+            <div class="flex-1">
+              <p class="text-xs text-gray-800 font-medium">버디킹: 다음 라운딩 같이해요~</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 bg-green-500 pixel-art" style="border: 2px solid #333;"></div>
+            <div class="flex-1">
+              <p class="text-xs text-gray-800 font-medium">파워골퍼: 멋진 스윙이네요! 💪</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 하단 빠른 메뉴 (탭바 위) -->
+    <div class="bg-white border-t border-gray-200">
+      <div class="grid grid-cols-2 divide-x divide-gray-200">
+        <button onclick="window.location.href='4-6-7-1-My-Green-My-Clubs-ESG-신청.html'" class="py-3 px-4">
+          <div class="flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+            </svg>
+            <span class="text-sm font-medium text-charcoal-gray">ESG 활동</span>
+          </div>
+        </button>
+        
+        <button onclick="window.location.href='4-4-1-My-Green-방문자-목록.html'" class="py-3 px-4 relative">
+          <div class="flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <span class="text-sm font-medium text-charcoal-gray">방문자</span>
+            <span class="absolute top-2 right-4 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">12</span>
+          </div>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 플레이 맵 선택 모달 (숨김 상태) -->
+    <div id="playMapModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end">
+      <div class="bg-white rounded-t-2xl w-full p-6">
+        <h3 class="text-lg font-semibold text-charcoal-gray mb-4">플레이 기록 보기</h3>
+        <div class="space-y-3">
+          <button onclick="window.location.href='4-3-1-4-My-Green-히스토리-플레이-지도.html'" class="w-full bg-gray-50 rounded-xl p-4 text-left flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <svg class="w-6 h-6 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+              <span class="font-medium text-charcoal-gray">지도로 보기</span>
+            </div>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="w-full bg-gray-50 rounded-xl p-4 text-left flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <svg class="w-6 h-6 text-forest-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+              <span class="font-medium text-charcoal-gray">목록으로 보기</span>
+            </div>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+        <button onclick="closePlayMapModal()" class="w-full mt-4 py-3 text-gray-500 font-medium">취소</button>
+      </div>
+    </div>
+    
+    <!-- 클럽 리스트 모달 (숨김 상태) -->
+    <div id="clubsModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end">
+      <div class="bg-white rounded-t-2xl w-full max-h-[70vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b border-gray-100 p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold text-charcoal-gray">나의 클럽</h3>
+            <button onclick="closeClubsModal()" class="text-gray-500">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="p-4 space-y-3">
+          <div class="bg-gray-50 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-medium text-charcoal-gray">드라이버</h4>
+              <span class="text-xs text-gray-500">1개</span>
+            </div>
+            <div class="text-sm text-gray-600">타이틀리스트 TSR2</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-medium text-charcoal-gray">아이언</h4>
+              <span class="text-xs text-gray-500">7개</span>
+            </div>
+            <div class="text-sm text-gray-600">미즈노 JPX923 (4-PW)</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-medium text-charcoal-gray">웨지</h4>
+              <span class="text-xs text-gray-500">3개</span>
+            </div>
+            <div class="text-sm text-gray-600">보키 SM9 (50°, 54°, 58°)</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-medium text-charcoal-gray">퍼터</h4>
+              <span class="text-xs text-gray-500">1개</span>
+            </div>
+            <div class="text-sm text-gray-600">스카티카메론 스페셜 셀렉트</div>
+          </div>
+        </div>
+        <div class="p-4 border-t border-gray-100">
+          <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="w-full bg-forest-green text-white py-3 rounded-xl font-semibold">
+            클럽 관리하기
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 하단 네비게이션 -->
+    <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400" onclick="window.location.href='3-1-마켓-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 relative group text-forest-green">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+          </svg>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400" onclick="window.location.href='5-1-커뮤니티-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showPlayMap() {
+      document.getElementById('playMapModal').classList.remove('hidden');
+    }
+    
+    function closePlayMapModal() {
+      document.getElementById('playMapModal').classList.add('hidden');
+    }
+    
+    function showClubsList() {
+      document.getElementById('clubsModal').classList.remove('hidden');
+    }
+    
+    function closeClubsModal() {
+      document.getElementById('clubsModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 게시글 수정</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">게시글 수정</h1>
+      <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">완료</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">태그 선택 <span class="text-red-500">*</span></label>
+          <select class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green" onchange="handleTagChange(this)">
+            <option value="추천요청" selected>#추천요청</option>
+            <option value="피팅샵후기">#피팅샵후기</option>
+            <option value="장비후기">#장비후기</option>
+            <option value="장비비교">#장비비교</option>
+            <option value="마이백인증">#마이백인증</option>
+            <option value="중고거래경험">#중고거래경험</option>
+            <option value="플레이인증">#플레이인증</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">제목 <span class="text-red-500">*</span></label>
+          <input type="text" value="90타 깨기 위한 아이언 추천 부탁드려요" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">내용 <span class="text-red-500">*</span></label>
+          <textarea rows="10" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none">안녕하세요, 골프 시작한지 2년된 초보입니다.
+현재 평균 95타 정도 치고 있는데, 아이언 정확도가 너무 떨어져서 교체를 고민하고 있습니다.
+
+스윙 스피드는 85mph 정도이고, 7번 아이언 기준 130-135m 정도 나옵니다.
+예산은 100-150만원 정도 생각하고 있습니다.
+
+캐비티백 아이언 중에서 관용성이 좋고, 비거리도 어느 정도 나오는 클럽으로 추천 부탁드립니다.
+선배님들의 조언 기다리겠습니다! 🙏</textarea>
+        </div>
+        
+        <div id="tagSpecificFields" class="space-y-4">
+          <div id="추천요청Fields" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">현재 사용 클럽</label>
+              <input type="text" value="미즈노 MX-19 (10년된 중고)" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">불만족 이유</label>
+              <textarea rows="3" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none">• 미스샷 시 거리 손실이 너무 큼
+• 롱아이언 탄도가 너무 낮음
+• 전체적으로 관용성이 부족한 느낌</textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">사진 첨부</label>
+          <div class="grid grid-cols-4 gap-3">
+            <button class="aspect-square bg-gray-100 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6 text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span class="text-xs text-gray-500">0/10</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        수정 완료
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    function handleTagChange(select) {
+      const value = select.value;
+      const allFieldGroups = document.querySelectorAll('[id$="Fields"]');
+      
+      allFieldGroups.forEach(group => {
+        group.classList.add('hidden');
+      });
+      
+      if (value) {
+        const fieldGroup = document.getElementById(value + 'Fields');
+        if (fieldGroup) {
+          fieldGroup.classList.remove('hidden');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

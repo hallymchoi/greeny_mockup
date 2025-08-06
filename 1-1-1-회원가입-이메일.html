@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-1-1 회원가입 > 이메일</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="bg-white h-screen flex flex-col">
+    <!-- 헤더 -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='1-1-회원가입.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">이메일 회원가입</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <!-- 전체 동의 체크박스 -->
+    <div class="px-6 pt-8 pb-2 flex items-center">
+      <input type="checkbox" id="all-agree" class="w-5 h-5 accent-pink-500 mr-3 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" onchange="toggleAllAgree()">
+      <label for="all-agree" class="font-semibold text-charcoal-gray text-base">전체 약관 동의</label>
+    </div>
+    
+    <!-- 약관 개별 체크박스 -->
+    <div class="px-10 space-y-4 pb-4">
+      <div class="flex items-center">
+        <input type="checkbox" id="terms" class="w-4 h-4 accent-pink-500 mr-2 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" onchange="checkAllSelected()">
+        <label for="terms" class="text-gray-700 text-sm">[필수] 서비스 이용약관 동의</label>
+        <a href="6-6-이용약관.html" class="ml-auto text-forest-green underline text-xs">상세보기</a>
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" id="privacy" class="w-4 h-4 accent-pink-500 mr-2 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" onchange="checkAllSelected()">
+        <label for="privacy" class="text-gray-700 text-sm">[필수] 개인정보처리방침 동의</label>
+        <a href="6-7-개인정보처리방침.html" class="ml-auto text-forest-green underline text-xs">상세보기</a>
+      </div>
+    </div>
+    
+    <!-- 다음 버튼 -->
+    <div class="px-6 pt-2 pb-8 mt-auto">
+      <button id="nextBtn" onclick="goToNext()" class="w-full bg-gray-300 text-white py-4 rounded-xl font-semibold cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-gray-400" disabled>
+        다음
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    function toggleAllAgree() {
+      const allAgree = document.getElementById('all-agree');
+      const terms = document.getElementById('terms');
+      const privacy = document.getElementById('privacy');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      terms.checked = allAgree.checked;
+      privacy.checked = allAgree.checked;
+      
+      if (allAgree.checked) {
+        nextBtn.disabled = false;
+        nextBtn.className = 'w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2';
+        nextBtn.style.cursor = 'pointer';
+      } else {
+        nextBtn.disabled = true;
+        nextBtn.className = 'w-full bg-gray-300 text-white py-4 rounded-xl font-semibold cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-gray-400';
+      }
+    }
+    
+    function checkAllSelected() {
+      const terms = document.getElementById('terms');
+      const privacy = document.getElementById('privacy');
+      const allAgree = document.getElementById('all-agree');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      if (terms.checked && privacy.checked) {
+        allAgree.checked = true;
+        nextBtn.disabled = false;
+        nextBtn.className = 'w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2';
+        nextBtn.style.cursor = 'pointer';
+      } else {
+        allAgree.checked = false;
+        nextBtn.disabled = true;
+        nextBtn.className = 'w-full bg-gray-300 text-white py-4 rounded-xl font-semibold cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-gray-400';
+      }
+    }
+    
+    function goToNext() {
+      if (!document.getElementById('nextBtn').disabled) {
+        window.location.href = '1-1-2-회원가입-이메일-정보.html';
+      }
+    }
+  </script>
+</body>
+</html> 

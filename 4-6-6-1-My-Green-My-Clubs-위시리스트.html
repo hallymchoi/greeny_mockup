@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 위시리스트</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">위시리스트</h1>
+      <button onclick="window.location.href='4-6-6-2-My-Green-My-Clubs-위시리스트-관리.html'" class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">관리</button>
+    </div>
+    
+    <div class="px-6 py-4">
+      <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-xl p-4 text-white">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium text-white/80">위시리스트</p>
+            <p class="text-2xl font-bold">3개 클럽</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs">
+              <span class="font-semibold">2</span>개 새 후기
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex border-b border-gray-100">
+      <button class="flex-1 py-3 text-forest-green font-medium text-sm border-b-2 border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">AI 추천</button>
+      <button class="flex-1 py-3 text-gray-500 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">마켓 찜</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-4 space-y-4">
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start space-x-4">
+              <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 TSR2" class="w-20 h-20 object-cover rounded-lg">
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-sm font-semibold text-charcoal-gray">타이틀리스트 TSR2</h3>
+                  <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">AI 추천 1순위</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-2">드라이버 • 10.5도</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span class="text-gray-500">매칭률 95%</span>
+                  <span class="text-red-500 font-medium">새 후기 12개</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-gray-100 flex items-center justify-between">
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기 보기</button>
+            <div class="flex items-center space-x-2">
+              <button class="text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">후기 요청</button>
+              <div class="relative">
+                <input type="checkbox" class="sr-only peer focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" checked>
+                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-forest-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start space-x-4">
+              <img src="../golfclub_img/미즈노 MX-1.jpg" alt="미즈노 JPX 923" class="w-20 h-20 object-cover rounded-lg">
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-sm font-semibold text-charcoal-gray">미즈노 JPX 923 포지드</h3>
+                  <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">AI 추천 2순위</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-2">아이언 • 4-PW</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span class="text-gray-500">매칭률 87%</span>
+                  <span class="text-gray-500">후기 45개</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-gray-100 flex items-center justify-between">
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기 보기</button>
+            <div class="flex items-center space-x-2">
+              <button class="text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">후기 요청</button>
+              <div class="relative">
+                <input type="checkbox" class="sr-only peer focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-forest-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start space-x-4">
+              <img src="../golfclub_img/골프채 특가 혜택 (3).jpg" alt="스코티카메론 팬텀" class="w-20 h-20 object-cover rounded-lg">
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-sm font-semibold text-charcoal-gray">스코티카메론 팬텀 X</h3>
+                  <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">AI 추천 3순위</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-2">퍼터 • 34인치</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span class="text-gray-500">매칭률 82%</span>
+                  <span class="text-red-500 font-medium">새 후기 3개</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-gray-100 flex items-center justify-between">
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">후기 보기</button>
+            <div class="flex items-center space-x-2">
+              <button class="text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">후기 요청</button>
+              <div class="relative">
+                <input type="checkbox" class="sr-only peer focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" checked>
+                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-forest-green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-purple-50 rounded-xl p-4">
+          <div class="flex items-start space-x-3">
+            <svg class="w-5 h-5 text-purple-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">후기 알림 설정</h3>
+              <p class="text-xs text-gray-600">위시리스트 클럽에 새로운 후기가 등록되면 알림을 받을 수 있어요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

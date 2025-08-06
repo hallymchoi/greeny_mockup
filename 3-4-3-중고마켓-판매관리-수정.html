@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 상품 수정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">상품 수정</h1>
+                <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">완료</button>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">상품 사진</h2>
+                <div class="flex gap-3 overflow-x-auto">
+                    <div class="relative w-20 h-20 flex-shrink-0">
+                        <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="상품 사진" class="w-full h-full object-cover rounded-lg">
+                        <button class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="w-20 h-20 bg-gray-100 rounded-lg flex flex-col items-center justify-center flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-6 h-6 text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="text-xs text-gray-500">1/10</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">기본 정보</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm text-gray-600">클럽 종류 *</label>
+                        <select class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" disabled>
+                            <option>아이언</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">브랜드 *</label>
+                        <select class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" disabled>
+                            <option>타이틀리스트</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">모델명 *</label>
+                        <input type="text" value="T200" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" readonly>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">상태 *</label>
+                        <div class="grid grid-cols-4 gap-2 mt-1">
+                            <button class="py-2 border rounded-lg text-sm hover:bg-forest-green hover:text-white focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">새상품</button>
+                            <button class="py-2 border rounded-lg text-sm bg-forest-green text-white focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">A급</button>
+                            <button class="py-2 border rounded-lg text-sm hover:bg-forest-green hover:text-white focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">B급</button>
+                            <button class="py-2 border rounded-lg text-sm hover:bg-forest-green hover:text-white focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">C급</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">상세 스펙</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm text-gray-600">샤프트</label>
+                        <input type="text" value="Project X 6.0" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">로프트</label>
+                        <input type="text" value="7번 아이언 기준 30도" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">플렉스</label>
+                        <select class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                            <option>S</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">가격</h2>
+                <div class="relative">
+                    <input type="number" value="350000" class="w-full px-4 py-2 border rounded-lg pr-12 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">원</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">설명</h2>
+                <textarea rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">2023년 1월에 구매한 타이틀리스트 T200 아이언입니다. 
+실사용 10회 미만으로 상태 매우 깨끗합니다.
+프로젝트X 6.0 샤프트 장착되어 있습니다.</textarea>
+            </div>
+
+            <button class="w-full bg-forest-green text-white py-4 rounded-lg font-semibold hover:bg-hunter-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                수정 완료
+            </button>
+        </div>
+    </div>
+</body>
+</html>

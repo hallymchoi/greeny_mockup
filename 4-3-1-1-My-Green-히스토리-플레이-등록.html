@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 플레이 등록</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">플레이 등록</h1>
+      <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">저장</button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">골프장명 <span class="text-red-500">*</span></label>
+          <div class="relative">
+            <input type="text" placeholder="골프장을 검색하세요" class="w-full bg-cream-white rounded-xl px-4 py-3 pr-10 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            <svg class="w-5 h-5 text-gray-400 absolute right-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">방문일 <span class="text-red-500">*</span></label>
+          <input type="date" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">스코어</label>
+          <div class="flex items-center space-x-3">
+            <input type="number" placeholder="전체 스코어" min="50" max="150" class="flex-1 bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green">
+            <span class="text-sm text-gray-500">타</span>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">입력하지 않아도 됩니다</p>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">동반자</label>
+          <textarea placeholder="함께 라운드한 분들의 이름을 입력하세요 (쉼표로 구분)" rows="2" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">메모</label>
+          <textarea placeholder="라운드에 대한 메모를 남겨보세요" rows="4" class="w-full bg-cream-white rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-forest-green resize-none"></textarea>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">사진 첨부</label>
+          <button class="w-full bg-gray-100 rounded-xl p-8 border-2 border-dashed border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex flex-col items-center">
+              <svg class="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <p class="text-sm text-gray-600">사진 추가하기</p>
+              <p class="text-xs text-gray-500 mt-1">최대 5장</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        플레이 기록 저장
+      </button>
+    </div>
+  </div>
+</body>
+</html>

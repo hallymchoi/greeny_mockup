@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 감성 피팅 추가</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-3-3-온보딩-감성-아이언.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto">
+      <h1 class="text-xl font-bold text-charcoal-gray mb-2">
+        마지막으로 알려주세요
+      </h1>
+      <p class="text-sm text-gray-600 mb-6">
+        더 나은 추천을 위한 선택사항이에요
+      </p>
+
+      <div class="bg-purple-50 border border-purple-200 rounded-xl p-3 mb-6">
+        <div class="flex items-start space-x-2">
+          <svg class="w-5 h-5 text-purple-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <p class="text-xs text-purple-800">
+            브랜드 선호도와 가격 민감도를 반영해 실현 가능한 클럽을 추천해드려요
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">
+            선호하는 브랜드가 있으신가요?
+          </label>
+          <p class="text-xs text-gray-500 mb-4">선호 브랜드 선택 시 추천에 반영됩니다</p>
+          
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">타이틀리스트</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">테일러메이드</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">캘러웨이</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">미즈노</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">스릭슨</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">핑</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">코브라</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 border-2 border-gray-200 rounded-xl hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 cursor-pointer">
+              <input type="checkbox" class="w-4 h-4 text-forest-green border-gray-300 rounded focus:ring-forest-green">
+              <span class="text-sm font-medium text-gray-700">윌슨</span>
+            </label>
+          </div>
+          
+          <button class="w-full mt-3 text-forest-green text-sm py-2 focus:outline-none focus:ring-2 focus:ring-forest-green">
+            + 더 많은 브랜드 보기
+          </button>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">
+            클럽이 너무 고가이면 부담스러우신가요?
+          </label>
+          <p class="text-xs text-gray-500 mb-4">가격대를 고려한 추천이 가능해요</p>
+          
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">민감함</p>
+              <p class="text-xs text-gray-500 mt-1">가격이 중요한 선택 기준이에요</p>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">보통</p>
+              <p class="text-xs text-gray-500 mt-1">성능이 좋다면 어느 정도는 괜찮아요</p>
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              <p class="font-medium">상관없음</p>
+              <p class="text-xs text-gray-500 mt-1">성능이 최우선이에요</p>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">
+            기존과는 다른 스타일의 클럽도 시도해보고 싶으신가요?
+          </label>
+          
+          <div class="space-y-2">
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              원래 스타일 유지
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              고려 가능
+            </button>
+            <button class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+              적극 시도
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='1-4-4-1-온보딩-결과-분석중.html'">
+        분석 시작하기
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.classList.contains('border-2') && !this.querySelector('input[type="checkbox"]')) {
+          const parent = this.closest('.space-y-2');
+          if (parent) {
+            parent.querySelectorAll('button').forEach(btn => {
+              btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+              btn.classList.add('border-gray-200');
+            });
+          }
+          this.classList.remove('border-gray-200');
+          this.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      });
+    });
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const label = this.closest('label');
+        if (this.checked) {
+          label.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+          label.classList.remove('border-gray-200');
+        } else {
+          label.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+          label.classList.add('border-gray-200');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

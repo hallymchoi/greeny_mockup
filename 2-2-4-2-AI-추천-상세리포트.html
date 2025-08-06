@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 상세 비교</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='2-2-4-1-AI-추천-결과-리스트.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">상세 비교 리포트</h1>
+      <button onclick="window.location.href='#'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m9.237 8.662L16.5 21v-3.75m0 0a2.25 2.25 0 00-2.25-2.25H10.5m6 2.25H10.5m6 0v-3.75"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6">
+        <div class="mb-6">
+          <h2 class="text-xl font-bold text-charcoal-gray mb-2">나이스샷님의 추천 클럽<br/>심층 분석 결과예요</h2>
+          <p class="text-sm text-gray-600">3개 클럽의 성능을 꼼꼼히 비교했어요</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-4 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-base font-bold text-charcoal-gray">종합 평가</h3>
+            <span class="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-1 rounded-full">AI 분석</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">타이틀리스트 T200</span>
+              <div class="flex items-center space-x-2">
+                <div class="flex-1 w-32 bg-gray-200 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-hunter-green to-forest-green h-2 rounded-full" style="width: 95%"></div>
+                </div>
+                <span class="text-sm font-bold text-purple-700">95%</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">캘러웨이 Apex 21</span>
+              <div class="flex items-center space-x-2">
+                <div class="flex-1 w-32 bg-gray-200 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-hunter-green to-forest-green h-2 rounded-full" style="width: 92%"></div>
+                </div>
+                <span class="text-sm font-bold text-purple-700">92%</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">테일러메이드 P790</span>
+              <div class="flex items-center space-x-2">
+                <div class="flex-1 w-32 bg-gray-200 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-hunter-green to-forest-green h-2 rounded-full" style="width: 88%"></div>
+                </div>
+                <span class="text-sm font-bold text-purple-700">88%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-4 mb-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-charcoal-gray mb-3">비거리 성능</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">타이틀리스트 T200</span>
+                <span class="font-medium text-charcoal-gray">평균 165yd</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">캘러웨이 Apex 21</span>
+                <span class="font-medium text-charcoal-gray">평균 168yd</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">테일러메이드 P790</span>
+                <span class="font-medium text-charcoal-gray">평균 167yd</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-charcoal-gray mb-3">정확도</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">타이틀리스트 T200</span>
+                <div class="flex space-x-1">
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                </div>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">캘러웨이 Apex 21</span>
+                <div class="flex space-x-1">
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
+                </div>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">테일러메이드 P790</span>
+                <div class="flex space-x-1">
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-charcoal-gray mb-3">관용성</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">타이틀리스트 T200</span>
+                <span class="font-medium text-forest-green">매우 높음</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">캘러웨이 Apex 21</span>
+                <span class="font-medium text-forest-green">매우 높음</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">테일러메이드 P790</span>
+                <span class="font-medium text-gray-600">높음</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-charcoal-gray mb-3">타구감</h3>
+            <div class="space-y-3 text-sm">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-gray-600">타이틀리스트 T200</span>
+                  <span class="font-medium text-charcoal-gray">부드러움</span>
+                </div>
+                <p class="text-xs text-gray-500">단조 같은 부드러운 타구감</p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-gray-600">캘러웨이 Apex 21</span>
+                  <span class="font-medium text-charcoal-gray">견고함</span>
+                </div>
+                <p class="text-xs text-gray-500">경쾌하고 파워풀한 타구감</p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-gray-600">테일러메이드 P790</span>
+                  <span class="font-medium text-charcoal-gray">탄성 있음</span>
+                </div>
+                <p class="text-xs text-gray-500">스프링 효과가 느껴지는 타구감</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 rounded-xl p-4 mb-6">
+          <h3 class="text-sm font-bold text-charcoal-gray mb-2 flex items-center">
+            <svg class="w-4 h-4 text-forest-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            AI 추천 이유
+          </h3>
+          <p class="text-xs text-gray-700">타이틀리스트 T200은 나이스샷님의 중급 실력과 안정적인 스윙에 가장 적합해요. 관용성이 높아 미스샷을 보정해주고, 부드러운 타구감으로 편안한 라운딩이 가능합니다.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100 space-y-3">
+      <button onclick="window.location.href='3-1-마켓-홈.html'" class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        추천 클럽 구매하기
+      </button>
+      <button onclick="window.location.href='2-2-4-1-AI-추천-결과-리스트.html'" class="w-full text-gray-500 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">
+        다시 보기
+      </button>
+    </div>
+  </div>
+</body>
+</html>

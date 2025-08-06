@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 안전거래 결제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+            <button onclick="window.location.href='3-3-1-마켓-상세-채팅.html'" class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-charcoal-gray">안전거래 결제</h1>
+            <div class="w-6"></div>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-6 py-6 space-y-6">
+                <!-- 상품 정보 -->
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-600 mb-3">상품 정보</h2>
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <div class="flex space-x-4">
+                            <img src="/Users/hallymchoi/Dev/projects/agc-platform/static-pages/golfclub_img/iron_titleist_t300.jpg" alt="상품" class="w-20 h-20 rounded-lg object-cover">
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-charcoal-gray">Titleist T300 아이언세트</h3>
+                                <p class="text-sm text-gray-600 mt-1">5-PW / Stiff</p>
+                                <p class="text-sm text-gray-500 mt-1">판매자: 골프매니아</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 구매자 정보 -->
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-600 mb-3">구매자 정보</h2>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">이름</label>
+                            <input type="text" value="나이스샷" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">연락처</label>
+                            <input type="tel" value="010-1234-5678" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 배송지 정보 -->
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-600 mb-3">배송지 정보</h2>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">받는 사람</label>
+                            <input type="text" placeholder="받는 사람 이름" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">배송 주소</label>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="우편번호" class="w-24 px-4 py-2 border border-gray-300 rounded-lg">
+                                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium">주소 검색</button>
+                            </div>
+                            <input type="text" placeholder="기본 주소" class="w-full px-4 py-2 border border-gray-300 rounded-lg mt-2">
+                            <input type="text" placeholder="상세 주소" class="w-full px-4 py-2 border border-gray-300 rounded-lg mt-2">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">배송 메모</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                <option>배송 시 요청사항 선택</option>
+                                <option>문 앞에 놓아주세요</option>
+                                <option>경비실에 맡겨주세요</option>
+                                <option>배송 전 연락 바랍니다</option>
+                                <option>직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 결제 수단 -->
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-600 mb-3">결제 수단</h2>
+                    <div class="space-y-2">
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment" checked class="mr-3">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-charcoal-gray">신용/체크카드</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment" class="mr-3">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-charcoal-gray">카카오페이</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment" class="mr-3">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-charcoal-gray">네이버페이</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment" class="mr-3">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-charcoal-gray">무통장입금</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- 최종 금액 -->
+                <div class="bg-gray-50 rounded-xl p-4">
+                    <h2 class="text-sm font-semibold text-gray-600 mb-3">최종 결제 금액</h2>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">상품 금액</span>
+                            <span class="text-charcoal-gray">₩1,150,000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">배송비</span>
+                            <span class="text-charcoal-gray">무료</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">안전거래 수수료</span>
+                            <span class="text-charcoal-gray">₩23,000</span>
+                        </div>
+                        <div class="pt-2 border-t border-gray-200">
+                            <div class="flex justify-between">
+                                <span class="font-semibold text-charcoal-gray">총 결제 금액</span>
+                                <span class="text-xl font-bold text-forest-green">₩1,173,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 안전거래 안내 -->
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <h3 class="text-sm font-semibold text-blue-800 mb-2">🔒 Greeny 안전거래 안내</h3>
+                    <ul class="text-xs text-blue-700 space-y-1">
+                        <li>• 결제 대금은 Greeny가 안전하게 보관합니다</li>
+                        <li>• 상품 수령 후 구매확정 시 판매자에게 전달됩니다</li>
+                        <li>• 문제 발생 시 100% 환불 보장</li>
+                    </ul>
+                </div>
+                
+                <!-- 동의 사항 -->
+                <div class="space-y-3">
+                    <label class="flex items-start space-x-2">
+                        <input type="checkbox" class="mt-1 w-4 h-4">
+                        <span class="text-sm text-gray-600">주문 내용을 확인했으며, 결제에 동의합니다</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 결제 버튼 -->
+        <div class="p-6 border-t border-gray-100">
+            <button onclick="processPayment()" class="w-full bg-forest-green text-white py-4 rounded-xl font-semibold text-lg">
+                ₩1,173,000 결제하기
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        function processPayment() {
+            alert('결제가 완료되었습니다. 안전거래가 시작됩니다.');
+            window.location.href = '3-3-마켓-상세.html';
+        }
+    </script>
+</body>
+</html>

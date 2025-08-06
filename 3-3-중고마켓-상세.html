@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 상품 상세</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .snap-x {
+      scroll-snap-type: x mandatory;
+    }
+    .snap-center {
+      scroll-snap-align: center;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="fixed top-0 left-0 right-0 bg-white z-20">
+      <div class="flex items-center justify-between p-6">
+        <button onclick="window.location.href='3-2-1-카테고리-드라이버.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <div class="flex items-center space-x-4">
+          <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto pt-20 pb-32">
+      <div class="flex overflow-x-auto snap-x">
+        <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="타이틀리스트 TSR2 1" class="w-full h-96 object-contain bg-gray-100 snap-center flex-shrink-0">
+        <img src="../golfclub_img/테일러메이드 혜택과 특가 (1).jpg" alt="타이틀리스트 TSR2 2" class="w-full h-96 object-contain bg-gray-100 snap-center flex-shrink-0">
+        <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="타이틀리스트 TSR2 3" class="w-full h-96 object-contain bg-gray-100 snap-center flex-shrink-0">
+      </div>
+      <div class="flex justify-center space-x-2 mt-4">
+        <div class="w-2 h-2 bg-forest-green rounded-full"></div>
+        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      </div>
+      
+      <div class="px-6 py-6 space-y-6">
+        <div>
+          <div class="flex items-center space-x-2 mb-2">
+            <span class="bg-forest-green text-white text-xs px-2 py-1 rounded">AI 추천 95%</span>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">A급</span>
+          </div>
+          <h1 class="text-2xl font-bold text-charcoal-gray mb-2">타이틀리스트 TSR2 드라이버</h1>
+          <p class="text-3xl font-bold text-charcoal-gray mb-2">980,000원</p>
+          <p class="text-sm text-gray-500">강남구 • 1시간 전</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-4 border border-green-100">
+          <div class="flex items-start space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-hunter-green to-forest-green rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <p class="text-sm font-bold text-charcoal-gray">나와의 매칭도</p>
+                <span class="text-2xl font-bold text-forest-green">95%</span>
+              </div>
+              <p class="text-sm text-gray-700 mb-3">나이스샷님의 스윙 스타일과 거의 완벽하게 일치해요!</p>
+              <div class="space-y-2 bg-white bg-opacity-50 rounded-lg p-3">
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-xs text-gray-700">회원님의 중급 스윙 스피드(85-95mph)에 적합한 샤프트 강도예요</p>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-xs text-gray-700">10.5도 로프트는 회원님의 공 띄우기 선호도와 잘 맞아요</p>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-yellow-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-xs text-gray-700">이 클럽은 회원님의 스윙 스피드에 비해 샤프트가 조금 뻣뻣할 수 있어요. 충분한 연습 스윙 후 사용을 권해요</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-lg font-bold text-charcoal-gray mb-4">상품 정보</h2>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">브랜드</span>
+              <span class="text-sm font-medium text-charcoal-gray">타이틀리스트</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">모델</span>
+              <span class="text-sm font-medium text-charcoal-gray">TSR2</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">로프트</span>
+              <span class="text-sm font-medium text-charcoal-gray">10.5도</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">샤프트</span>
+              <span class="text-sm font-medium text-charcoal-gray">Hzrdus Black 6.0</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">그립</span>
+              <span class="text-sm font-medium text-charcoal-gray">Golf Pride Tour Velvet</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+              <span class="text-sm text-gray-600">상태</span>
+              <span class="text-sm font-medium text-charcoal-gray">A급 (사용감 적음)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-lg font-bold text-charcoal-gray mb-4">상품 설명</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            작년에 구매해서 라운딩 10회 정도 사용했습니다.<br><br>
+            타구감이 정말 부드럽고 방향성이 뛰어난 드라이버입니다.<br>
+            페이스와 솔에 사용감은 있지만 성능에는 전혀 문제 없습니다.<br><br>
+            새 클럽으로 교체하면서 판매합니다.<br>
+            직거래 환영, 택배거래도 가능합니다.
+          </p>
+        </div>
+        
+        <div>
+          <h2 class="text-lg font-bold text-charcoal-gray mb-4">판매자 정보</h2>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+            <div class="flex-1">
+              <h3 class="text-sm font-semibold text-charcoal-gray">골프매니아</h3>
+              <div class="flex items-center space-x-2 text-xs text-gray-500">
+                <span>평점 4.8</span>
+                <span>•</span>
+                <span>거래 152회</span>
+              </div>
+            </div>
+            <button class="text-sm text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">프로필 보기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 하단 액션 버튼 -->
+    <div class="fixed bottom-20 left-0 right-0 bg-white border-t border-gray-100 p-4">
+      <div class="flex space-x-3">
+        <button onclick="window.location.href='3-3-1-마켓-상세-채팅.html'" class="flex-1 bg-white border-2 border-forest-green text-forest-green py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green">
+          채팅하기
+        </button>
+        <button onclick="window.location.href='3-3-2-마켓-상세-결제.html'" class="flex-1 bg-forest-green text-white py-3 rounded-xl font-semibold hover:bg-hunter-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green">
+          구매하기
+        </button>
+      </div>
+    </div>
+    
+        <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 transition-colors group text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green" onclick="window.location.href='3-1-마켓-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='4-1-My-Green-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='5-1-커뮤니티-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

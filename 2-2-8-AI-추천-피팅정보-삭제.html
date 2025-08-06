@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 피팅정보 삭제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex items-center justify-center px-6">
+        <div class="bg-white rounded-2xl shadow-xl p-6 w-full">
+            <div class="flex justify-center mb-6">
+                <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <h2 class="text-xl font-bold text-center text-charcoal-gray mb-3">피팅정보를 삭제하시겠습니까?</h2>
+            
+            <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+                <p class="text-sm text-red-800 text-center font-medium mb-2">
+                    ⚠️ 삭제 시 주의사항
+                </p>
+                <ul class="text-xs text-red-700 space-y-1">
+                    <li>• 모든 피팅 데이터가 영구적으로 삭제됩니다</li>
+                    <li>• AI 추천 이력이 초기화됩니다</li>
+                    <li>• 삭제된 데이터는 복구할 수 없습니다</li>
+                    <li>• 새로운 추천을 받으려면 피팅정보를 다시 입력해야 합니다</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                <p class="text-xs text-gray-600 mb-2">삭제될 정보:</p>
+                <div class="space-y-1">
+                    <p class="text-sm text-charcoal-gray">• 신체 정보 (키, 체중, 팔 길이 등)</p>
+                    <p class="text-sm text-charcoal-gray">• 스윙 정보 (헤드 스피드, 스윙 경로 등)</p>
+                    <p class="text-sm text-charcoal-gray">• 선호 정보 (샤프트, 브랜드, 예산 등)</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="flex items-start space-x-2">
+                    <input type="checkbox" id="confirmDelete" class="mt-1 w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500">
+                    <span class="text-xs text-gray-600">
+                        위 내용을 모두 확인했으며, 피팅정보 삭제에 동의합니다.
+                    </span>
+                </label>
+            </div>
+            
+            <div class="flex space-x-3">
+                <button onclick="window.location.href='2-2-6-AI-추천-피팅정보-조회.html'" class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+                    취소
+                </button>
+                <button onclick="deleteFittingInfo()" class="flex-1 bg-red-600 text-white py-3 rounded-xl font-semibold" id="deleteBtn" disabled>
+                    삭제하기
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('confirmDelete').addEventListener('change', function() {
+            document.getElementById('deleteBtn').disabled = !this.checked;
+        });
+        
+        function deleteFittingInfo() {
+            if(confirm('정말로 피팅정보를 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.')) {
+                alert('피팅정보가 삭제되었습니다.');
+                window.location.href = '2-1-홈.html';
+            }
+        }
+    </script>
+</body>
+</html>

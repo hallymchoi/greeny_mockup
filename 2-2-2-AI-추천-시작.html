@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-2-2 홈 > AI 추천 > 시작</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="bg-white h-screen flex flex-col">
+    <!-- 헤더 -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">AI 클럽 추천</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <!-- 메인 콘텐츠 -->
+    <div class="flex-1 flex flex-col items-center justify-center px-6">
+      <div class="text-center">
+        <div class="mb-8">
+          <svg class="w-20 h-20 text-forest-green mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <h2 class="text-xl font-semibold text-charcoal-gray mb-2">어떻게 추천받고 싶으세요?</h2>
+          <p class="text-gray-600 text-sm">나이스샷님의 정보를 바탕으로 최적의 클럽을 찾아드릴게요</p>
+        </div>
+        
+        <!-- 기존 정보로 추천받기 버튼 -->
+        <div class="mb-4">
+          <button class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 mb-3 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='2-2-1-AI-추천-로딩.html'">
+            기존 정보로 추천받기
+          </button>
+          <p class="text-xs text-gray-500">온보딩 때 입력한 정보를 사용해요</p>
+        </div>
+        
+        <!-- 새로운 정보로 추천받기 버튼 -->
+        <div class="mb-8">
+          <button class="w-full border-2 border-forest-green text-forest-green py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-200 mb-3 focus:outline-none focus:ring-2 focus:ring-forest-green" onclick="window.location.href='1-4-1-1-온보딩-정적-시작.html'">
+            새로운 정보로 추천받기
+          </button>
+          <p class="text-xs text-gray-500">피팅 정보를 다시 입력하고 추천받아요</p>
+        </div>
+        
+        <!-- 현재 정보 요약 -->
+        <div class="bg-cream-white rounded-xl p-4">
+          <h3 class="text-sm font-medium text-gray-700 mb-3">현재 저장된 정보</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">키</span>
+              <span class="text-charcoal-gray font-medium">165cm</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">스윙 속도</span>
+              <span class="text-charcoal-gray font-medium">보통</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">선호 브랜드</span>
+              <span class="text-charcoal-gray font-medium">타이틀리스트</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

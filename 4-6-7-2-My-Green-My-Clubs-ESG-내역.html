@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 수거 내역</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-6-7-1-My-Green-My-Clubs-ESG-신청.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">수거 내역</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <div class="px-6 py-4">
+      <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 text-white">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium text-white/80">누적 수거</p>
+            <p class="text-2xl font-bold">12개 클럽</p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm font-medium text-white/80">획득 리워드</p>
+            <p class="text-2xl font-bold">15,000P</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 pb-6 space-y-4">
+        <div class="bg-white rounded-xl border border-gray-100">
+          <button onclick="window.location.href='4-6-7-3-My-Green-My-Clubs-ESG-내역-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs text-gray-500">2024.01.10</span>
+              <span class="text-xs font-medium text-green-600">수거완료</span>
+            </div>
+            <div class="text-left">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">드라이버 외 2개</h3>
+              <p class="text-xs text-gray-600 mb-3">테일러메이드 M4, 미즈노 JPX 850 아이언세트</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-gray-500">서울시 강남구</p>
+                <p class="text-sm font-semibold text-green-600">+5,000P</p>
+              </div>
+            </div>
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <button onclick="window.location.href='4-6-7-3-My-Green-My-Clubs-ESG-내역-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs text-gray-500">2024.01.15</span>
+              <span class="text-xs font-medium text-forest-green">수거진행중</span>
+            </div>
+            <div class="text-left">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">아이언세트 1개</h3>
+              <p class="text-xs text-gray-600 mb-3">캘러웨이 X-16 아이언 5-PW</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-gray-500">서울시 서초구</p>
+                <p class="text-sm font-semibold text-gray-400">예정: 5,000P</p>
+              </div>
+            </div>
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <button onclick="window.location.href='4-6-7-3-My-Green-My-Clubs-ESG-내역-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs text-gray-500">2023.12.20</span>
+              <span class="text-xs font-medium text-green-600">수거완료</span>
+            </div>
+            <div class="text-left">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">퍼터 외 1개</h3>
+              <p class="text-xs text-gray-600 mb-3">오디세이 화이트핫, 클리브랜드 웨지 56도</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-gray-500">경기도 성남시</p>
+                <p class="text-sm font-semibold text-green-600">+5,000P</p>
+              </div>
+            </div>
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <button onclick="window.location.href='4-6-7-3-My-Green-My-Clubs-ESG-내역-상세.html'" class="w-full p-4 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs text-gray-500">2023.11.15</span>
+              <span class="text-xs font-medium text-green-600">수거완료</span>
+            </div>
+            <div class="text-left">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-1">드라이버 1개</h3>
+              <p class="text-xs text-gray-600 mb-3">타이틀리스트 910D2 (헤드 파손)</p>
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-gray-500">서울시 송파구</p>
+                <p class="text-sm font-semibold text-green-600">+5,000P</p>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <div class="bg-green-50 rounded-xl p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-charcoal-gray">환경 기여도</p>
+            <p class="text-xs text-gray-600 mt-1">탄소 감축량 약 24kg</p>
+          </div>
+          <button onclick="window.location.href='4-6-7-1-My-Green-My-Clubs-ESG-신청.html'" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">
+            새로 신청하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

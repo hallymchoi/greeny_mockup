@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 문의 삭제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex items-center justify-center px-6">
+        <div class="bg-white rounded-2xl shadow-xl p-6 w-full">
+            <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <h2 class="text-xl font-bold text-center text-charcoal-gray mb-2">문의를 삭제하시겠습니까?</h2>
+            <p class="text-sm text-center text-gray-600 mb-6">
+                삭제된 문의는 복구할 수 없습니다.<br>
+                답변이 등록된 문의는 기록 보관을 위해<br>
+                삭제하지 않는 것을 권장합니다.
+            </p>
+            
+            <div class="bg-gray-50 rounded-lg p-3 mb-6">
+                <p class="text-xs text-gray-600 mb-1">삭제할 문의:</p>
+                <p class="text-sm font-semibold text-charcoal-gray">AI 추천 클럽이 맞지 않는 것 같아요</p>
+                <p class="text-xs text-gray-500 mt-1">작성일: 2025.01.18</p>
+            </div>
+            
+            <div class="flex space-x-3">
+                <button onclick="window.history.back()" class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+                    취소
+                </button>
+                <button onclick="deleteInquiry()" class="flex-1 bg-red-600 text-white py-3 rounded-xl font-semibold">
+                    삭제
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function deleteInquiry() {
+            alert('문의가 삭제되었습니다.');
+            window.location.href = '6-3-1-더보기-1:1문의-목록.html';
+        }
+    </script>
+</body>
+</html>

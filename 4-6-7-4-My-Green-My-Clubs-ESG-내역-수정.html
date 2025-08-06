@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - ESG 수거 신청 수정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">수거 신청 수정</h1>
+                <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">완료</button>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-6">
+                <p class="text-sm text-yellow-800">
+                    ⚠️ 수거 예정일 하루 전까지만 수정 가능합니다
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 클럽 정보</h2>
+                <div class="space-y-3">
+                    <div class="border border-gray-200 rounded-lg p-3 opacity-60">
+                        <div class="flex items-center gap-3">
+                            <img src="../golfclub_img/골프채 특가 혜택 (3).jpg" alt="클럽" class="w-16 h-16 rounded object-cover">
+                            <div class="flex-1">
+                                <h3 class="font-medium">캘러웨이 빅버사</h3>
+                                <p class="text-sm text-gray-600">드라이버 · 2015년식</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500">* 클럽 정보는 수정할 수 없습니다</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 정보</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm text-gray-600">이름 *</label>
+                        <input type="text" value="나이스샷" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">연락처 *</label>
+                        <input type="tel" value="010-1234-5678" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 주소</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm text-gray-600">주소 *</label>
+                        <div class="flex gap-2 mt-1">
+                            <input type="text" value="06234" class="w-24 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent" readonly>
+                            <button class="px-4 py-2 border border-forest-green text-forest-green rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-forest-green">
+                                주소검색
+                            </button>
+                        </div>
+                        <input type="text" value="서울특별시 강남구 테헤란로 123" class="w-full px-4 py-2 border rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                        <input type="text" value="그린빌딩 1층 현관 앞" class="w-full px-4 py-2 border rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">수거 요청사항</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">문 앞에 놓아주세요</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button class="w-full bg-forest-green text-white py-4 rounded-lg font-semibold hover:bg-hunter-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                수정 완료
+            </button>
+        </div>
+    </div>
+</body>
+</html>

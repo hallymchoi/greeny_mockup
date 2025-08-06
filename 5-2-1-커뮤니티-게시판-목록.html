@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 통합 게시판</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='5-1-커뮤니티-홈.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">통합 게시판</h1>
+      <button onclick="window.location.href='5-2-2-커뮤니티-게시판-작성.html'" class="text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="sticky top-0 bg-white z-10 border-b border-gray-100">
+      <div class="px-6 py-3">
+        <div class="flex space-x-2 overflow-x-auto scrollbar-hide">
+          <button class="px-3 py-1.5 bg-forest-green text-white rounded-full text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">전체</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#추천요청</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#피팅샵후기</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#장비후기</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#장비비교</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#마이백인증</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#중고거래경험</button>
+          <button class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">#플레이인증</button>
+        </div>
+      </div>
+      <div class="px-6 py-2 flex items-center justify-between">
+        <span class="text-sm text-gray-600">총 1,234개</span>
+        <select class="text-sm text-gray-700 border border-gray-200 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+          <option>최신순</option>
+          <option>인기순</option>
+          <option>댓글순</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-4 space-y-4">
+        <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl border border-gray-100 p-4 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">#추천요청</span>
+              <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded">HOT</span>
+            </div>
+            <span class="text-xs text-gray-500">2시간 전</span>
+          </div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-1">90타 깨기 위한 아이언 추천 부탁드려요</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 mb-3">현재 평균 95타 치는데 아이언 정확도가 너무 떨어져서 교체 고민중입니다. 스윙 스피드는 85mph 정도이고...</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full"></div>
+              <span class="text-xs text-gray-700">골프초보</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs text-gray-500">
+              <span>조회 234</span>
+              <span>댓글 18</span>
+              <span>좋아요 24</span>
+            </div>
+          </div>
+        </button>
+        
+        <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl border border-gray-100 p-4 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">#장비후기</span>
+            <span class="text-xs text-gray-500">5시간 전</span>
+          </div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-1">타이틀리스트 T200 3개월 사용 후기</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 mb-3">기존 미즈노 JPX에서 바꾸고 나서 확실히 비거리가 늘었습니다. 특히 롱아이언의 탄도가 높아져서...</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full"></div>
+              <span class="text-xs text-gray-700">버디왕</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs text-gray-500">
+              <span>조회 567</span>
+              <span>댓글 34</span>
+              <span>좋아요 89</span>
+            </div>
+          </div>
+        </button>
+        
+        <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl border border-gray-100 p-4 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">#피팅샵후기</span>
+            <span class="text-xs text-gray-500">어제</span>
+          </div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-1">강남 골프피팅샵 다녀왔습니다</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 mb-3">트랙맨 피팅받고 왔는데 정말 만족스러웠어요. 제 스윙에 맞는 샤프트를 찾아주시고...</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full"></div>
+              <span class="text-xs text-gray-700">이글헌터</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs text-gray-500">
+              <span>조회 123</span>
+              <span>댓글 8</span>
+              <span>좋아요 15</span>
+            </div>
+          </div>
+        </button>
+        
+        <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl border border-gray-100 p-4 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">#장비비교</span>
+            <span class="text-xs text-gray-500">2일 전</span>
+          </div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-1">테일러메이드 Qi10 vs 캘러웨이 파라다임 비교</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 mb-3">두 드라이버 모두 시타해보고 비교해봤습니다. 각각의 장단점이 확실히 있더라구요...</p>
+          <div class="grid grid-cols-2 gap-2 mb-3">
+            <img src="../golfclub_img/골프채 특가 혜택 (2).jpg" alt="드라이버 비교" class="w-full h-20 object-cover rounded-lg">
+            <img src="../golfclub_img/골프채 특가 혜택 (4).jpg" alt="드라이버 비교" class="w-full h-20 object-cover rounded-lg">
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full"></div>
+              <span class="text-xs text-gray-700">주말골퍼</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs text-gray-500">
+              <span>조회 892</span>
+              <span>댓글 45</span>
+              <span>좋아요 123</span>
+            </div>
+          </div>
+        </button>
+        
+        <button onclick="window.location.href='5-2-3-커뮤니티-게시판-상세.html'" class="w-full bg-white rounded-xl border border-gray-100 p-4 text-left focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">#마이백인증</span>
+            <span class="text-xs text-gray-500">3일 전</span>
+          </div>
+          <h3 class="text-sm font-semibold text-charcoal-gray mb-1">2024년 새해 클럽 세팅 완료!</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 mb-3">드디어 꿈의 세팅 완성했습니다. 타이틀리스트로 통일하니까 가방이 예쁘네요...</p>
+          <div class="w-full h-32 bg-gray-100 rounded-lg mb-3"></div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full"></div>
+              <span class="text-xs text-gray-700">파온더그린</span>
+            </div>
+            <div class="flex items-center space-x-3 text-xs text-gray-500">
+              <span>조회 445</span>
+              <span>댓글 67</span>
+              <span>좋아요 234</span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    
+    <button onclick="window.location.href='5-2-2-커뮤니티-게시판-작성.html'" class="fixed bottom-20 right-6 w-14 h-14 bg-gradient-to-r from-hunter-green to-forest-green rounded-full flex items-center justify-center shadow-lg focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      </svg>
+    </button>
+  </div>
+</body>
+</html>

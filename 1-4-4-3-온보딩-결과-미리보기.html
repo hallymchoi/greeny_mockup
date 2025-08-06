@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 결과 미리보기</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          },
+          animation: {
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in': 'fadeIn 1s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            'bounce-slow': 'bounce 2s infinite'
+          },
+          keyframes: {
+            slideUp: {
+              '0%': { transform: 'translateY(30px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.8)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4">
+      <div class="flex items-center space-x-1">
+        <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-16 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto">
+      <h1 class="text-2xl font-bold text-charcoal-gray mb-2 animate-fade-in">
+        나이스샷님을 위한<br/>
+        추천 클럽을 찾았어요!
+      </h1>
+      
+      <p class="text-sm text-gray-600 mb-6 animate-fade-in" style="animation-delay: 0.1s">
+        총 3개의 최적 조합을 준비했어요
+      </p>
+
+      <div class="space-y-4">
+        <div class="bg-gradient-to-r from-forest-green to-hunter-green p-1 rounded-2xl animate-scale-in" style="animation-delay: 0.2s">
+          <div class="bg-white rounded-2xl p-5">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="flex items-center space-x-2 mb-1">
+                  <span class="bg-forest-green text-white text-xs font-bold px-2 py-1 rounded-full">1순위</span>
+                  <span class="text-lg font-bold text-forest-green">95% 매칭</span>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-gray">타이틀리스트 T200</h3>
+                <p class="text-sm text-gray-600 mt-1">정교한 컨트롤과 부드러운 타구감</p>
+              </div>
+              <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center">
+                <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="T200" class="w-full h-full object-contain rounded-xl">
+              </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-xl p-3">
+              <p class="text-xs text-blue-800">
+                <span class="font-semibold">추천 이유:</span> 입문자에게 적합한 관용성과 선택하신 부드러운 타구감을 모두 만족시키는 클럽이에요
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-5 animate-slide-up" style="animation-delay: 0.3s">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center space-x-2 mb-1">
+                <span class="bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded-full">2순위</span>
+                <span class="text-sm font-semibold text-gray-600">87% 매칭</span>
+              </div>
+              <h3 class="text-base font-semibold text-charcoal-gray">미즈노 JPX 923</h3>
+              <p class="text-xs text-gray-600 mt-1">일관된 거리와 높은 탄도</p>
+            </div>
+            <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+              <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="JPX 923" class="w-full h-full object-contain rounded-lg">
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-5 animate-slide-up" style="animation-delay: 0.4s">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center space-x-2 mb-1">
+                <span class="bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded-full">3순위</span>
+                <span class="text-sm font-semibold text-gray-600">82% 매칭</span>
+              </div>
+              <h3 class="text-base font-semibold text-charcoal-gray">캘러웨이 Rogue ST</h3>
+              <p class="text-xs text-gray-600 mt-1">뛰어난 관용성과 직진성</p>
+            </div>
+            <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+              <img src="../golfclub_img/골프채 혜택과 특가.jpg" alt="Rogue ST" class="w-full h-full object-contain rounded-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-purple-50 rounded-xl p-4 animate-fade-in" style="animation-delay: 0.5s">
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-purple-900 mb-1">AI 추천 팁</p>
+            <p class="text-xs text-purple-700">
+              추천 클럽은 마켓에서도 찾을 수 있어요. 상태 좋은 중고 클럽으로 시작하는 것도 좋은 선택이에요!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-6 bg-white border-t border-gray-100">
+      <button class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 animate-bounce-slow focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2" onclick="window.location.href='1-4-4-4-온보딩-결과-완료.html'">
+        Greeny 시작하기
+      </button>
+      <p class="text-xs text-gray-500 text-center mt-3">
+        더 자세한 분석 결과는 홈에서 확인할 수 있어요
+      </p>
+    </div>
+  </div>
+</body>
+</html>

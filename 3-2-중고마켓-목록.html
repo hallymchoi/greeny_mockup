@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 마켓</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <!-- 헤더 -->
+        <div class="bg-white px-4 py-3 border-b border-gray-200 sticky top-0 z-10">
+            <div class="flex items-center justify-between mb-3">
+                <button onclick="window.location.href='3-1-마켓-홈.html'" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">마켓</h1>
+                <div class="flex gap-2">
+                    <button onclick="showSearchModal()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button onclick="showFilterModal()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 검색바 -->
+            <div class="relative mb-3">
+                <input type="text" placeholder="골프채 브랜드, 모델명을 검색해보세요" 
+                       class="w-full bg-gray-50 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-forest-green focus:bg-white">
+                <svg class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 카테고리 탭 -->
+        <div class="px-4 py-3 bg-white border-b border-gray-100">
+            <div class="flex gap-2 overflow-x-auto scrollbar-hide">
+                <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 bg-forest-green text-white rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                    전체 <span class="ml-1 text-xs bg-white/20 px-1.5 py-0.5 rounded-full">156</span>
+                </button>
+                <button onclick="filterCategory('driver')" class="category-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    드라이버 <span class="ml-1 text-xs bg-gray-200 px-1.5 py-0.5 rounded-full">42</span>
+                </button>
+                <button onclick="filterCategory('iron')" class="category-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    아이언세트 <span class="ml-1 text-xs bg-gray-200 px-1.5 py-0.5 rounded-full">68</span>
+                </button>
+                <button onclick="filterCategory('putter')" class="category-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    퍼터 <span class="ml-1 text-xs bg-gray-200 px-1.5 py-0.5 rounded-full">23</span>
+                </button>
+                <button onclick="filterCategory('wedge')" class="category-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    웨지 <span class="ml-1 text-xs bg-gray-200 px-1.5 py-0.5 rounded-full">15</span>
+                </button>
+                <button onclick="filterCategory('hybrid')" class="category-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    하이브리드 <span class="ml-1 text-xs bg-gray-200 px-1.5 py-0.5 rounded-full">8</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 정렬 및 필터 옵션 -->
+        <div class="px-4 py-3 bg-white border-b border-gray-100">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="text-sm text-gray-600">총 <span class="text-forest-green font-semibold">156개</span></span>
+                    <div class="w-1 h-1 bg-gray-300 rounded-full"></div>
+                    <span class="text-xs text-gray-500">서울시 내 거래가능</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <select class="text-sm bg-transparent focus:outline-none" onchange="sortProducts(this.value)">
+                        <option value="latest">최신순</option>
+                        <option value="price_low">낮은 가격순</option>
+                        <option value="price_high">높은 가격순</option>
+                        <option value="popular">인기순</option>
+                        <option value="distance">거리순</option>
+                    </select>
+                    <button onclick="toggleViewMode()" class="p-1 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg id="view-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 상품 목록 -->
+        <div class="px-4 py-4">
+            <div id="product-grid" class="grid grid-cols-2 gap-3">
+                <!-- 상품 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" onclick="window.location.href='3-3-마켓-상세.html'">
+                    <div class="relative">
+                        <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 T200 아이언" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-forest-green text-white px-2 py-1 text-xs rounded">A급</span>
+                        <span class="absolute top-2 right-2 bg-red-500 text-white px-1.5 py-0.5 text-xs rounded">HOT</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">타이틀리스트 T200 아이언</h3>
+                        <p class="text-xs text-gray-500 mb-2">7번-PW (4개) • 2021년</p>
+                        <p class="text-forest-green font-bold text-lg">350,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">서초구 • 2시간 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="미즈노 JPX 923 Hot Metal" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-gold-accent text-white px-2 py-1 text-xs rounded">B급</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">미즈노 JPX 923 Hot Metal</h3>
+                        <p class="text-xs text-gray-500 mb-2">6번-SW (7개) • 2022년</p>
+                        <p class="text-forest-green font-bold text-lg">280,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">강남구 • 5시간 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/골프채 특가 혜택.jpg" alt="캘러웨이 로그 ST 드라이버" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-forest-green text-white px-2 py-1 text-xs rounded">A급</span>
+                        <span class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 text-xs rounded">예약중</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">캘러웨이 로그 ST 드라이버</h3>
+                        <p class="text-xs text-gray-500 mb-2">10.5도 • 정품</p>
+                        <p class="text-forest-green font-bold text-lg">420,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">송파구 • 1일 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 4 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm opacity-60">
+                    <div class="relative">
+                        <img src="../golfclub_img/테일러메이드 혜택과 특가 (1).jpg" alt="테일러메이드 스텔스2 드라이버" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-gray-500 text-white px-2 py-1 text-xs rounded">판매완료</span>
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-medium">SOLD OUT</span>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-gray-500">테일러메이드 스텔스2 드라이버</h3>
+                        <p class="text-xs text-gray-400 mb-2">9도 • 정품</p>
+                        <p class="text-gray-400 font-bold text-lg line-through">380,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-400">용산구 • 2일 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="text-xs text-gray-400">15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 5 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/골프채 혜택과 특가.jpg" alt="핑 G430 MAX 드라이버" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded">S급</span>
+                        <span class="absolute top-2 right-2 bg-green-500 text-white px-1.5 py-0.5 text-xs rounded">NEW</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">핑 G430 MAX 드라이버</h3>
+                        <p class="text-xs text-gray-500 mb-2">10.5도 • 미사용</p>
+                        <p class="text-forest-green font-bold text-lg">580,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">마포구 • 30분 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 6 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="스코티 카메론 퍼터" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-forest-green text-white px-2 py-1 text-xs rounded">A급</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">스코티 카메론 퍼터</h3>
+                        <p class="text-xs text-gray-500 mb-2">뉴포트2 • 34인치</p>
+                        <p class="text-forest-green font-bold text-lg">450,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">노원구 • 3시간 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 7 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/테일러메이드 혜택과 특가.jpg" alt="보이스 스핀 밀드 웨지" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-gold-accent text-white px-2 py-1 text-xs rounded">B급</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">보이스 스핀 밀드 웨지</h3>
+                        <p class="text-xs text-gray-500 mb-2">52도, 56도 • 세트</p>
+                        <p class="text-forest-green font-bold text-lg">180,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">강동구 • 6시간 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">11</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 8 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="../golfclub_img/테일러메이드 혜택과 특가 (1).jpg" alt="코브라 에어X 하이브리드" class="w-full h-40 object-cover">
+                        <span class="absolute top-2 left-2 bg-forest-green text-white px-2 py-1 text-xs rounded">A급</span>
+                        <button class="absolute bottom-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm mb-1 text-charcoal-gray">코브라 에어X 하이브리드</h3>
+                        <p class="text-xs text-gray-500 mb-2">4번 • 24도</p>
+                        <p class="text-forest-green font-bold text-lg">95,000원</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs text-gray-500">중랑구 • 1일 전</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 20 20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="text-xs text-gray-500">4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 더보기 버튼 -->
+            <div class="mt-6 text-center">
+                <button onclick="loadMoreProducts()" class="w-full py-3 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <div class="flex items-center justify-center gap-2">
+                        <span>더 많은 상품 보기</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- 플로팅 판매하기 버튼 -->
+        <button class="fixed bottom-20 right-4 w-14 h-14 bg-forest-green text-white rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2 hover:bg-hunter-green transition-colors" onclick="window.location.href='3-4-2-마켓-판매관리-등록.html'">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- 검색 모달 -->
+    <div id="search-modal" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="bg-white h-full flex flex-col">
+            <div class="flex items-center p-4 border-b">
+                <button onclick="hideSearchModal()" class="p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <input type="text" placeholder="브랜드, 모델명으로 검색" class="flex-1 bg-gray-50 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-forest-green">
+                <button class="ml-2 px-4 py-2 bg-forest-green text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green">검색</button>
+            </div>
+            <div class="p-4">
+                <h3 class="font-semibold mb-3">최근 검색어</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">타이틀리스트</span>
+                    <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">미즈노</span>
+                    <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">드라이버</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 필터 모달 -->
+    <div id="filter-modal" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="bg-white rounded-t-xl mt-20 h-full flex flex-col">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h3 class="font-semibold">필터</h3>
+                <button onclick="hideFilterModal()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex-1 p-4 space-y-6">
+                <div>
+                    <h4 class="font-medium mb-3">가격대</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">10만원 이하</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">10-30만원</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">30-50만원</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">50만원 이상</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-3">브랜드</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">타이틀리스트</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">미즈노</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">캘러웨이</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded mr-2">
+                            <span class="text-sm">테일러메이드</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <button class="w-full py-3 bg-forest-green text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-green">필터 적용</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCategory(category) {
+            // 카테고리 버튼 스타일 변경
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-forest-green', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            
+            event.target.classList.add('active', 'bg-forest-green', 'text-white');
+            event.target.classList.remove('bg-gray-100', 'text-gray-700');
+            
+            // 상품 필터링 로직 (실제 구현 시)
+            console.log('Category filtered:', category);
+        }
+
+        function sortProducts(sortType) {
+            console.log('Products sorted by:', sortType);
+        }
+
+        function toggleViewMode() {
+            const grid = document.getElementById('product-grid');
+            const icon = document.getElementById('view-icon');
+            
+            if (grid.classList.contains('grid-cols-2')) {
+                grid.classList.remove('grid-cols-2');
+                grid.classList.add('grid-cols-1');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            } else {
+                grid.classList.remove('grid-cols-1');
+                grid.classList.add('grid-cols-2');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>';
+            }
+        }
+
+        function showSearchModal() {
+            document.getElementById('search-modal').classList.remove('hidden');
+        }
+
+        function hideSearchModal() {
+            document.getElementById('search-modal').classList.add('hidden');
+        }
+
+        function showFilterModal() {
+            document.getElementById('filter-modal').classList.remove('hidden');
+        }
+
+        function hideFilterModal() {
+            document.getElementById('filter-modal').classList.add('hidden');
+        }
+
+        function loadMoreProducts() {
+            // 더 많은 상품 로드 로직
+            console.log('Loading more products...');
+        }
+
+        // 스크롤 이벤트로 무한 스크롤 구현
+        window.addEventListener('scroll', function() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
+                // 하단 근처에서 자동으로 더 로드
+                // loadMoreProducts();
+            }
+        });
+    </script>
+</body>
+</html>

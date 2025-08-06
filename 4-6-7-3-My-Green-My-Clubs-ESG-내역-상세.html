@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - ESG 수거 내역 상세</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">수거 내역 상세</h1>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">신청 번호</span>
+                    <span class="font-medium">ESG-2025072001</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-600">처리 상태</span>
+                    <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">수거완료</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 클럽 정보</h2>
+                <div class="space-y-3">
+                    <div class="border border-gray-200 rounded-lg p-3">
+                        <div class="flex items-center gap-3">
+                            <img src="../golfclub_img/골프채 특가 혜택 (3).jpg" alt="클럽" class="w-16 h-16 rounded object-cover">
+                            <div>
+                                <h3 class="font-medium">캘러웨이 빅버사</h3>
+                                <p class="text-sm text-gray-600">드라이버 · 2015년식</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-3">
+                        <div class="flex items-center gap-3">
+                            <img src="../golfclub_img/미즈노 MX-1.jpg" alt="클럽" class="w-16 h-16 rounded object-cover">
+                            <div>
+                                <h3 class="font-medium">미즈노 MP-32</h3>
+                                <p class="text-sm text-gray-600">아이언 세트 · 2010년식</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 정보</h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">신청일</span>
+                        <span>2025.07.20</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">수거일</span>
+                        <span>2025.07.22</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">수거 방법</span>
+                        <span>비대면 수거</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">수거 주소</h2>
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <p class="text-sm">서울특별시 강남구 테헤란로 123</p>
+                    <p class="text-sm">그린빌딩 1층 현관 앞</p>
+                    <p class="text-sm text-gray-600 mt-2">요청사항: 문 앞에 놓아주세요</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">리워드 내역</h2>
+                <div class="bg-gold-accent bg-opacity-10 border border-gold-accent rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-medium">환경 보호 리워드</span>
+                        <span class="text-lg font-bold text-gold-accent">5,000 P</span>
+                    </div>
+                    <p class="text-sm text-gray-600">지급일: 2025.07.23</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-4">
+                <h3 class="font-medium mb-2">🌱 환경 보호 기여도</h3>
+                <p class="text-sm text-gray-700">
+                    회원님의 수거 참여로 약 2.3kg의 탄소 배출을 줄였습니다. 감사합니다!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

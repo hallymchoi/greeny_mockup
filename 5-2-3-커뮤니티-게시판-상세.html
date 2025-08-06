@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 게시글</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='5-2-1-커뮤니티-게시판-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">게시글</h1>
+      <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6">
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+              <div>
+                <p class="text-sm font-semibold text-charcoal-gray">골프초보</p>
+                <p class="text-xs text-gray-500">2시간 전 • 조회 234</p>
+              </div>
+            </button>
+            <button class="px-3 py-1 bg-blue-100 text-forest-green rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">
+              팔로우
+            </button>
+          </div>
+          
+          <span class="inline-block bg-red-100 text-red-700 text-xs px-2 py-1 rounded mb-3">#추천요청</span>
+          
+          <h1 class="text-xl font-bold text-charcoal-gray mb-4">90타 깨기 위한 아이언 추천 부탁드려요</h1>
+          
+          <div class="prose prose-sm text-gray-700">
+            <p class="mb-4">
+              안녕하세요, 골프 시작한지 2년된 초보입니다.
+              현재 평균 95타 정도 치고 있는데, 아이언 정확도가 너무 떨어져서 교체를 고민하고 있습니다.
+            </p>
+            
+            <div class="bg-cream-white rounded-xl p-4 mb-4">
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-2">현재 사용 클럽</h3>
+              <p class="text-sm text-gray-700">미즈노 MX-19 (10년된 중고)</p>
+              
+              <h3 class="text-sm font-semibold text-charcoal-gray mb-2 mt-3">불만족 이유</h3>
+              <ul class="text-sm text-gray-700 space-y-1">
+                <li>• 미스샷 시 거리 손실이 너무 큼</li>
+                <li>• 롱아이언 탄도가 너무 낮음</li>
+                <li>• 전체적으로 관용성이 부족한 느낌</li>
+              </ul>
+            </div>
+            
+            <p class="mb-4">
+              스윙 스피드는 85mph 정도이고, 7번 아이언 기준 130-135m 정도 나옵니다.
+              예산은 100-150만원 정도 생각하고 있습니다.
+            </p>
+            
+            <p class="mb-4">
+              캐비티백 아이언 중에서 관용성이 좋고, 비거리도 어느 정도 나오는 클럽으로 추천 부탁드립니다.
+              선배님들의 조언 기다리겠습니다! 🙏
+            </p>
+          </div>
+          
+          <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-gray-100">
+            <button class="flex items-center space-x-2 text-gray-600 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span class="text-sm font-medium">24</span>
+            </button>
+            <button class="flex items-center space-x-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              <span class="text-sm font-medium">18</span>
+            </button>
+            <button class="flex items-center space-x-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m9.237 8.662L16.5 21v-3.75m0 0a2.25 2.25 0 00-2.25-2.25H10.5m6 2.25H10.5m6 0v-3.75"></path>
+              </svg>
+            </button>
+            <button class="flex items-center space-x-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-100 pt-6">
+          <h3 class="text-base font-semibold text-charcoal-gray mb-4">댓글 18</h3>
+          <div class="space-y-4">
+            <div class="flex space-x-3">
+              <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400"></button>
+              <div class="flex-1">
+                <div class="bg-cream-white rounded-xl p-3">
+                  <p class="text-sm font-semibold text-charcoal-gray mb-1">버디왕</p>
+                  <p class="text-sm text-gray-700">저는 타이틀리스트 T200 추천드려요! 관용성도 좋고 비거리도 충분히 나옵니다. 저도 비슷한 스윙스피드인데 7번 140m 정도 나와요.</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                  <span>30분 전</span>
+                  <button>좋아요 3</button>
+                  <button>답글</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex space-x-3">
+              <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400"></button>
+              <div class="flex-1">
+                <div class="bg-cream-white rounded-xl p-3">
+                  <p class="text-sm font-semibold text-charcoal-gray mb-1">이글헌터</p>
+                  <p class="text-sm text-gray-700">캘러웨이 APEX DCB도 고려해보세요. 관용성 최고입니다. 미스샷해도 거리 손실이 거의 없어요.</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                  <span>1시간 전</span>
+                  <button>좋아요 5</button>
+                  <button>답글</button>
+                </div>
+                
+                <div class="flex space-x-3 mt-3 ml-8">
+                  <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400"></button>
+                  <div class="flex-1">
+                    <div class="bg-blue-50 rounded-xl p-3">
+                      <p class="text-sm font-semibold text-charcoal-gray mb-1">골프초보 <span class="text-xs text-forest-green font-normal">작성자</span></p>
+                      <p class="text-sm text-gray-700">오 APEX DCB는 처음 들어봐요! 중고로도 구할 수 있나요?</p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                      <span>50분 전</span>
+                      <button>좋아요</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex space-x-3">
+              <button onclick="window.location.href='5-4-2-커뮤니티-타인그린-방문.html'" class="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400"></button>
+              <div class="flex-1">
+                <div class="bg-cream-white rounded-xl p-3">
+                  <p class="text-sm font-semibold text-charcoal-gray mb-1">주말골퍼</p>
+                  <p class="text-sm text-gray-700">예산 생각하시면 테일러메이드 스텔스도 좋아요. 작년 모델이라 가격도 많이 내렸고, 성능은 최신 모델 못지않습니다!</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                  <span>1시간 전</span>
+                  <button>좋아요 2</button>
+                  <button>답글</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 댓글 입력 폼 추가 -->
+    <div class="sticky bottom-14 bg-white border-t border-gray-200 p-4">
+      <div class="flex items-end space-x-3">
+        <div class="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0"></div>
+        <div class="flex-1">
+          <div class="relative">
+            <textarea 
+              id="comment-input"
+              placeholder="댓글을 입력하세요..."
+              class="w-full px-4 py-3 pr-12 bg-gray-50 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-forest-green focus:bg-white transition-all"
+              rows="1"
+              oninput="adjustTextareaHeight(this)"
+              onfocus="showCommentButtons()"
+            ></textarea>
+            <button id="submit-btn" class="absolute bottom-2 right-2 p-2 text-gray-400 hover:text-forest-green transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-forest-green" onclick="submitComment()" disabled>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+            </button>
+          </div>
+          <div id="comment-buttons" class="hidden mt-2 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <button class="p-2 text-gray-500 hover:text-forest-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </button>
+              <button class="p-2 text-gray-500 hover:text-forest-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </button>
+            </div>
+            <button onclick="cancelComment()" class="text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      function adjustTextareaHeight(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+        
+        // 텍스트가 있으면 전송 버튼 활성화
+        const submitBtn = document.getElementById('submit-btn');
+        if (textarea.value.trim()) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('text-gray-400');
+          submitBtn.classList.add('text-forest-green');
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.classList.add('text-gray-400');
+          submitBtn.classList.remove('text-forest-green');
+        }
+      }
+      
+      function showCommentButtons() {
+        document.getElementById('comment-buttons').classList.remove('hidden');
+      }
+      
+      function cancelComment() {
+        const textarea = document.getElementById('comment-input');
+        textarea.value = '';
+        textarea.style.height = 'auto';
+        textarea.blur();
+        document.getElementById('comment-buttons').classList.add('hidden');
+        
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.classList.add('text-gray-400');
+        submitBtn.classList.remove('text-forest-green');
+      }
+      
+      function submitComment() {
+        const textarea = document.getElementById('comment-input');
+        const comment = textarea.value.trim();
+        
+        if (comment) {
+          // 여기에 댓글 제출 로직 추가
+          console.log('댓글 제출:', comment);
+          
+          // 제출 후 초기화
+          cancelComment();
+          
+          // 성공 메시지 표시 (옵션)
+          showCommentSuccess();
+        }
+      }
+      
+      function showCommentSuccess() {
+        // 임시 성공 메시지
+        const successDiv = document.createElement('div');
+        successDiv.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+        successDiv.textContent = '댓글이 등록되었습니다';
+        document.body.appendChild(successDiv);
+        
+        setTimeout(() => {
+          successDiv.remove();
+        }, 2000);
+      }
+      
+      // 엔터키로 댓글 제출 (Shift+Enter는 줄바꿈)
+      document.getElementById('comment-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          if (!document.getElementById('submit-btn').disabled) {
+            submitComment();
+          }
+        }
+      });
+    </script>
+    
+        <div class="mt-auto border-t border-gray-100 bg-white relative">
+      <div class="flex items-center justify-around py-3">
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='2-1-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <span class="text-xs">홈</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='3-1-마켓-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="text-xs">마켓</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors relative group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='4-1-My-Green-홈.html'">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <span class="text-xs">My Green</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 relative group text-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <div class="relative">
+            <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <span class="text-xs">커뮤니티</span>
+        </button>
+        <button class="flex flex-col items-center space-y-1 hover:text-gray-600 transition-colors group text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="window.location.href='6-1-더보기-홈.html'">
+          <svg class="w-6 h-6 transition-transform group-active:scale-95" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs">더보기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

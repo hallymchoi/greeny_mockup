@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 플레이 지도</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .map-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: #f5f5f5;
+        }
+        
+        .map-marker {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        
+        .marker-inner {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+            border: 2.5px solid white;
+        }
+        
+        .marker-label {
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            color: #2E2E2E;
+        }
+        
+        .marker-gold {
+            background: #f59e0b;
+        }
+        
+        .marker-green {
+            background: #10b981;
+        }
+        
+        .marker-blue {
+            background: #3b82f6;
+        }
+        
+        .marker-purple {
+            background: #8b5cf6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="w-full bg-white min-h-screen flex flex-col">
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200">
+            <button onclick="window.location.href='4-3-1-My-Green-히스토리-플레이-목록.html'" class="p-2 -ml-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-base font-semibold text-gray-900">플레이 지도</h1>
+            <button onclick="toggleView()" class="text-sm text-green-600 font-medium">
+                목록보기
+            </button>
+        </div>
+
+        <!-- 통계 요약 -->
+        <div class="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4">
+            <div class="flex justify-around text-white">
+                <div class="text-center">
+                    <p class="text-2xl font-bold">12</p>
+                    <p class="text-xs opacity-90">골프장</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-2xl font-bold">28</p>
+                    <p class="text-xs opacity-90">라운딩</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-2xl font-bold">3</p>
+                    <p class="text-xs opacity-90">지역</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 필터 바 -->
+        <div class="bg-white px-4 py-3 flex items-center justify-between border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <label class="text-sm text-gray-600">기간:</label>
+                <select class="text-sm bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <option>전체</option>
+                    <option>2024년</option>
+                    <option>2023년</option>
+                </select>
+            </div>
+            <div class="flex items-center gap-2 bg-gray-100 px-3 py-1.5 rounded-lg">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+                </svg>
+                <span class="text-sm font-medium text-gray-700">총 38회</span>
+            </div>
+        </div>
+        
+        <!-- 지도 영역 -->
+        <div class="flex-1 relative map-container">
+            <!-- 실제 지도 이미지 -->
+            <img src="map01.png" alt="수원 지도" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+            
+            <!-- 지도 마커들을 하드코딩으로 배치 -->
+            
+            <!-- 남서울CC - 수원 북쪽 -->
+            <div class="map-marker" style="top: 38%; left: 50%;">
+                <div class="marker-inner marker-gold">12</div>
+                <div class="marker-label">남서울CC</div>
+            </div>
+            
+            <!-- 88CC - 용인 동쪽 -->
+            <div class="map-marker" style="top: 45%; left: 68%;">
+                <div class="marker-inner marker-green">8</div>
+                <div class="marker-label">88CC</div>
+            </div>
+            
+            <!-- 리베라CC - 화성 서쪽 -->
+            <div class="map-marker" style="top: 55%; left: 32%;">
+                <div class="marker-inner marker-purple">6</div>
+                <div class="marker-label">리베라CC</div>
+            </div>
+            
+            <!-- 페럼CC - 오산 남쪽 -->
+            <div class="map-marker" style="top: 68%; left: 48%;">
+                <div class="marker-inner marker-green">5</div>
+                <div class="marker-label">페럼CC</div>
+            </div>
+            
+            <!-- 안성베네스트CC - 안성 방향 -->
+            <div class="map-marker" style="top: 72%; left: 65%;">
+                <div class="marker-inner marker-green">4</div>
+                <div class="marker-label">안성베네스트CC</div>
+            </div>
+            
+            <!-- 에버랜드CC - 용인 북쪽 -->
+            <div class="map-marker" style="top: 30%; left: 70%;">
+                <div class="marker-inner marker-blue">3</div>
+                <div class="marker-label">에버랜드CC</div>
+            </div>
+            
+            <!-- 블랙스톤CC - 이천 동쪽 -->
+            <div class="map-marker" style="top: 48%; left: 78%;">
+                <div class="marker-inner marker-purple">2</div>
+                <div class="marker-label">블랙스톤CC</div>
+            </div>
+            
+            <!-- SKY72 - 인천 서쪽 -->
+            <div class="map-marker" style="top: 25%; left: 20%;">
+                <div class="marker-inner marker-blue">2</div>
+                <div class="marker-label">SKY72</div>
+            </div>
+        </div>
+        
+        <!-- 하단 범례 -->
+        <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+            <div class="px-4 py-3">
+                <p class="text-sm font-semibold text-gray-900 mb-2">방문 횟수</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+                        <span class="text-xs text-gray-700">10회 이상</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                        <span class="text-xs text-gray-700">5-9회</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"></div>
+                        <span class="text-xs text-gray-700">3-4회</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"></div>
+                        <span class="text-xs text-gray-700">1-2회</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 줌 컨트롤 아이콘들 -->
+            <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                <button onclick="zoomOut()" class="w-10 h-10 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                    </svg>
+                </button>
+                <button onclick="zoomIn()" class="w-10 h-10 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                </button>
+                <button onclick="centerMap()" class="w-10 h-10 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleView() {
+            window.location.href = '4-3-1-My-Green-히스토리-플레이-목록.html';
+        }
+
+        // 줌 버튼들은 보이지만 실제 동작하지 않음
+        function zoomIn() {
+            // 실제 동작 없음
+        }
+
+        function zoomOut() {
+            // 실제 동작 없음
+        }
+        
+        function centerMap() {
+            // 실제 동작 없음
+        }
+    </script>
+</body>
+</html>

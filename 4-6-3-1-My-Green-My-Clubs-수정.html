@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 클럽 정보 수정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen">
+        <div class="bg-white px-4 py-3 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <button onclick="history.back()" class="p-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold">클럽 정보 수정</h1>
+                <button class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">완료</button>
+            </div>
+        </div>
+
+        <div class="p-4">
+            <div class="mb-6">
+                <h2 class="font-semibold mb-3">클럽 사진</h2>
+                <div class="flex gap-3">
+                    <div class="relative">
+                        <img src="../golfclub_img/골프채 특가 혜택 (2).jpg" alt="클럽 사진" class="w-24 h-24 rounded-lg object-cover">
+                        <button class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="w-24 h-24 bg-gray-100 rounded-lg flex flex-col items-center justify-center focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        <span class="text-xs text-gray-500 mt-1">사진 추가</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="text-sm text-gray-600">클럽 종류 *</label>
+                    <select class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                        <option>드라이버</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">브랜드 *</label>
+                    <select class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                        <option>테일러메이드</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">모델명 *</label>
+                    <input type="text" value="Qi10" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">샤프트</label>
+                    <input type="text" value="Fujikura Ventus Black 6S" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">로프트</label>
+                    <input type="text" value="9.5도" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">구매일</label>
+                    <input type="date" value="2024-03-15" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-600">메모</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-forest-green focus:border-transparent">비거리와 방향성이 좋아짐</textarea>
+                </div>
+            </div>
+
+            <button class="w-full bg-forest-green text-white py-4 rounded-lg font-semibold hover:bg-hunter-green transition-colors mt-6 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+                수정 완료
+            </button>
+        </div>
+    </div>
+</body>
+</html>

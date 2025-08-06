@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeny - 결제 처리중</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'hunter-green': '#355E3B',
+              'forest-green': '#228B22',
+              'gold-accent': '#D4AF37',
+              'cream-white': '#F8F5EC',
+              'charcoal-gray': '#2E2E2E'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cream-white">
+    <div class="w-full bg-white min-h-screen flex flex-col items-center justify-center">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-24 h-24 bg-forest-green bg-opacity-10 rounded-full mb-6">
+                <svg class="w-12 h-12 text-forest-green animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+            </div>
+            
+            <h2 class="text-xl font-semibold text-charcoal-gray mb-3">안전하게 결제 처리중입니다...</h2>
+            
+            <p class="text-gray-600 mb-8">
+                잠시만 기다려주세요<br>
+                결제가 진행되고 있습니다
+            </p>
+            
+            <div class="w-64 bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div class="bg-forest-green h-full rounded-full animate-pulse" style="width: 60%"></div>
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-4">
+                이 페이지를 벗어나지 마세요
+            </p>
+        </div>
+    </div>
+</body>
+</html>

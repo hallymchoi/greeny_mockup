@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 받은 선물함</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-1-My-Green-홈.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">선물함</h1>
+      <button onclick="window.location.href='4-5-2-My-Green-선물함-보내기.html'" class="text-forest-green font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">보내기</button>
+    </div>
+    
+    <div class="sticky top-0 bg-white z-10 px-6 py-3 border-b border-gray-100">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-gray-600">받은 선물 총 45개</span>
+        <div class="flex items-center space-x-2">
+          <svg class="w-4 h-4 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+          </svg>
+          <span class="text-sm font-medium text-charcoal-gray">받은 골프공 +45</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="px-6 py-4 space-y-4">
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-charcoal-gray">골프공 1개</p>
+                  <p class="text-xs text-gray-500">버디왕님이 보냄</p>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500">1시간 전</p>
+            </div>
+            <div class="bg-cream-white rounded-lg p-3">
+              <p class="text-sm text-gray-700">"위시리스트 응원합니다! 좋은 클럽 구매하시길 🏌️"</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-charcoal-gray">스페셜 스티커 세트</p>
+                  <p class="text-xs text-gray-500">Greeny 운영진</p>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500">3일 전</p>
+            </div>
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3">
+              <p class="text-sm text-gray-700">"베스트 리뷰어 선정 축하드립니다! 🎉"</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-charcoal-gray">골프공 5개</p>
+                  <p class="text-xs text-gray-500">이벤트 보상</p>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500">1주일 전</p>
+            </div>
+            <div class="bg-green-50 rounded-lg p-3">
+              <p class="text-sm text-gray-700">"방명록 이벤트 참여 감사합니다!"</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl border border-gray-100">
+          <div class="p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-charcoal-gray">골프공 1개</p>
+                  <p class="text-xs text-gray-500">골프초보님이 보냄</p>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500">2주일 전</p>
+            </div>
+            <div class="bg-cream-white rounded-lg p-3">
+              <p class="text-sm text-gray-700">"후기 정말 도움됐어요! 감사합니다 😊"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100">
+      <div class="bg-blue-50 rounded-xl p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-charcoal-gray">선물 보내기 규칙</p>
+            <p class="text-xs text-gray-600 mt-1">1일 1인 1개 골프공 선물 가능</p>
+          </div>
+          <button onclick="window.location.href='4-5-2-My-Green-선물함-보내기.html'" class="bg-forest-green text-white px-4 py-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+            선물하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

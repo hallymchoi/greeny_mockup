@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 클럽 상세</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='4-6-1-My-Green-My-Clubs-목록.html'" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">클럽 상세</h1>
+      <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6">
+        <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden">
+          <img src="../golfclub_img/골프채 특가 혜택 (1).jpg" alt="타이틀리스트 T200" class="w-full h-full object-contain">
+        </div>
+        
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-xl font-bold text-charcoal-gray">타이틀리스트 T200</h2>
+            <button onclick="window.location.href='4-6-3-1-My-Green-My-Clubs-수정.html'" class="text-forest-green text-sm font-medium focus:outline-none focus:ring-2 focus:ring-forest-green">수정</button>
+          </div>
+          <p class="text-sm text-gray-600">아이언 • 5-PW (6개)</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-sm font-semibold text-charcoal-gray mb-2">샤프트 정보</h3>
+            <div class="bg-cream-white rounded-xl p-4 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">샤프트</span>
+                <span class="text-charcoal-gray">NS PRO 950 GH NEO</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">플렉스</span>
+                <span class="text-charcoal-gray">스틸 S</span>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-charcoal-gray mb-2">구매 정보</h3>
+            <div class="bg-cream-white rounded-xl p-4 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">구매일</span>
+                <span class="text-charcoal-gray">2024.01.15</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">구매가격</span>
+                <span class="text-charcoal-gray">1,250,000원</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">사용기간</span>
+                <span class="text-charcoal-gray">3개월</span>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-charcoal-gray mb-2">메모</h3>
+            <div class="bg-cream-white rounded-xl p-4">
+              <p class="text-sm text-gray-700">
+                기존 아이언보다 관용성이 확실히 좋아졌어요. 
+                특히 롱아이언의 탄도가 높아져서 그린 공략이 수월해졌습니다.
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-charcoal-gray mb-3">AI 분석 결과</h3>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4">
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-forest-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+                <div>
+                  <p class="text-sm font-semibold text-charcoal-gray mb-1">이 클럽이 나이스샷님께 잘 맞아요!</p>
+                  <p class="text-xs text-gray-600">
+                    T200은 중상급자용 아이언으로 나이스샷님의 핸디캡 10에 적합합니다. 
+                    높은 관용성과 비거리 성능이 게임 향상에 도움이 될 것으로 예상됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-6 py-4 border-t border-gray-100 space-y-3">
+      <button class="w-full bg-gradient-to-r from-hunter-green to-forest-green text-white py-3 rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        이 클럽 리뷰 작성하기
+      </button>
+      <button onclick="window.location.href='4-6-4-My-Green-My-Clubs-삭제.html'" class="w-full text-red-500 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-400">
+        이 클럽 삭제하기
+      </button>
+    </div>
+  </div>
+</body>
+</html>

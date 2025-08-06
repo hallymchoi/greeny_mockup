@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny - 찜한 상품</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'charcoal-gray': '#2E2E2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+      <button onclick="window.location.href='2-1-홈.html'" class="text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <h1 class="text-lg font-semibold text-charcoal-gray">찜한 상품</h1>
+      <div class="w-6"></div>
+    </div>
+    
+    <div class="flex-1 flex items-center justify-center px-6">
+      <div class="text-center">
+        <div class="w-32 h-32 bg-cream-white rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h2 class="text-lg font-semibold text-charcoal-gray mb-2">아직 찜한 상품이 없어요</h2>
+        <p class="text-sm text-gray-600 mb-8">마음에 드는 클럽을 찜해보세요<br/>가격 변동 알림을 받을 수 있어요</p>
+        <button onclick="window.location.href='3-1-마켓-홈.html'" class="bg-forest-green text-white px-8 py-3 rounded-xl font-semibold hover:bg-hunter-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          취향저격 클럽 찾으러 가기
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
