@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 임팩트</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-5-3-온보딩-동적-7번아이언-샤프트.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-7 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-7 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <button onclick="skipToNext()" class="text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        건너뛰기
+      </button>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">7</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">7번 아이언 임팩트</h1>
+            <p class="text-sm text-gray-600">임팩트가 어떤 편인가요?</p>
+          </div>
+        </div>
+        
+        <p class="text-sm text-gray-500">라이각과 샤프트 보정에 참고해요</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <button onclick="selectImpact('thin')" id="impact-thin"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-10 h-10 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+              <div class="w-3 h-3 bg-red-500 rounded-full -translate-y-1"></div>
+            </div>
+            <p class="text-sm font-medium text-gray-700">탑볼</p>
+            <p class="text-xs text-gray-500 mt-1">얕게 맞음</p>
+          </div>
+        </button>
+        
+        <button onclick="selectImpact('center')" id="impact-center"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-10 h-10 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <p class="text-sm font-medium text-gray-700">정타</p>
+            <p class="text-xs text-gray-500 mt-1">중앙 맞음</p>
+          </div>
+        </button>
+        
+        <button onclick="selectImpact('fat')" id="impact-fat"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-10 h-10 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+              <div class="w-3 h-3 bg-forest-green rounded-full translate-y-1"></div>
+            </div>
+            <p class="text-sm font-medium text-gray-700">뒤땅</p>
+            <p class="text-xs text-gray-500 mt-1">두껑게 맞음</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-4">
+        <div class="flex items-start space-x-2">
+          <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          <div>
+            <p class="text-sm font-semibold text-blue-900 mb-1">임팩트 패턴이란?</p>
+            <p class="text-xs text-blue-800">
+              볼이 클럽 페이스에 맞는 위치를 말해요. 정타가 가장 좋지만, 개인의 스윙 특성에 따라 다를 수 있어요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedImpact = null;
+
+    function selectImpact(impact) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('[id^="impact-"]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+
+      // 선택된 버튼 강조
+      const selectedBtn = document.getElementById('impact-' + impact);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+
+      selectedImpact = impact;
+      localStorage.setItem('onboarding_7iron_impact', impact);
+      
+      // 자동으로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-3-1-온보딩-감성-시작.html';
+      }, 300);
+    }
+
+    function skipToNext() {
+      window.location.href='1-4-3-1-온보딩-감성-시작.html';
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedValue = localStorage.getItem('onboarding_7iron_impact');
+      if (savedValue) {
+        // 저장된 값이 있으면 해당 버튼 강조만 하고 자동 이동은 하지 않음
+        document.querySelectorAll('[id^="impact-"]').forEach(btn => {
+          btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+          btn.classList.add('border-gray-200');
+        });
+        const selectedBtn = document.getElementById('impact-' + savedValue);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

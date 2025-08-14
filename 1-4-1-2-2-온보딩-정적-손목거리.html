@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 정적 피팅 손목거리</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-1-2-1-온보딩-정적-키.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-12">
+        <h1 class="text-2xl font-bold text-charcoal-gray mb-3">
+          손목에서 땅까지 거리를 알려주세요
+        </h1>
+        <p class="text-sm text-gray-600">
+          라이각을 계산하는데 필요해요
+        </p>
+        <button onclick="showMeasurementGuide()" class="text-sm text-forest-green mt-3 flex items-center hover:text-hunter-green transition-colors focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          측정 방법 보기
+        </button>
+      </div>
+
+      <div>
+        <div class="relative">
+          <input type="number" id="wrist" 
+            class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:border-forest-green focus:ring-2 focus:ring-forest-green focus:ring-opacity-20 text-xl font-medium text-center" 
+            placeholder="82"
+            onkeyup="checkInput()">
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">cm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-t border-gray-100">
+      <button id="nextBtn"
+        class="w-full bg-gray-300 text-white py-4 rounded-xl font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2 disabled:opacity-50" 
+        onclick="goNext()"
+        disabled>
+        다음
+      </button>
+    </div>
+  </div>
+
+  <!-- 측정 가이드 팝업 -->
+  <div id="measurement-guide" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-6 mx-6 w-full max-w-md">
+      <h3 class="text-lg font-bold text-charcoal-gray mb-4">손목-바닥 거리 측정 방법</h3>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-forest-green text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</div>
+          <p class="text-sm text-gray-600">자연스럽게 서서 양팔을 편안하게 늘어뜨리세요</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-forest-green text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</div>
+          <p class="text-sm text-gray-600">손목 중앙부터 바닥까지의 거리를 측정하세요</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 bg-forest-green text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</div>
+          <p class="text-sm text-gray-600">신발을 신은 상태에서 측정하는 것이 정확해요</p>
+        </div>
+      </div>
+      <div class="bg-cream-white rounded-lg p-3 mb-6">
+        <p class="text-xs text-gray-600">💡 Tip: 혼자 측정이 어렵다면 가족이나 친구의 도움을 받아보세요</p>
+      </div>
+      <button onclick="closeMeasurementGuide()" class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function showMeasurementGuide() {
+      document.getElementById('measurement-guide').classList.remove('hidden');
+    }
+
+    function closeMeasurementGuide() {
+      document.getElementById('measurement-guide').classList.add('hidden');
+    }
+
+    function checkInput() {
+      const input = document.getElementById('wrist');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      if (input.value && input.value > 0) {
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('bg-gray-300');
+        nextBtn.classList.add('bg-gradient-to-r', 'from-forest-green', 'to-hunter-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      } else {
+        nextBtn.disabled = true;
+        nextBtn.classList.add('bg-gray-300');
+        nextBtn.classList.remove('bg-gradient-to-r', 'from-forest-green', 'to-hunter-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      }
+    }
+
+    function goNext() {
+      const wrist = document.getElementById('wrist').value;
+      if (wrist) {
+        localStorage.setItem('onboarding_wrist', wrist);
+        window.location.href='1-4-1-2-3-온보딩-정적-성별.html';
+      }
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedWrist = localStorage.getItem('onboarding_wrist');
+      if (savedWrist) {
+        document.getElementById('wrist').value = savedWrist;
+        checkInput();
+      }
+    }
+  </script>
+</body>
+</html>

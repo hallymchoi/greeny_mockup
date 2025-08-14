@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 정적 피팅 나이</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-1-2-3-온보딩-정적-성별.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-12">
+        <h1 class="text-2xl font-bold text-charcoal-gray mb-3">
+          나이를 알려주세요
+        </h1>
+        <p class="text-sm text-gray-600">
+          연령대별 최적화된 클럽을 추천해드릴게요
+        </p>
+      </div>
+
+      <div>
+        <div class="relative">
+          <input type="number" id="age" 
+            class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:border-forest-green focus:ring-2 focus:ring-forest-green focus:ring-opacity-20 text-xl font-medium text-center" 
+            placeholder="31"
+            onkeyup="checkInput()">
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">세</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 bg-white border-t border-gray-100">
+      <button id="nextBtn"
+        class="w-full bg-gray-300 text-white py-4 rounded-xl font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2 disabled:opacity-50" 
+        onclick="goNext()"
+        disabled>
+        다음
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function checkInput() {
+      const input = document.getElementById('age');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      if (input.value && input.value > 0 && input.value < 120) {
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('bg-gray-300');
+        nextBtn.classList.add('bg-gradient-to-r', 'from-forest-green', 'to-hunter-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      } else {
+        nextBtn.disabled = true;
+        nextBtn.classList.add('bg-gray-300');
+        nextBtn.classList.remove('bg-gradient-to-r', 'from-forest-green', 'to-hunter-green', 'hover:shadow-lg', 'hover:-translate-y-0.5');
+      }
+    }
+
+    function goNext() {
+      const age = document.getElementById('age').value;
+      if (age) {
+        localStorage.setItem('onboarding_age', age);
+        window.location.href='1-4-1-2-5-온보딩-정적-경력.html';
+      }
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedAge = localStorage.getItem('onboarding_age');
+      if (savedAge) {
+        document.getElementById('age').value = savedAge;
+        checkInput();
+      }
+    }
+  </script>
+</body>
+</html>

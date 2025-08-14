@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 드라이버 구질</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-2-2-온보딩-동적-드라이버-캐리.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-20 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-red-600">D</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">공의 구질</h1>
+            <p class="text-sm text-gray-600">교정이 쉬운 클럽을 추천해드릴게요</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <button onclick="selectShape('draw')" id="draw"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M10 40 Q30 35 50 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="50" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">드로우</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('straight')" id="straight"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M30 40 L30 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="30" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">스트레이트</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('fade')" id="fade"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M50 40 Q30 35 10 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">페이드</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('hook')" id="hook"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M10 40 Q20 30 50 15" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="50" cy="15" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">훅</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('slice')" id="slice"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M50 40 Q40 30 10 15" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="15" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">슬라이스</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('unknown')" id="unknown"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <span class="text-3xl text-gray-400">?</span>
+            </div>
+            <p class="text-sm font-medium text-gray-700">모르겠음</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function selectShape(shape) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(shape);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_driver_shape', shape);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-2-3-온보딩-동적-드라이버-선택.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedShape = localStorage.getItem('onboarding_driver_shape');
+      if (savedShape) {
+        const selectedBtn = document.getElementById(savedShape);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

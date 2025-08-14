@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 감성 피팅 아이언 브랜드</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-3-3-4-온보딩-감성-아이언-오프셋.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">Fe</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">아이언 브랜드</h1>
+            <p class="text-sm text-gray-600">어떤 이미지를 선호하시나요?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="selectBrand('traditional')" id="traditional"
+          class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          전통적이고 고급스러움
+        </button>
+        <button onclick="selectBrand('innovative')" id="innovative"
+          class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          혁신적이고 젊은
+        </button>
+        <button onclick="selectBrand('none')" id="none"
+          class="w-full py-3 border-2 border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          상관없음
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function selectBrand(brand) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(brand);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_iron_brand', brand);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-3-4-온보딩-감성-추가.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedBrand = localStorage.getItem('onboarding_iron_brand');
+      if (savedBrand) {
+        const selectedBtn = document.getElementById(savedBrand);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

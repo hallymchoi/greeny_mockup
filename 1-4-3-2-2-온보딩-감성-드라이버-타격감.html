@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 감성 피팅 드라이버 타격감</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-3-2-1-온보딩-감성-드라이버-타구음.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-10 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-10 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-10 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-10 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-10 h-1.5 bg-gray-200 rounded-full"></div>
+        <div class="w-10 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-red-600">D</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">임팩트 타격감</h1>
+            <p class="text-sm text-gray-600">어떤 손맛을 선호하시나요?</p>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500">손맛은 샷 순간 손으로 전해지는 타격감이에요</p>
+      </div>
+
+      <div class="space-y-3">
+        <button onclick="selectFeel('solid')" id="solid"
+          class="w-full border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <p class="font-medium text-charcoal-gray text-lg">정교하고 단단한</p>
+          <p class="text-sm text-gray-500 mt-1">또렷한 임팩트 감각을 전달하는 느낌</p>
+        </button>
+        
+        <button onclick="selectFeel('soft')" id="soft"
+          class="w-full border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <p class="font-medium text-charcoal-gray text-lg">부드럽고 편한</p>
+          <p class="text-sm text-gray-500 mt-1">충격이 적고 편안한 느낌</p>
+        </button>
+        
+        <button onclick="selectFeel('none')" id="none"
+          class="w-full border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <p class="font-medium text-charcoal-gray text-lg">상관없음</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function selectFeel(feel) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(feel);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_driver_feel', feel);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-3-2-3-온보딩-감성-드라이버-마감.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedFeel = localStorage.getItem('onboarding_driver_feel');
+      if (savedFeel) {
+        const selectedBtn = document.getElementById(savedFeel);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

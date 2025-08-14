@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 캐리</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-4-1-온보딩-동적-7번아이언-클럽스피드.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">7</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">7번 아이언 캐리 거리</h1>
+            <p class="text-sm text-gray-600">정확한 클럽 추천에 필요해요</p>
+          </div>
+        </div>
+        
+        <button onclick="showCarryGuide()" class="text-sm text-forest-green flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          캐리가 뭔가요?
+        </button>
+        <p class="text-xs text-gray-500 mt-2">공이 떨어질 때까지 날아간 거리예요</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <button onclick="selectCarry('less100')" id="less100"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          100m 미만
+        </button>
+        <button onclick="selectCarry('100to120')" id="100to120"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          100~120m
+        </button>
+        <button onclick="selectCarry('120to140')" id="120to140"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          120~140m
+        </button>
+        <button onclick="selectCarry('140to160')" id="140to160"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          140~160m
+        </button>
+        <button onclick="selectCarry('more160')" id="more160"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          160m 이상
+        </button>
+        <button onclick="selectCarry('unknown')" id="unknown"
+          class="py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          모르겠어요
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 캐리 가이드 팝업 -->
+  <div id="carry-guide" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-6 mx-6 w-full max-w-md">
+      <h3 class="text-lg font-bold text-charcoal-gray mb-4">캐리 거리란?</h3>
+      <div class="space-y-3 mb-6">
+        <p class="text-sm text-gray-600">공이 지면에 떨어지기 전까지 공중에서 날아간 거리를 말해요. 런(구름)은 포함하지 않습니다.</p>
+        <div class="bg-cream-white rounded-lg p-3">
+          <p class="text-xs text-gray-600 font-semibold mb-2">7번 아이언 거리 참고</p>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 상급자: 140m 이상</li>
+            <li>• 중급자: 120~140m</li>
+            <li>• 초급자: 100~120m</li>
+            <li>• 스크린 골프장에서 확인 가능해요</li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="closeCarryGuide()" class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function showCarryGuide() {
+      document.getElementById('carry-guide').classList.remove('hidden');
+    }
+
+    function closeCarryGuide() {
+      document.getElementById('carry-guide').classList.add('hidden');
+    }
+
+    function selectCarry(carry) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(carry);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_iron7_carry', carry);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-2-4-3-온보딩-동적-7번아이언-구질.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedCarry = localStorage.getItem('onboarding_iron7_carry');
+      if (savedCarry) {
+        const selectedBtn = document.getElementById(savedCarry);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

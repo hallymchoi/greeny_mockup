@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 감성 피팅 아이언 오프셋</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-3-3-3-온보딩-감성-아이언-디자인.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">Fe</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">아이언 오프셋</h1>
+            <p class="text-sm text-gray-600">어떤 오프셋을 선호하시나요?</p>
+          </div>
+        </div>
+        <button class="text-xs text-forest-green mb-3 flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          오프셋이 뭔가요?
+        </button>
+        <p class="text-xs text-gray-500">오프셋은 공을 더 쉽게 띄우는 데 도움이 돼요</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <button onclick="selectOffset('minimal')" id="minimal"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="w-full h-16 mb-2 flex items-center justify-center">
+            <svg class="w-full h-full" viewBox="0 0 80 60">
+              <line x1="40" y1="10" x2="40" y2="50" stroke="currentColor" stroke-width="3" class="text-gray-400"/>
+              <rect x="30" y="40" width="20" height="10" fill="currentColor" class="text-gray-600"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-charcoal-gray">거의 없는</p>
+        </button>
+        
+        <button onclick="selectOffset('medium')" id="medium"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="w-full h-16 mb-2 flex items-center justify-center">
+            <svg class="w-full h-full" viewBox="0 0 80 60">
+              <line x1="45" y1="10" x2="40" y2="50" stroke="currentColor" stroke-width="3" class="text-gray-400"/>
+              <rect x="30" y="40" width="20" height="10" fill="currentColor" class="text-gray-600"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-charcoal-gray">중간</p>
+        </button>
+        
+        <button onclick="selectOffset('significant')" id="significant"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="w-full h-16 mb-2 flex items-center justify-center">
+            <svg class="w-full h-full" viewBox="0 0 80 60">
+              <line x1="50" y1="10" x2="40" y2="50" stroke="currentColor" stroke-width="3" class="text-gray-400"/>
+              <rect x="30" y="40" width="20" height="10" fill="currentColor" class="text-gray-600"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium text-charcoal-gray">뚜렷한</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function selectOffset(offset) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(offset);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_iron_offset', offset);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-3-3-5-온보딩-감성-아이언-브랜드.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedOffset = localStorage.getItem('onboarding_iron_offset');
+      if (savedOffset) {
+        const selectedBtn = document.getElementById(savedOffset);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

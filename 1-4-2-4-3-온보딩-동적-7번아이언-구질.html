@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 구질</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-4-2-온보딩-동적-7번아이언-캐리.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <div class="w-6"></div>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">7</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">공의 구질</h1>
+            <p class="text-sm text-gray-600">교정이 쉬운 클럽을 추천해드릴게요</p>
+          </div>
+        </div>
+        
+        <button onclick="showShapeGuide()" class="text-sm text-forest-green flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          구질이 뭘 의미하나요?
+        </button>
+        <p class="text-xs text-gray-500 mt-2">공이 날아가며 휘는 방향이에요</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <button onclick="selectShape('draw')" id="draw"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M10 40 Q30 35 50 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="50" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">드로우</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('straight')" id="straight"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M30 40 L30 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="30" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">스트레이트</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('fade')" id="fade"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M50 40 Q30 35 10 20" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="20" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">페이드</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('hook')" id="hook"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M10 40 Q20 30 50 15" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="50" cy="15" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">훅</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('slice')" id="slice"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 60 50">
+                <path d="M50 40 Q40 30 10 15" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="15" r="3" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">슬라이스</p>
+          </div>
+        </button>
+        
+        <button onclick="selectShape('unknown')" id="unknown"
+          class="border-2 border-gray-200 rounded-xl p-3 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <span class="text-3xl text-gray-400">?</span>
+            </div>
+            <p class="text-sm font-medium text-gray-700">모르겠음</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 구질 가이드 팝업 -->
+  <div id="shape-guide" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-6 mx-6 w-full max-w-md">
+      <h3 class="text-lg font-bold text-charcoal-gray mb-4">구질이란?</h3>
+      <div class="space-y-3 mb-6">
+        <p class="text-sm text-gray-600">공이 날아가면서 휘는 방향을 말해요. 클럽 페이스 각도와 스윙 패스에 따라 결정됩니다.</p>
+        <div class="bg-cream-white rounded-lg p-3">
+          <p class="text-xs text-gray-600 font-semibold mb-2">구질 설명</p>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 드로우/훅: 왼쪽으로 휘는 구질</li>
+            <li>• 스트레이트: 직선으로 날아가는 구질</li>
+            <li>• 페이드/슬라이스: 오른쪽으로 휘는 구질</li>
+            <li>• 정도의 차이로 드로우<훅, 페이드<슬라이스</li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="closeShapeGuide()" class="w-full bg-gradient-to-r from-forest-green to-hunter-green text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function showShapeGuide() {
+      document.getElementById('shape-guide').classList.remove('hidden');
+    }
+
+    function closeShapeGuide() {
+      document.getElementById('shape-guide').classList.add('hidden');
+    }
+
+    function selectShape(shape) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('button[id]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+      
+      // 선택된 버튼 하이라이트
+      const selectedBtn = document.getElementById(shape);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+      
+      // localStorage에 저장
+      localStorage.setItem('onboarding_iron7_shape', shape);
+      
+      // 바로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-2-5-1-온보딩-동적-7번아이언-탄도.html';
+      }, 300);
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedShape = localStorage.getItem('onboarding_iron7_shape');
+      if (savedShape) {
+        const selectedBtn = document.getElementById(savedShape);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 드라이버 스핀량</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-3-1-온보딩-동적-드라이버-발사각.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-20 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-20 h-1.5 bg-forest-green rounded-full"></div>
+      </div>
+      <button onclick="skipToNext()" class="text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        건너뛰기
+      </button>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-red-600">D</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">드라이버 스핀량</h1>
+            <p class="text-sm text-gray-600">공이 얼마나 회전했나요?</p>
+          </div>
+        </div>
+        
+        <button onclick="showSpinGuide()" class="text-sm text-forest-green flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          스핀량이 뭔가요?
+        </button>
+        <p class="text-xs text-gray-500 mt-2">탄도와 비거리, 구질 안정성에 영향을 줘요</p>
+      </div>
+
+      <div class="space-y-3">
+        <button onclick="selectSpin('low')" id="spin-low"
+          class="w-full py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <span>적음</span>
+          <span class="text-sm text-gray-500">2000rpm 이하</span>
+        </button>
+        <button onclick="selectSpin('optimal')" id="spin-optimal"
+          class="w-full py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <span>적정</span>
+          <span class="text-sm text-gray-500">2000~2500rpm</span>
+        </button>
+        <button onclick="selectSpin('normal')" id="spin-normal"
+          class="w-full py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <span>보통</span>
+          <span class="text-sm text-gray-500">2500~3000rpm</span>
+        </button>
+        <button onclick="selectSpin('high')" id="spin-high"
+          class="w-full py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 flex justify-between items-center focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          <span>많음</span>
+          <span class="text-sm text-gray-500">3000rpm 이상</span>
+        </button>
+        <button onclick="selectSpin('unknown')" id="spin-unknown"
+          class="w-full py-4 border-2 border-gray-200 rounded-xl text-lg font-medium text-gray-700 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 text-left px-4 focus:border-forest-green focus:bg-forest-green focus:bg-opacity-10">
+          측정한 적 없어요
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 스핀량 가이드 팝업 -->
+  <div id="spin-guide" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-6 mx-6 w-full max-w-md">
+      <h3 class="text-lg font-bold text-charcoal-gray mb-4">스핀량이란?</h3>
+      <div class="space-y-3 mb-6">
+        <p class="text-sm text-gray-600">공이 1분당 회전하는 횟수(rpm)를 말해요. 백스핀량이라고도 불립니다.</p>
+        <div class="bg-cream-white rounded-lg p-3">
+          <p class="text-xs text-gray-600 font-semibold mb-2">참고 기준</p>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 적음: 런이 많고 낮은 탄도</li>
+            <li>• 적정: 최적 비거리</li>
+            <li>• 보통: 안정적인 구질</li>
+            <li>• 많음: 높은 탄도, 캐리 위주</li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="closeSpinGuide()" class="w-full bg-forest-green text-white py-3 rounded-xl font-semibold">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let selectedSpin = null;
+
+    function selectSpin(spin) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('[id^="spin-"]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+
+      // 선택된 버튼 강조
+      const selectedBtn = document.getElementById('spin-' + spin);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+
+      selectedSpin = spin;
+      localStorage.setItem('onboarding_driver_spin', spin);
+      
+      // 자동으로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-2-3-3-온보딩-동적-드라이버-스윙리듬.html';
+      }, 300);
+    }
+
+    function skipToNext() {
+      window.location.href='1-4-2-3-3-온보딩-동적-드라이버-스윙리듬.html';
+    }
+
+    function showSpinGuide() {
+      document.getElementById('spin-guide').classList.remove('hidden');
+    }
+
+    function closeSpinGuide() {
+      document.getElementById('spin-guide').classList.add('hidden');
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedValue = localStorage.getItem('onboarding_driver_spin');
+      if (savedValue) {
+        selectSpin(savedValue);
+      }
+    }
+  </script>
+</body>
+</html>

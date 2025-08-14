@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeny 온보딩 - 동적 피팅 7번 아이언 탄도</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hunter-green': '#355E3B',
+            'forest-green': '#228B22',
+            'gold-accent': '#D4AF37',
+            'cream-white': '#F8F5EC',
+            'agc-error': '#EF4444',
+            'agc-gray': '#6B7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream-white">
+  <div class="w-full bg-white min-h-screen flex flex-col">
+    <div class="px-6 py-4 flex items-center justify-between">
+      <button onclick="window.location.href='1-4-2-4-3-온보딩-동적-7번아이언-구질.html'" class="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <div class="flex items-center space-x-1">
+        <div class="w-8 h-1.5 bg-gray-300 rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-forest-green rounded-full"></div>
+        <div class="w-8 h-1.5 bg-gray-200 rounded-full"></div>
+      </div>
+      <button onclick="skipToNext()" class="text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        건너뛰기
+      </button>
+    </div>
+
+    <div class="flex-1 px-6 py-6 overflow-y-auto flex flex-col justify-center">
+      <div class="mb-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="text-xl font-bold text-forest-green">7</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-charcoal-gray">7번 아이언 탄도</h1>
+            <p class="text-sm text-gray-600">공이 어느 정도 높이로 뜨는 편인가요?</p>
+          </div>
+        </div>
+        
+        <button onclick="showTrajectoryGuide()" class="text-sm text-forest-green flex items-center focus:outline-none focus:ring-2 focus:ring-forest-green">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          탄도가 뭐가요?
+        </button>
+        <p class="text-xs text-gray-500 mt-2">공이 날아가는 전체 궤적의 높낮이예요</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <button onclick="selectTrajectory('low')" id="trajectory-low"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 80 50">
+                <path d="M10 40 Q40 35 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">낮음</p>
+          </div>
+        </button>
+        
+        <button onclick="selectTrajectory('medium')" id="trajectory-medium"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 80 50">
+                <path d="M10 40 Q40 20 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">중간</p>
+          </div>
+        </button>
+        
+        <button onclick="selectTrajectory('high')" id="trajectory-high"
+          class="border-2 border-gray-200 rounded-xl p-4 hover:border-forest-green hover:bg-forest-green hover:bg-opacity-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-forest-green focus:ring-offset-2">
+          <div class="text-center">
+            <div class="w-full h-16 mb-2 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 80 50">
+                <path d="M10 40 Q40 10 70 30" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"/>
+                <circle cx="10" cy="40" r="2" fill="currentColor" class="text-gray-600"/>
+                <circle cx="70" cy="30" r="2" fill="currentColor" class="text-gray-600"/>
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-gray-700">높음</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탄도 가이드 팝업 -->
+  <div id="trajectory-guide" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-6 mx-6 w-full max-w-md">
+      <h3 class="text-lg font-bold text-charcoal-gray mb-4">탄도란?</h3>
+      <div class="space-y-3 mb-6">
+        <p class="text-sm text-gray-600">공이 날아가는 전체 궤적의 높낮이를 말해요.</p>
+        <div class="bg-cream-white rounded-lg p-3">
+          <p class="text-xs text-gray-600 font-semibold mb-2">참고 기준</p>
+          <ul class="text-xs text-gray-600 space-y-1">
+            <li>• 낮음: 바람에 강하고 런이 많음</li>
+            <li>• 중간: 일반적인 탄도</li>
+            <li>• 높음: 뺀어서 멈추기 좋음</li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="closeTrajectoryGuide()" class="w-full bg-forest-green text-white py-3 rounded-xl font-semibold">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let selectedTrajectory = null;
+
+    function selectTrajectory(trajectory) {
+      // 모든 버튼 초기화
+      document.querySelectorAll('[id^="trajectory-"]').forEach(btn => {
+        btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        btn.classList.add('border-gray-200');
+      });
+
+      // 선택된 버튼 강조
+      const selectedBtn = document.getElementById('trajectory-' + trajectory);
+      selectedBtn.classList.remove('border-gray-200');
+      selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+
+      selectedTrajectory = trajectory;
+      localStorage.setItem('onboarding_7iron_trajectory', trajectory);
+      
+      // 자동으로 다음 페이지로 이동
+      setTimeout(() => {
+        window.location.href='1-4-2-5-2-온보딩-동적-7번아이언-체감무게.html';
+      }, 300);
+    }
+
+    function skipToNext() {
+      window.location.href='1-4-2-5-2-온보딩-동적-7번아이언-체감무게.html';
+    }
+
+    function showTrajectoryGuide() {
+      document.getElementById('trajectory-guide').classList.remove('hidden');
+    }
+
+    function closeTrajectoryGuide() {
+      document.getElementById('trajectory-guide').classList.add('hidden');
+    }
+
+    // 페이지 로드 시 저장된 값 불러오기
+    window.onload = function() {
+      const savedValue = localStorage.getItem('onboarding_7iron_trajectory');
+      if (savedValue) {
+        // 저장된 값이 있으면 해당 버튼 강조만 하고 자동 이동은 하지 않음
+        document.querySelectorAll('[id^="trajectory-"]').forEach(btn => {
+          btn.classList.remove('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+          btn.classList.add('border-gray-200');
+        });
+        const selectedBtn = document.getElementById('trajectory-' + savedValue);
+        if (selectedBtn) {
+          selectedBtn.classList.remove('border-gray-200');
+          selectedBtn.classList.add('border-forest-green', 'bg-forest-green', 'bg-opacity-10');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
